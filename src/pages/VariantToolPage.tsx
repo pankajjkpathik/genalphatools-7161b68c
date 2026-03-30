@@ -18,6 +18,13 @@ import IdealWeightForm from "@/components/tools/IdealWeightForm";
 import BodyFatForm from "@/components/tools/BodyFatForm";
 import WaterIntakeForm from "@/components/tools/WaterIntakeForm";
 import PregnancyDueDateForm from "@/components/tools/PregnancyDueDateForm";
+import NameNumerologyForm from "@/components/tools/NameNumerologyForm";
+import LifePathForm from "@/components/tools/LifePathForm";
+import DestinyNumberForm from "@/components/tools/DestinyNumberForm";
+import MobileNumerologyForm from "@/components/tools/MobileNumerologyForm";
+import PersonalYearForm from "@/components/tools/PersonalYearForm";
+import VehicleNumerologyForm from "@/components/tools/VehicleNumerologyForm";
+import MarriageCompatibilityForm from "@/components/tools/MarriageCompatibilityForm";
 
 const variantFormMap: Record<string, React.ComponentType> = {
   "bmi-calculator": BMIForm,
@@ -26,6 +33,13 @@ const variantFormMap: Record<string, React.ComponentType> = {
   "body-fat-calculator": BodyFatForm,
   "water-intake-calculator": WaterIntakeForm,
   "pregnancy-due-date-calculator": PregnancyDueDateForm,
+  "name-numerology-calculator": NameNumerologyForm,
+  "life-path-number-calculator": LifePathForm,
+  "destiny-number-calculator": DestinyNumberForm,
+  "mobile-number-numerology": MobileNumerologyForm,
+  "personal-year-number-calculator": PersonalYearForm,
+  "vehicle-number-numerology": VehicleNumerologyForm,
+  "marriage-compatibility-calculator": MarriageCompatibilityForm,
 };
 
 const VariantToolPage = () => {
