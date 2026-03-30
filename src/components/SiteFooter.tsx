@@ -5,7 +5,7 @@ const SiteFooter = () => (
     <div className="container py-10">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="col-span-2 md:col-span-1">
-          <h3 className="font-heading font-bold text-lg gradient-text mb-2">AnkDarppan</h3>
+          <h3 className="font-heading font-bold text-lg gradient-text mb-2">GenAlpha Tools</h3>
           <p className="text-sm text-muted-foreground">Free online calculators & numerology tools. Instant results, accurate insights.</p>
         </div>
         <div>
@@ -34,7 +34,7 @@ const SiteFooter = () => (
         </div>
       </div>
       <div className="border-t border-border mt-8 pt-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} AnkDarppan Tools. All rights reserved. For informational purposes only.
+        © {new Date().getFullYear()} GenAlpha Tools. All rights reserved. For informational purposes only.
       </div>
     </div>
   </footer>

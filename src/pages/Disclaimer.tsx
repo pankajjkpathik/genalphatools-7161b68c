@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Disclaimer = () => (
   <>
-    <SEOHead title="Disclaimer | AnkDarppan Tools" description="Important disclaimer for AnkDarppan Tools regarding health and numerology content." />
+    <SEOHead title="Disclaimer | GenAlpha Tools" description="Important disclaimer for GenAlpha Tools regarding health and numerology content." />
     <SiteHeader />
     <main className="container py-8 max-w-3xl">
       <Breadcrumbs items={[{ label: "Disclaimer" }]} />
@@ -21,7 +21,7 @@ const Disclaimer = () => (
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">Accuracy</h2>
         <p>While we strive to ensure the accuracy of our calculations, we make no guarantees regarding the results. Formulas used are based on widely accepted methods but may not account for all individual factors.</p>
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">Liability</h2>
-        <p>AnkDarppan Tools shall not be held liable for any losses, damages, or consequences arising from the use of any tool or information on this website.</p>
+        <p>GenAlpha Tools shall not be held liable for any losses, damages, or consequences arising from the use of any tool or information on this website.</p>
       </div>
     </main>
     <SiteFooter />

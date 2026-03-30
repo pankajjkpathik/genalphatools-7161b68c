@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getToolBySlug, getRelatedTools } from "@/data/tools";
-import { getVariationBySlug } from "@/data/seo-variations";
+import { getVariationBySlug, getVariationsByBaseSlug } from "@/data/seo-variations";
 import SEOHead from "@/components/SEOHead";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -12,7 +12,6 @@ import ShareButtons from "@/components/ShareButtons";
 import ToolCard from "@/components/ToolCard";
 import NotFound from "@/pages/NotFound";
 
-// Tool form components
 import NameNumerologyForm from "@/components/tools/NameNumerologyForm";
 import LifePathForm from "@/components/tools/LifePathForm";
 import DestinyNumberForm from "@/components/tools/DestinyNumberForm";
@@ -72,6 +71,7 @@ const ToolPage = () => {
 
   const FormComponent = formMap[tool.slug];
   const related = getRelatedTools(tool.relatedSlugs);
+  const variations = getVariationsByBaseSlug(tool.slug);
   const categoryPath = tool.category === "numerology" ? "/numerology-tools" : "/health-calculators";
   const categoryLabel = tool.category === "numerology" ? "Numerology Tools" : "Health Calculators";
 
@@ -89,8 +89,8 @@ const ToolPage = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://ankdarppan.com/" },
-      { "@type": "ListItem", position: 2, name: categoryLabel, item: `https://ankdarppan.com${categoryPath}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://genalphatools.com/" },
+      { "@type": "ListItem", position: 2, name: categoryLabel, item: `https://genalphatools.com${categoryPath}` },
       { "@type": "ListItem", position: 3, name: tool.name },
     ],
   };
@@ -115,14 +115,30 @@ const ToolPage = () => {
           <h1 className="font-heading font-bold text-2xl md:text-3xl mb-3">{tool.name}</h1>
           <p className="text-muted-foreground mb-6 leading-relaxed">{tool.intro}</p>
 
-          {/* Calculator */}
           {FormComponent && <FormComponent />}
 
           <ShareButtons title={tool.name} />
 
+          {/* SEO Variation Links */}
+          {variations.length > 0 && (
+            <section className="mt-8">
+              <h2 className="font-heading font-semibold text-lg mb-3">Also Try</h2>
+              <div className="flex flex-wrap gap-2">
+                {variations.map(v => (
+                  <Link
+                    key={v.slug}
+                    to={`/tool/${v.slug}`}
+                    className="inline-block text-sm px-3 py-1.5 rounded-full border border-border bg-muted/50 text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                  >
+                    {v.name}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
           <AdPlaceholder slot="tool-mid" />
 
-          {/* Formula */}
           {tool.formula && (
             <section className="mt-10">
               <h2 className="font-heading font-bold text-xl mb-3">How It's Calculated</h2>
@@ -130,7 +146,6 @@ const ToolPage = () => {
             </section>
           )}
 
-          {/* Benefits */}
           <section className="mt-10">
             <h2 className="font-heading font-bold text-xl mb-3">Benefits & Use Cases</h2>
             <ul className="space-y-2">
@@ -143,12 +158,10 @@ const ToolPage = () => {
             </ul>
           </section>
 
-          {/* FAQs */}
           <FAQSection faqs={tool.faqs} />
 
           <AdPlaceholder slot="tool-bottom" />
 
-          {/* Related */}
           {related.length > 0 && (
             <section className="mt-10">
               <h2 className="font-heading font-bold text-xl mb-4">Related Tools</h2>

@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { useState, useMemo } from "react";
@@ -8,6 +7,9 @@ import SiteFooter from "@/components/SiteFooter";
 import ToolCard from "@/components/ToolCard";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import { tools, getPopularTools, getToolsByCategory } from "@/data/tools";
+import heroBg from "@/assets/hero-bg.jpg";
+import numerologyIcon from "@/assets/numerology-icon.png";
+import healthIcon from "@/assets/health-icon.png";
 
 const Index = () => {
   const [search, setSearch] = useState("");
@@ -26,12 +28,12 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "AnkDarppan Tools",
-    url: "https://ankdarppan.com",
+    name: "GenAlpha Tools",
+    url: "https://genalphatools.com",
     description: "Free online calculators and numerology tools. Instant results, accurate insights.",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://ankdarppan.com/?q={search_term_string}",
+      target: "https://genalphatools.com/?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -39,19 +41,23 @@ const Index = () => {
   return (
     <>
       <SEOHead
-        title="Free Online Calculators & Numerology Tools | AnkDarppan"
+        title="Free Online Calculators & Numerology Tools | GenAlpha Tools"
         description="Free online numerology calculators, BMI calculator, calorie calculator & more. Instant results, accurate insights. 100% free tools for India & global users."
         jsonLd={jsonLd}
       />
       <SiteHeader />
       <main>
         {/* Hero */}
-        <section className="gradient-hero py-16 md:py-24 text-center px-4">
-          <div className="container max-w-3xl">
-            <h1 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground mb-4 leading-tight">
+        <section
+          className="relative py-16 md:py-24 text-center px-4 overflow-hidden"
+          style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        >
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="container max-w-3xl relative z-10">
+            <h1 className="font-heading text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               Free Online Calculators &<br />Numerology Tools
             </h1>
-            <p className="text-primary-foreground/80 text-base md:text-lg mb-8">
+            <p className="text-white/80 text-base md:text-lg mb-8">
               Instant Results. Accurate Insights. 100% Free.
             </p>
             <div className="relative max-w-lg mx-auto">
@@ -68,6 +74,32 @@ const Index = () => {
         </section>
 
         <div className="container py-10">
+          {/* Category Cards */}
+          {!filtered && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+              <Link
+                to="/numerology-tools"
+                className="group flex items-center gap-4 bg-card border border-border rounded-xl p-6 hover:shadow-elevated hover:border-secondary/40 transition-all"
+              >
+                <img src={numerologyIcon} alt="Numerology Tools" width={80} height={80} loading="lazy" className="shrink-0" />
+                <div>
+                  <h2 className="font-heading font-bold text-lg group-hover:text-secondary transition-colors">Numerology Tools</h2>
+                  <p className="text-sm text-muted-foreground mt-1">Discover the hidden power of numbers with {numerology.length} free calculators.</p>
+                </div>
+              </Link>
+              <Link
+                to="/health-calculators"
+                className="group flex items-center gap-4 bg-card border border-border rounded-xl p-6 hover:shadow-elevated hover:border-accent/40 transition-all"
+              >
+                <img src={healthIcon} alt="Health Calculators" width={80} height={80} loading="lazy" className="shrink-0" />
+                <div>
+                  <h2 className="font-heading font-bold text-lg group-hover:text-accent transition-colors">Health Calculators</h2>
+                  <p className="text-sm text-muted-foreground mt-1">Track and improve your health with {health.length} accurate tools.</p>
+                </div>
+              </Link>
+            </div>
+          )}
+
           <AdPlaceholder slot="top-banner" />
 
           {/* Search results */}
