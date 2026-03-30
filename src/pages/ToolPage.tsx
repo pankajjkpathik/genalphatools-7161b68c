@@ -52,9 +52,20 @@ const formMap: Record<string, React.ComponentType> = {
   "ovulation-calculator": OvulationForm,
 };
 
+const VariantToolPage = lazy(() => import("./VariantToolPage"));
+
 const ToolPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const tool = slug ? getToolBySlug(slug) : undefined;
+  const variation = slug ? getVariationBySlug(slug) : undefined;
+
+  if (!tool && variation) {
+    return (
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+        <VariantToolPage />
+      </Suspense>
+    );
+  }
 
   if (!tool) return <NotFound />;
 
