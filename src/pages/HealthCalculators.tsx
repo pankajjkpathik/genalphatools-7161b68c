@@ -10,7 +10,7 @@ const HealthCalculators = () => {
   return (
     <>
       <SEOHead
-        title="Free Health Calculators Online – BMI, Calories, BMR | AnkDarppan"
+        title="Free Health Calculators Online – BMI, Calories, BMR | GenAlpha Tools"
         description="Free online health calculators: BMI, calorie needs, BMR, water intake, ideal weight & more. Instant results for better health decisions."
       />
       <SiteHeader />

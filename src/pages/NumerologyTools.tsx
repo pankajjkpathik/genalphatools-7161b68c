@@ -10,7 +10,7 @@ const NumerologyTools = () => {
   return (
     <>
       <SEOHead
-        title="Free Numerology Tools & Calculators Online | AnkDarppan"
+        title="Free Numerology Tools & Calculators Online | GenAlpha Tools"
         description="Explore free numerology tools: name numerology, life path, destiny number, mobile number analysis & more. Instant results, 100% free."
       />
       <SiteHeader />
