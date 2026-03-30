@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { getToolBySlug, getRelatedTools } from "@/data/tools";
 import { getVariationBySlug } from "@/data/seo-variations";
