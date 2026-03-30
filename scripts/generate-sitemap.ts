@@ -51,6 +51,19 @@ const variationSlugs = [
   "body-fat-calculator-for-women",
   "water-intake-calculator-india",
   "pregnancy-due-date-calculator-india",
+  // Numerology variations
+  "name-numerology-for-baby",
+  "name-numerology-for-business",
+  "name-numerology-hindi",
+  "life-path-number-2025",
+  "life-path-number-2026",
+  "marriage-compatibility-by-name",
+  "marriage-compatibility-by-date-of-birth",
+  "destiny-number-calculator-india",
+  "mobile-numerology-india",
+  "personal-year-number-2025",
+  "personal-year-number-2026",
+  "vehicle-number-numerology-india",
 ];
 
 const today = new Date().toISOString().split("T")[0];
