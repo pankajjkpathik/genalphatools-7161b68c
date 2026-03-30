@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { getToolBySlug, getRelatedTools } from "@/data/tools";
 import { getVariationBySlug } from "@/data/seo-variations";
 import SEOHead from "@/components/SEOHead";
+import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQSection";
