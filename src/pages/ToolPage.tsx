@@ -22,6 +22,13 @@ import CalorieForm from "@/components/tools/CalorieForm";
 import BMRForm from "@/components/tools/BMRForm";
 import WaterIntakeForm from "@/components/tools/WaterIntakeForm";
 import IdealWeightForm from "@/components/tools/IdealWeightForm";
+import BabyNameNumerologyForm from "@/components/tools/BabyNameNumerologyForm";
+import BusinessNameNumerologyForm from "@/components/tools/BusinessNameNumerologyForm";
+import LuckyNameGeneratorForm from "@/components/tools/LuckyNameGeneratorForm";
+import MarriageCompatibilityForm from "@/components/tools/MarriageCompatibilityForm";
+import BodyFatForm from "@/components/tools/BodyFatForm";
+import PregnancyDueDateForm from "@/components/tools/PregnancyDueDateForm";
+import OvulationForm from "@/components/tools/OvulationForm";
 
 const formMap: Record<string, React.ComponentType> = {
   "name-numerology-calculator": NameNumerologyForm,
@@ -35,6 +42,13 @@ const formMap: Record<string, React.ComponentType> = {
   "bmr-calculator": BMRForm,
   "water-intake-calculator": WaterIntakeForm,
   "ideal-weight-calculator": IdealWeightForm,
+  "baby-name-numerology": BabyNameNumerologyForm,
+  "business-name-numerology": BusinessNameNumerologyForm,
+  "lucky-name-generator": LuckyNameGeneratorForm,
+  "marriage-compatibility-calculator": MarriageCompatibilityForm,
+  "body-fat-calculator": BodyFatForm,
+  "pregnancy-due-date-calculator": PregnancyDueDateForm,
+  "ovulation-calculator": OvulationForm,
 };
 
 const ToolPage = () => {
