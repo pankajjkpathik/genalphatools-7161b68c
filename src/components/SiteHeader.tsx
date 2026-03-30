@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -9,7 +9,7 @@ const SiteHeader = () => {
     <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-14">
         <Link to="/" className="flex items-center gap-2 font-heading font-bold text-lg">
-          <span className="gradient-text">AnkDarppan</span>
+          <span className="gradient-text">GenAlpha</span>
           <span className="text-muted-foreground text-sm font-body font-normal hidden sm:inline">Tools</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">

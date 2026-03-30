@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://ankdarppan.com/sitemap.xml
+Sitemap: https://genalphatools.com/sitemap.xml
 
 User-agent: Googlebot
 Allow: /

@@ -433,3 +433,6 @@ export const getVariationBySlug = (slug: string): ToolVariation | undefined =>
 
 export const getAllVariationSlugs = (): string[] =>
   toolVariations.map((v) => v.slug);
+
+export const getVariationsByBaseSlug = (baseSlug: string): ToolVariation[] =>
+  toolVariations.filter((v) => v.baseToolSlug === baseSlug);
