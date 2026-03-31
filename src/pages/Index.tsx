@@ -55,10 +55,10 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/30" />
           <div className="container max-w-3xl relative z-10">
             <h1 className="font-heading text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Free Online Calculators &<br />Numerology Tools
+              Free Online Calculators &<br />Numerology Tools (Instant Results)
             </h1>
-            <p className="text-white/80 text-base md:text-lg mb-8">
-              Instant Results. Accurate Insights. 100% Free.
+            <p className="text-white/90 text-base md:text-lg mb-8 max-w-xl mx-auto">
+              Check your health, destiny &amp; lucky numbers in seconds. 100% free, accurate, and trusted by millions.
             </p>
             <div className="relative max-w-lg mx-auto">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />

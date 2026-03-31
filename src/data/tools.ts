@@ -14,9 +14,12 @@ export interface ToolData {
   popular?: boolean;
   intro: string;
   formula?: string;
+  howToUse: string[];
+  example: string;
   benefits: string[];
   faqs: ToolFAQ[];
   relatedSlugs: string[];
+  peopleAlsoSearch: string[];
 }
 
 export const tools: ToolData[] = [
@@ -30,8 +33,10 @@ export const tools: ToolData[] = [
     category: "numerology",
     icon: "✨",
     popular: true,
-    intro: "Your name carries a powerful vibration. Using Pythagorean numerology, each letter is assigned a number (A=1, B=2... I=9, J=1...). The digits are summed and reduced to a single digit (1-9) or master number (11, 22, 33) to reveal your Name Number.",
+    intro: "Your name carries a powerful vibration. Using Pythagorean numerology, each letter is assigned a number (A=1, B=2... I=9, J=1...). The digits are summed and reduced to a single digit (1-9) or master number (11, 22, 33) to reveal your Name Number. This ancient system has been used for centuries to understand personality traits, life purpose, and compatibility.",
     formula: "Each letter maps to 1-9 (A=1, B=2, C=3... I=9, J=1, K=2...). Sum all letter values, then reduce to a single digit unless it's 11, 22, or 33.",
+    howToUse: ["Enter your full name (first + last name) in the input field", "Click 'Calculate' to compute your name number", "View your result — a single digit (1-9) or master number (11, 22, 33)", "Read the interpretation to understand your name's vibration"],
+    example: "For the name 'JOHN DOE': J=1, O=6, H=8, N=5, D=4, O=6, E=5. Total = 1+6+8+5+4+6+5 = 35. Reduce: 3+5 = 8. Name Number is 8 — representing ambition, authority, and material success.",
     benefits: ["Understand personality traits linked to your name", "Find lucky and compatible names", "Choose powerful baby or business names", "Gain self-awareness and direction"],
     faqs: [
       { question: "What is name numerology?", answer: "Name numerology assigns numerical values to letters in your name and reduces them to a single-digit or master number to reveal personality traits." },
@@ -39,8 +44,10 @@ export const tools: ToolData[] = [
       { question: "Should I use my full name?", answer: "Yes, using your full birth name gives the most accurate result." },
       { question: "What are master numbers?", answer: "11, 22, and 33 are master numbers with special significance and are not reduced further." },
       { question: "Can I check nicknames?", answer: "Absolutely! You can check any name variation to see its vibration." },
+      { question: "Is name numerology scientifically proven?", answer: "Numerology is a belief system, not a science. Many find it insightful for self-reflection, but it shouldn't replace professional advice." },
     ],
     relatedSlugs: ["life-path-number-calculator", "destiny-number-calculator", "baby-name-numerology"],
+    peopleAlsoSearch: ["name-numerology-for-baby", "name-numerology-for-business", "name-numerology-hindi", "destiny-number-calculator", "lucky-name-generator"],
   },
   {
     slug: "life-path-number-calculator",
@@ -51,8 +58,10 @@ export const tools: ToolData[] = [
     category: "numerology",
     icon: "🌟",
     popular: true,
-    intro: "Your Life Path Number is the most important number in numerology. Derived from your full date of birth, it reveals your life purpose, natural talents, and the challenges you'll face.",
+    intro: "Your Life Path Number is the most important number in numerology. Derived from your full date of birth, it reveals your life purpose, natural talents, and the challenges you'll face. Think of it as the blueprint of your life journey. This number stays with you forever and provides deep insights into who you are at your core.",
     formula: "Add all digits of your birth date (DD+MM+YYYY), then reduce to a single digit or master number (11, 22, 33).",
+    howToUse: ["Enter your full date of birth (day, month, year)", "Click 'Calculate' to find your life path number", "Your life path number will be displayed (1-9 or 11, 22, 33)", "Read the detailed interpretation for your number"],
+    example: "For birthdate 15 March 1990: 1+5+0+3+1+9+9+0 = 28. Reduce: 2+8 = 10. Reduce: 1+0 = 1. Life Path Number is 1 — the Leader, indicating independence and pioneering spirit.",
     benefits: ["Discover your life purpose", "Understand natural strengths and weaknesses", "Improve relationships through self-knowledge", "Make better career decisions"],
     faqs: [
       { question: "What is a life path number?", answer: "It's a single-digit number derived from your birth date that reveals your life's purpose and direction." },
@@ -60,8 +69,10 @@ export const tools: ToolData[] = [
       { question: "What does life path 1 mean?", answer: "Life path 1 indicates leadership, independence, and pioneering spirit." },
       { question: "Can two people have the same life path?", answer: "Yes, many people share life path numbers, but their full chart will differ." },
       { question: "Is life path number the same as destiny number?", answer: "No. Life path comes from birth date; destiny number comes from your name." },
+      { question: "What is the rarest life path number?", answer: "Master numbers (11, 22, 33) are the rarest since they require specific digit combinations in the birth date." },
     ],
     relatedSlugs: ["name-numerology-calculator", "destiny-number-calculator", "personal-year-number-calculator"],
+    peopleAlsoSearch: ["life-path-number-2025", "life-path-number-2026", "destiny-number-calculator", "marriage-compatibility-calculator", "personal-year-number-calculator"],
   },
   {
     slug: "destiny-number-calculator",
@@ -72,8 +83,10 @@ export const tools: ToolData[] = [
     category: "numerology",
     icon: "🔮",
     popular: true,
-    intro: "The Destiny Number, also called Expression Number, is calculated from your full birth name. It reveals your natural abilities, personal goals, and the opportunities that will come your way.",
+    intro: "The Destiny Number, also called Expression Number, is calculated from your full birth name. It reveals your natural abilities, personal goals, and the opportunities that will come your way. While your life path number shows your journey, the destiny number shows your destination — the person you're meant to become.",
     formula: "Same as name numerology — sum all letter values from full birth name and reduce to single digit or master number.",
+    howToUse: ["Enter your full birth name (first, middle, and last)", "Click 'Calculate' to compute your destiny number", "View your single-digit result or master number", "Read what your destiny number reveals about your talents and life purpose"],
+    example: "For 'MARIA SHARMA': M=4, A=1, R=9, I=9, A=1, S=1, H=8, A=1, R=9, M=4, A=1. Total = 48. Reduce: 4+8 = 12 → 1+2 = 3. Destiny Number is 3 — creativity, self-expression, and communication.",
     benefits: ["Understand your innate talents", "Clarify your life goals", "Align career with natural strengths", "Improve personal development"],
     faqs: [
       { question: "What's the difference between destiny and life path?", answer: "Life path comes from birth date; destiny number comes from your full birth name." },
@@ -83,6 +96,7 @@ export const tools: ToolData[] = [
       { question: "Is destiny number same as expression number?", answer: "Yes, they are the same thing." },
     ],
     relatedSlugs: ["name-numerology-calculator", "life-path-number-calculator", "mobile-number-numerology"],
+    peopleAlsoSearch: ["destiny-number-calculator-india", "name-numerology-calculator", "life-path-number-calculator"],
   },
   {
     slug: "mobile-number-numerology",
@@ -93,8 +107,10 @@ export const tools: ToolData[] = [
     category: "numerology",
     icon: "📱",
     popular: true,
-    intro: "Your mobile number carries a unique vibration that can influence your daily life. By reducing all digits to a single number, you can discover whether your phone number aligns with your personal energy.",
+    intro: "Your mobile number carries a unique vibration that can influence your daily life. By reducing all digits to a single number, you can discover whether your phone number aligns with your personal energy. In India and globally, millions of people choose their mobile numbers based on numerology for better luck and positive vibrations.",
     formula: "Sum all digits of the mobile number and reduce to a single digit (1-9).",
+    howToUse: ["Enter your 10-digit mobile number (without country code)", "Click 'Check' to analyze your number's vibration", "View the single-digit numerology value (1-9)", "Read whether your number is lucky or needs changing"],
+    example: "For mobile number 9876543210: 9+8+7+6+5+4+3+2+1+0 = 45. Reduce: 4+5 = 9. Your mobile number vibrates with the energy of 9 — wisdom, humanitarianism, and completion.",
     benefits: ["Check if your number is lucky", "Choose a number aligned with your energy", "Understand the vibration of your current number", "Make informed decisions about number changes"],
     faqs: [
       { question: "Does phone number really affect luck?", answer: "In numerology, every number carries a vibration. While not scientifically proven, many believe it influences energy." },
@@ -104,6 +120,7 @@ export const tools: ToolData[] = [
       { question: "How often should I check?", answer: "Check whenever you get a new number or are considering changing." },
     ],
     relatedSlugs: ["name-numerology-calculator", "life-path-number-calculator", "vehicle-number-numerology"],
+    peopleAlsoSearch: ["mobile-numerology-india", "vehicle-number-numerology", "lucky-number-finder"],
   },
   {
     slug: "personal-year-number-calculator",
@@ -113,8 +130,10 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate your personal year number and discover the theme of your current year. Free numerology tool for yearly insights.",
     category: "numerology",
     icon: "📅",
-    intro: "Your Personal Year Number reveals the theme and energy of your current year. It cycles from 1 to 9 and helps you understand what opportunities and challenges lie ahead.",
+    intro: "Your Personal Year Number reveals the theme and energy of your current year. It cycles from 1 to 9 and helps you understand what opportunities and challenges lie ahead. By knowing your personal year, you can time important decisions — career changes, relationships, travel — for maximum alignment with universal energy.",
     formula: "Add your birth day + birth month + current year digits, then reduce to single digit.",
+    howToUse: ["Enter your date of birth", "The calculator automatically uses the current year", "Click 'Calculate' to find your personal year number", "Read what this year's energy holds for you"],
+    example: "Born on June 15, for year 2026: 1+5+0+6+2+0+2+6 = 22. Since 22 is a master number, your personal year is 22 — a year of master building and large-scale achievement.",
     benefits: ["Plan your year with cosmic alignment", "Understand yearly cycles", "Make better timing decisions", "Prepare for upcoming challenges"],
     faqs: [
       { question: "What is a personal year number?", answer: "It's a number that reveals the overarching theme of your current year based on your birth date." },
@@ -124,6 +143,7 @@ export const tools: ToolData[] = [
       { question: "Can I calculate for future years?", answer: "Yes, just use the future year in the calculation." },
     ],
     relatedSlugs: ["life-path-number-calculator", "destiny-number-calculator", "name-numerology-calculator"],
+    peopleAlsoSearch: ["personal-year-number-2025", "personal-year-number-2026", "life-path-number-calculator"],
   },
   {
     slug: "vehicle-number-numerology",
@@ -133,8 +153,10 @@ export const tools: ToolData[] = [
     metaDescription: "Analyze your vehicle registration number's numerological energy. Find if your car number is lucky. Free instant numerology tool.",
     category: "numerology",
     icon: "🚗",
-    intro: "In numerology, your vehicle number can influence the energy around your travels and safety. By reducing the digits in your registration number, you can find its core vibration.",
+    intro: "In numerology, your vehicle number can influence the energy around your travels and safety. By reducing the digits in your registration number, you can find its core vibration. Whether you're buying a new car, bike, or choosing a number plate, this tool helps you pick a number aligned with positive energy.",
     formula: "Extract only the digits from your vehicle number, sum them, and reduce to a single digit.",
+    howToUse: ["Enter the numeric digits from your vehicle registration (e.g., 021234)", "Click 'Check' to analyze the numerology", "View the single-digit vibration number", "Read whether your vehicle number is favorable"],
+    example: "For vehicle MH 02 AB 1234: digits are 0+2+1+2+3+4 = 12. Reduce: 1+2 = 3. Vehicle number vibrates with 3 — creativity, joy, and social energy. Great for family cars!",
     benefits: ["Check vehicle number compatibility", "Choose a lucky registration number", "Understand travel energy", "Make informed vehicle purchases"],
     faqs: [
       { question: "Does vehicle number matter in numerology?", answer: "Many numerologists believe the number on your vehicle influences travel energy and safety." },
@@ -144,6 +166,7 @@ export const tools: ToolData[] = [
       { question: "Should I change my vehicle number?", answer: "If the number doesn't resonate, some people prefer to add a lucky sticker or accessory number." },
     ],
     relatedSlugs: ["mobile-number-numerology", "name-numerology-calculator", "life-path-number-calculator"],
+    peopleAlsoSearch: ["vehicle-number-numerology-india", "mobile-number-numerology", "lucky-number-finder"],
   },
   // HEALTH
   {
@@ -155,8 +178,10 @@ export const tools: ToolData[] = [
     category: "health",
     icon: "⚖️",
     popular: true,
-    intro: "Body Mass Index (BMI) is a simple measure using your height and weight to estimate body fat. It helps you understand if your weight falls within a healthy range.",
+    intro: "Body Mass Index (BMI) is a simple measure using your height and weight to estimate body fat. It helps you understand if your weight falls within a healthy range. Used by doctors worldwide, BMI is the quickest way to screen for weight-related health risks. Whether you're male or female, Indian or global — get your BMI in seconds.",
     formula: "BMI = Weight (kg) / Height² (m²). Categories: <18.5 Underweight, 18.5-24.9 Normal, 25-29.9 Overweight, 30+ Obese.",
+    howToUse: ["Enter your weight in kilograms", "Enter your height in centimeters", "Click 'Calculate BMI' to get your result", "View your BMI value and weight category with color-coded indicator"],
+    example: "For a person weighing 70 kg and 170 cm tall: BMI = 70 / (1.70)² = 70 / 2.89 = 24.2. This falls in the 'Normal' category — a healthy weight range!",
     benefits: ["Quick health screening", "Track weight management progress", "Understand health risk levels", "Simple and widely used metric"],
     faqs: [
       { question: "What is a healthy BMI?", answer: "A BMI between 18.5 and 24.9 is considered normal/healthy." },
@@ -164,8 +189,10 @@ export const tools: ToolData[] = [
       { question: "What BMI is considered obese?", answer: "A BMI of 30 or higher is classified as obese." },
       { question: "Does BMI differ by age?", answer: "For adults, the same formula applies. For children, age-specific percentiles are used." },
       { question: "How often should I check BMI?", answer: "Monthly tracking is usually sufficient for weight management." },
+      { question: "Is BMI different for Indians?", answer: "Yes, WHO recommends that Asians/Indians consider BMI 23+ as overweight due to higher metabolic risk at lower BMI values." },
     ],
-    relatedSlugs: ["ideal-weight-calculator", "bmr-calculator", "calorie-calculator"],
+    relatedSlugs: ["ideal-weight-calculator", "bmr-calculator", "calorie-calculator", "body-fat-calculator"],
+    peopleAlsoSearch: ["bmi-calculator-for-men", "bmi-calculator-for-women", "bmi-calculator-india", "body-fat-calculator", "ideal-weight-calculator"],
   },
   {
     slug: "calorie-calculator",
@@ -176,8 +203,10 @@ export const tools: ToolData[] = [
     category: "health",
     icon: "🔥",
     popular: true,
-    intro: "Knowing your daily calorie needs is essential for weight management. This calculator uses the Mifflin-St Jeor equation — considered the most accurate — to estimate your Total Daily Energy Expenditure (TDEE).",
+    intro: "Knowing your daily calorie needs is essential for weight management. This calculator uses the Mifflin-St Jeor equation — considered the most accurate — to estimate your Total Daily Energy Expenditure (TDEE). Whether you're trying to lose weight, gain muscle, or maintain your current physique, accurate calorie tracking is the foundation.",
     formula: "BMR (Men) = 10×weight(kg) + 6.25×height(cm) - 5×age - 5. BMR (Women) = 10×weight(kg) + 6.25×height(cm) - 5×age - 161. TDEE = BMR × Activity Multiplier.",
+    howToUse: ["Enter your age, weight (kg), and height (cm)", "Select your gender (male/female)", "Choose your activity level from the dropdown", "Click 'Calculate' to see your daily calorie needs for maintenance, loss, and gain"],
+    example: "For a 30-year-old male, 75 kg, 175 cm, moderately active: BMR = 10×75 + 6.25×175 - 5×30 + 5 = 1,693 cal. TDEE = 1,693 × 1.55 = 2,624 cal/day. For weight loss, eat ~2,124 cal/day.",
     benefits: ["Plan meals for weight goals", "Understand energy balance", "Support fitness programs", "Make informed dietary choices"],
     faqs: [
       { question: "What is TDEE?", answer: "Total Daily Energy Expenditure — the total calories your body burns in a day including activity." },
@@ -187,6 +216,7 @@ export const tools: ToolData[] = [
       { question: "What activity level should I choose?", answer: "Be honest — most people with desk jobs are 'lightly active' even if they exercise 2-3 times/week." },
     ],
     relatedSlugs: ["bmr-calculator", "bmi-calculator", "water-intake-calculator"],
+    peopleAlsoSearch: ["calorie-calculator-for-men", "calorie-calculator-for-women", "calorie-calculator-india", "bmr-calculator", "water-intake-calculator"],
   },
   {
     slug: "bmr-calculator",
@@ -196,8 +226,10 @@ export const tools: ToolData[] = [
     metaDescription: "Find your BMR — the calories your body burns at rest. Use the Mifflin-St Jeor equation for accurate results. Free instant BMR calculator.",
     category: "health",
     icon: "💪",
-    intro: "Your Basal Metabolic Rate (BMR) is the number of calories your body needs at complete rest — just to keep your organs functioning. It's the foundation for any calorie-based diet plan.",
+    intro: "Your Basal Metabolic Rate (BMR) is the number of calories your body needs at complete rest — just to keep your organs functioning. It's the foundation for any calorie-based diet plan. Knowing your BMR helps you set accurate calorie targets for weight loss, maintenance, or muscle gain.",
     formula: "Men: BMR = 10×weight(kg) + 6.25×height(cm) - 5×age(y) + 5. Women: BMR = 10×weight(kg) + 6.25×height(cm) - 5×age(y) - 161.",
+    howToUse: ["Enter your age, weight (kg), and height (cm)", "Select your gender", "Click 'Calculate BMR' to see your result", "Use your BMR as the base for calculating daily calorie needs"],
+    example: "For a 25-year-old woman, 60 kg, 165 cm: BMR = 10×60 + 6.25×165 - 5×25 - 161 = 600 + 1,031 - 125 - 161 = 1,345 cal/day. This means her body burns ~1,345 calories just to stay alive at rest.",
     benefits: ["Foundation for meal planning", "Understand resting energy needs", "Optimize weight loss/gain", "Personalize nutrition plans"],
     faqs: [
       { question: "What is BMR?", answer: "Basal Metabolic Rate — the calories your body burns just to maintain basic life functions at rest." },
@@ -207,6 +239,7 @@ export const tools: ToolData[] = [
       { question: "Does BMR change with age?", answer: "Yes, BMR typically decreases about 1-2% per decade after age 20." },
     ],
     relatedSlugs: ["calorie-calculator", "bmi-calculator", "ideal-weight-calculator"],
+    peopleAlsoSearch: ["calorie-calculator", "bmi-calculator", "ideal-weight-calculator", "body-fat-calculator"],
   },
   {
     slug: "water-intake-calculator",
@@ -216,8 +249,10 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate your recommended daily water intake based on weight, activity, and climate. Free water intake calculator for healthy hydration.",
     category: "health",
     icon: "💧",
-    intro: "Proper hydration is crucial for health, digestion, skin, and energy levels. This calculator estimates your daily water needs based on your weight and activity level.",
+    intro: "Proper hydration is crucial for health, digestion, skin, and energy levels. This calculator estimates your daily water needs based on your weight and activity level. Dehydration can cause fatigue, headaches, and reduced focus — knowing your ideal intake keeps you performing at your best.",
     formula: "Base: 35ml per kg of body weight. Add 500ml for moderate activity, 1000ml for intense activity. Add 500ml for hot/humid climate.",
+    howToUse: ["Enter your body weight in kilograms", "Select your activity level (sedentary, moderate, intense)", "Click 'Calculate' to see your recommended daily water intake", "View results in liters and glasses per day"],
+    example: "For a 70 kg person with moderate activity: Base = 70 × 35ml = 2,450ml. Add 500ml for activity = 2,950ml. That's about 3 liters or 12 glasses per day.",
     benefits: ["Stay properly hydrated", "Improve energy and focus", "Support kidney function", "Better skin health"],
     faqs: [
       { question: "How much water should I drink daily?", answer: "A general guideline is 35ml per kg of body weight, adjusted for activity and climate." },
@@ -227,6 +262,7 @@ export const tools: ToolData[] = [
       { question: "Should I drink more during exercise?", answer: "Yes, drink about 200-300ml every 15-20 minutes during intense exercise." },
     ],
     relatedSlugs: ["calorie-calculator", "bmi-calculator", "bmr-calculator"],
+    peopleAlsoSearch: ["water-intake-calculator-india", "calorie-calculator", "bmi-calculator"],
   },
   {
     slug: "ideal-weight-calculator",
@@ -236,8 +272,10 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate your ideal body weight using multiple formulas. Find the healthy weight range for your height, age, and gender. Free & instant.",
     category: "health",
     icon: "🎯",
-    intro: "Your ideal weight depends on height, gender, and body frame. This calculator uses the Devine formula — widely used in clinical settings — to estimate your healthy weight range.",
+    intro: "Your ideal weight depends on height, gender, and body frame. This calculator uses the Devine formula — widely used in clinical settings — to estimate your healthy weight range. Knowing your ideal weight helps you set realistic fitness goals and track your progress effectively.",
     formula: "Men: 50 + 2.3 × (height in inches - 60). Women: 45.5 + 2.3 × (height in inches - 60). Results in kg.",
+    howToUse: ["Enter your height in centimeters", "Select your gender (male/female)", "Click 'Calculate' to see your ideal weight", "Compare your current weight against the ideal range"],
+    example: "For a male, 175 cm (68.9 inches): Ideal weight = 50 + 2.3 × (68.9 - 60) = 50 + 20.5 = 70.5 kg. A healthy range would be 63-78 kg (±10%).",
     benefits: ["Set realistic weight goals", "Understand healthy weight range", "Track fitness progress", "Complement BMI analysis"],
     faqs: [
       { question: "What formula is used?", answer: "We use the Devine formula, which is widely used in medicine and pharmacology." },
@@ -247,6 +285,7 @@ export const tools: ToolData[] = [
       { question: "Is ideal weight different for athletes?", answer: "Athletes with more muscle mass may weigh more than 'ideal' and still be very healthy." },
     ],
     relatedSlugs: ["bmi-calculator", "bmr-calculator", "calorie-calculator"],
+    peopleAlsoSearch: ["ideal-weight-calculator-for-men", "ideal-weight-calculator-for-women", "bmi-calculator", "body-fat-calculator"],
   },
   // NEW NUMEROLOGY TOOLS
   {
@@ -258,8 +297,10 @@ export const tools: ToolData[] = [
     category: "numerology",
     icon: "👶",
     popular: true,
-    intro: "Choosing your baby's name is one of the most important decisions. In numerology, each name carries a unique vibration that can influence personality, strengths, and life path. Use this tool to check the numerological value of any baby name.",
+    intro: "Choosing your baby's name is one of the most important decisions. In numerology, each name carries a unique vibration that can influence personality, strengths, and life path. Use this tool to check the numerological value of any baby name and choose the most auspicious one for your little one.",
     formula: "Same Pythagorean system: A=1, B=2...I=9, J=1... Sum all letter values and reduce to a single digit or master number.",
+    howToUse: ["Enter the baby name you're considering", "Click 'Calculate' to find the name's numerology number", "Compare multiple name options by checking each one", "Choose the name with the most favorable vibration for your baby"],
+    example: "For baby name 'ARJUN': A=1, R=9, J=1, U=3, N=5. Total = 19. Reduce: 1+9 = 10 → 1+0 = 1. Name number is 1 — representing leadership, independence, and originality. A powerful name!",
     benefits: ["Choose a name aligned with positive energy", "Understand the personality traits associated with a name", "Compare multiple name options", "Combine with life path for deeper insights"],
     faqs: [
       { question: "How does baby name numerology work?", answer: "Each letter has a numeric value. We sum all values and reduce to a single digit to reveal the name's core vibration." },
@@ -269,6 +310,7 @@ export const tools: ToolData[] = [
       { question: "Does spelling matter?", answer: "Absolutely. Even small spelling changes alter the numerological value." },
     ],
     relatedSlugs: ["name-numerology-calculator", "lucky-name-generator", "life-path-number-calculator"],
+    peopleAlsoSearch: ["name-numerology-for-baby", "lucky-name-generator", "name-numerology-calculator"],
   },
   {
     slug: "business-name-numerology",
@@ -278,8 +320,10 @@ export const tools: ToolData[] = [
     metaDescription: "Analyze your business name's numerological vibration. Find if your brand name attracts success. Free instant business numerology tool.",
     category: "numerology",
     icon: "💼",
-    intro: "Your business name sets the energetic tone for your brand. A numerologically aligned name can attract prosperity, clients, and success. Analyze any business name to discover its core vibration and what it means for your venture.",
+    intro: "Your business name sets the energetic tone for your brand. A numerologically aligned name can attract prosperity, clients, and success. Analyze any business name to discover its core vibration and what it means for your venture. Many successful entrepreneurs use numerology to pick their brand names.",
     formula: "Sum all letter values using Pythagorean numerology (A=1...Z=8) and reduce to a single digit or master number.",
+    howToUse: ["Enter your business or brand name", "Click 'Analyze' to calculate the numerology value", "View the core vibration number and its meaning", "Compare different name options to find the most powerful one"],
+    example: "For 'GOOGLE': G=7, O=6, O=6, G=7, L=3, E=5. Total = 34. Reduce: 3+4 = 7. Google's name number is 7 — representing analysis, wisdom, and research. Perfect for a search engine!",
     benefits: ["Choose a brand name that attracts success", "Understand your current brand's energy", "Compare name options before registering", "Align business energy with your personal numbers"],
     faqs: [
       { question: "Does business name really affect success?", answer: "Numerologists believe the vibration of a name influences the energy around the business, though success depends on many factors." },
@@ -289,6 +333,7 @@ export const tools: ToolData[] = [
       { question: "Does this work for freelancers?", answer: "Yes! Your personal brand name or freelance alias carries the same numerological weight." },
     ],
     relatedSlugs: ["name-numerology-calculator", "lucky-name-generator", "mobile-number-numerology"],
+    peopleAlsoSearch: ["name-numerology-for-business", "lucky-name-generator", "name-numerology-calculator"],
   },
   {
     slug: "lucky-name-generator",
@@ -298,8 +343,10 @@ export const tools: ToolData[] = [
     metaDescription: "Generate lucky name suggestions based on numerology. Find spelling variations that vibrate with your desired number. Free tool.",
     category: "numerology",
     icon: "🍀",
-    intro: "Want a name that resonates with a specific lucky number? Enter your name and desired number, and this tool will suggest spelling variations that align with your target vibration.",
+    intro: "Want a name that resonates with a specific lucky number? Enter your name and desired number, and this tool will suggest spelling variations that align with your target vibration. Perfect for parents choosing baby names or entrepreneurs picking brand names.",
     formula: "Analyzes letter values and suggests additions that make the total reduce to your chosen single digit.",
+    howToUse: ["Enter your current name or a base name", "Select your desired lucky number (1-9)", "Click 'Generate' to see name variations", "Pick the variation that sounds best and matches your target number"],
+    example: "Name 'RAJ' (R=9, A=1, J=1 = 11 → 2). If you want number 1, the tool might suggest 'RAJH' (adding H=8, total = 19 → 10 → 1) or 'RAAJ' (total = 12 → 3). Try different variations!",
     benefits: ["Find name spellings that match your lucky number", "Experiment with variations for baby or business names", "Align your name with desired traits", "Easy comparison of multiple options"],
     faqs: [
       { question: "How does the lucky name generator work?", answer: "It tests letter additions to your name and finds variations that reduce to your chosen target number." },
@@ -309,6 +356,7 @@ export const tools: ToolData[] = [
       { question: "Should I trust this completely?", answer: "Use it as a starting point. Consult a professional numerologist for important decisions." },
     ],
     relatedSlugs: ["name-numerology-calculator", "baby-name-numerology", "business-name-numerology"],
+    peopleAlsoSearch: ["name-numerology-calculator", "baby-name-numerology", "business-name-numerology"],
   },
   {
     slug: "marriage-compatibility-calculator",
@@ -319,8 +367,10 @@ export const tools: ToolData[] = [
     category: "numerology",
     icon: "💕",
     popular: true,
-    intro: "Numerological compatibility compares the life path numbers of two individuals to assess harmony, challenges, and growth potential in a relationship. Enter both birth dates to discover your compatibility score.",
+    intro: "Numerological compatibility compares the life path numbers of two individuals to assess harmony, challenges, and growth potential in a relationship. Enter both birth dates to discover your compatibility score. This tool is perfect for couples considering marriage or anyone curious about relationship dynamics.",
     formula: "Calculate each partner's life path number from DOB, then compare using established numerological compatibility patterns.",
+    howToUse: ["Enter your date of birth", "Enter your partner's date of birth", "Click 'Check Compatibility' to see results", "View your compatibility percentage, strengths, and areas to work on"],
+    example: "Partner 1 born 15/03/1990 (Life Path 1) + Partner 2 born 22/07/1992 (Life Path 4): 1 and 4 have 72% compatibility. Strength: shared ambition and work ethic. Challenge: both can be stubborn.",
     benefits: ["Understand relationship dynamics", "Identify strengths and challenges as a couple", "Gain insights for better communication", "Fun way to explore your bond"],
     faqs: [
       { question: "How is marriage compatibility calculated?", answer: "We calculate both partners' life path numbers and compare them using numerological compatibility charts." },
@@ -330,6 +380,7 @@ export const tools: ToolData[] = [
       { question: "What if we get a low score?", answer: "A low score highlights areas that need attention — it doesn't mean the relationship can't succeed." },
     ],
     relatedSlugs: ["life-path-number-calculator", "name-numerology-calculator", "personal-year-number-calculator"],
+    peopleAlsoSearch: ["marriage-compatibility-by-name", "marriage-compatibility-by-date-of-birth", "life-path-number-calculator"],
   },
   // NEW HEALTH TOOLS
   {
@@ -340,8 +391,10 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate your body fat percentage using the U.S. Navy method. Just enter height, waist, neck (and hip for women). Free & instant.",
     category: "health",
     icon: "📏",
-    intro: "Body fat percentage is a more accurate indicator of fitness than weight alone. This calculator uses the U.S. Navy method — a well-validated formula using simple body measurements.",
+    intro: "Body fat percentage is a more accurate indicator of fitness than weight alone. This calculator uses the U.S. Navy method — a well-validated formula using simple body measurements. Unlike BMI, body fat percentage distinguishes between muscle and fat, giving you a clearer picture of your health.",
     formula: "Men: %BF = 495/(1.0324 - 0.19077×log10(waist-neck) + 0.15456×log10(height)) - 450. Women: similar with hip measurement included.",
+    howToUse: ["Select your gender (male/female)", "Enter your height, waist circumference, and neck circumference in cm", "For women: also enter hip circumference", "Click 'Calculate' to see your body fat percentage and fitness category"],
+    example: "For a male, height 175 cm, waist 85 cm, neck 38 cm: %BF = 495/(1.0324 - 0.19077×log10(85-38) + 0.15456×log10(175)) - 450 ≈ 18.2%. This falls in the 'Fitness' category — healthy and active!",
     benefits: ["More accurate than BMI for fitness assessment", "Track body composition changes", "Set realistic fitness goals", "No expensive equipment needed"],
     faqs: [
       { question: "How accurate is the Navy method?", answer: "It's within 1-3% of hydrostatic weighing for most people — quite reliable for a tape-measure method." },
@@ -351,6 +404,7 @@ export const tools: ToolData[] = [
       { question: "Why do women have higher body fat?", answer: "Women naturally carry more essential fat for reproductive health." },
     ],
     relatedSlugs: ["bmi-calculator", "ideal-weight-calculator", "bmr-calculator"],
+    peopleAlsoSearch: ["body-fat-calculator-for-men", "body-fat-calculator-for-women", "bmi-calculator", "ideal-weight-calculator"],
   },
   {
     slug: "pregnancy-due-date-calculator",
@@ -361,8 +415,10 @@ export const tools: ToolData[] = [
     category: "health",
     icon: "🤰",
     popular: true,
-    intro: "Knowing your due date helps you prepare for your baby's arrival. This calculator uses Naegele's rule — the most widely used method by doctors — to estimate your due date based on the first day of your last menstrual period.",
+    intro: "Knowing your due date helps you prepare for your baby's arrival. This calculator uses Naegele's rule — the most widely used method by doctors — to estimate your due date based on the first day of your last menstrual period. Track your pregnancy milestones and plan prenatal care with confidence.",
     formula: "Due Date = LMP + 280 days (40 weeks). Adjusted for cycle length variation from 28 days.",
+    howToUse: ["Enter the first day of your last menstrual period (LMP)", "Optionally enter your average cycle length if it differs from 28 days", "Click 'Calculate Due Date' to see your estimated delivery date", "View your current trimester and weeks pregnant"],
+    example: "If your LMP was January 1, 2026: Due date = January 1 + 280 days = October 8, 2026. You'd be in the 1st trimester during January-March, 2nd trimester April-June, and 3rd trimester July-October.",
     benefits: ["Plan prenatal care schedule", "Track pregnancy milestones", "Prepare for baby's arrival", "Understand which trimester you're in"],
     faqs: [
       { question: "How accurate is this calculator?", answer: "Only about 5% of babies arrive on their exact due date. Most arrive within 2 weeks before or after." },
@@ -372,6 +428,7 @@ export const tools: ToolData[] = [
       { question: "Can the due date change?", answer: "Yes, early ultrasound measurements may adjust the due date by a few days." },
     ],
     relatedSlugs: ["ovulation-calculator", "bmi-calculator", "water-intake-calculator"],
+    peopleAlsoSearch: ["pregnancy-due-date-calculator-india", "ovulation-calculator", "bmi-calculator-for-women"],
   },
   {
     slug: "ovulation-calculator",
@@ -381,8 +438,10 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate your ovulation date and fertile window based on your menstrual cycle. Plan for pregnancy or track your cycle. Free & instant.",
     category: "health",
     icon: "🌸",
-    intro: "Understanding your ovulation cycle is key for family planning. This calculator estimates your ovulation date and fertile window based on your cycle length, helping you identify the best days for conception.",
+    intro: "Understanding your ovulation cycle is key for family planning. This calculator estimates your ovulation date and fertile window based on your cycle length, helping you identify the best days for conception. Whether you're trying to conceive or simply tracking your cycle, accurate ovulation tracking empowers your reproductive health.",
     formula: "Ovulation = LMP + (Cycle Length - 14) days. Fertile window = 5 days before ovulation to 1 day after.",
+    howToUse: ["Enter the first day of your last menstrual period", "Enter your average cycle length (default: 28 days)", "Click 'Calculate' to see your ovulation date and fertile window", "Mark the fertile days on your calendar for family planning"],
+    example: "LMP: March 1, Cycle: 30 days. Ovulation = March 1 + (30-14) = March 17. Fertile window: March 12-18. These are the best days for conception!",
     benefits: ["Identify most fertile days", "Plan for conception", "Track menstrual cycle patterns", "Understand your reproductive health"],
     faqs: [
       { question: "When do I ovulate?", answer: "Ovulation typically occurs about 14 days before your next period starts." },
@@ -392,6 +451,7 @@ export const tools: ToolData[] = [
       { question: "How can I confirm ovulation?", answer: "Ovulation predictor kits, basal body temperature tracking, and cervical mucus changes can help confirm." },
     ],
     relatedSlugs: ["pregnancy-due-date-calculator", "bmi-calculator", "water-intake-calculator"],
+    peopleAlsoSearch: ["pregnancy-due-date-calculator", "pregnancy-due-date-calculator-india", "bmi-calculator-for-women"],
   },
 ];
 
