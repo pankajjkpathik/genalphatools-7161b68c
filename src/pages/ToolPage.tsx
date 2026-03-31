@@ -10,6 +10,9 @@ import FAQSection from "@/components/FAQSection";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import ShareButtons from "@/components/ShareButtons";
 import ToolCard from "@/components/ToolCard";
+import HowToUse from "@/components/HowToUse";
+import ExampleCalculation from "@/components/ExampleCalculation";
+import PeopleAlsoSearch from "@/components/PeopleAlsoSearch";
 import NotFound from "@/pages/NotFound";
 
 import NameNumerologyForm from "@/components/tools/NameNumerologyForm";
@@ -85,6 +88,17 @@ const ToolPage = () => {
     })),
   };
 
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to Use ${tool.name}`,
+    step: tool.howToUse.map((text, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      text,
+    })),
+  };
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -100,7 +114,7 @@ const ToolPage = () => {
       <SEOHead
         title={tool.metaTitle}
         description={tool.metaDescription}
-        jsonLd={[faqJsonLd, breadcrumbJsonLd]}
+        jsonLd={[faqJsonLd, howToJsonLd, breadcrumbJsonLd]}
       />
       <SiteHeader />
       <main className="container py-8 max-w-4xl">
@@ -137,6 +151,10 @@ const ToolPage = () => {
             </section>
           )}
 
+          <HowToUse steps={tool.howToUse} />
+
+          <ExampleCalculation example={tool.example} />
+
           <AdPlaceholder slot="tool-mid" />
 
           {tool.formula && (
@@ -160,11 +178,13 @@ const ToolPage = () => {
 
           <FAQSection faqs={tool.faqs} />
 
+          <PeopleAlsoSearch slugs={tool.peopleAlsoSearch} />
+
           <AdPlaceholder slot="tool-bottom" />
 
           {related.length > 0 && (
             <section className="mt-10">
-              <h2 className="font-heading font-bold text-xl mb-4">Related Tools</h2>
+              <h2 className="font-heading font-bold text-xl mb-4">Related Calculators</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {related.map(t => <ToolCard key={t.slug} tool={t} />)}
               </div>

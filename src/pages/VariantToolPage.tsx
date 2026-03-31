@@ -9,9 +9,11 @@ import FAQSection from "@/components/FAQSection";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import ShareButtons from "@/components/ShareButtons";
 import ToolCard from "@/components/ToolCard";
+import HowToUse from "@/components/HowToUse";
+import ExampleCalculation from "@/components/ExampleCalculation";
+import PeopleAlsoSearch from "@/components/PeopleAlsoSearch";
 import NotFound from "@/pages/NotFound";
 
-// Reuse form components from ToolPage
 import BMIForm from "@/components/tools/BMIForm";
 import CalorieForm from "@/components/tools/CalorieForm";
 import IdealWeightForm from "@/components/tools/IdealWeightForm";
@@ -25,6 +27,7 @@ import MobileNumerologyForm from "@/components/tools/MobileNumerologyForm";
 import PersonalYearForm from "@/components/tools/PersonalYearForm";
 import VehicleNumerologyForm from "@/components/tools/VehicleNumerologyForm";
 import MarriageCompatibilityForm from "@/components/tools/MarriageCompatibilityForm";
+import OvulationForm from "@/components/tools/OvulationForm";
 
 const variantFormMap: Record<string, React.ComponentType> = {
   "bmi-calculator": BMIForm,
@@ -40,6 +43,7 @@ const variantFormMap: Record<string, React.ComponentType> = {
   "personal-year-number-calculator": PersonalYearForm,
   "vehicle-number-numerology": VehicleNumerologyForm,
   "marriage-compatibility-calculator": MarriageCompatibilityForm,
+  "ovulation-calculator": OvulationForm,
 };
 
 const VariantToolPage = () => {
@@ -66,6 +70,17 @@ const VariantToolPage = () => {
     })),
   };
 
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to Use ${variation.name}`,
+    step: baseTool.howToUse.map((text, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      text,
+    })),
+  };
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -82,7 +97,7 @@ const VariantToolPage = () => {
       <SEOHead
         title={variation.metaTitle}
         description={variation.metaDescription}
-        jsonLd={[faqJsonLd, breadcrumbJsonLd]}
+        jsonLd={[faqJsonLd, howToJsonLd, breadcrumbJsonLd]}
       />
       <SiteHeader />
       <main className="container py-8 max-w-4xl">
@@ -103,6 +118,10 @@ const VariantToolPage = () => {
           {FormComponent && <FormComponent />}
 
           <ShareButtons title={variation.name} />
+
+          <HowToUse steps={baseTool.howToUse} />
+
+          <ExampleCalculation example={baseTool.example} />
 
           <AdPlaceholder slot="tool-mid" />
 
@@ -127,11 +146,13 @@ const VariantToolPage = () => {
 
           <FAQSection faqs={variation.faqs} />
 
+          <PeopleAlsoSearch slugs={baseTool.peopleAlsoSearch} />
+
           <AdPlaceholder slot="tool-bottom" />
 
           {related.length > 0 && (
             <section className="mt-10">
-              <h2 className="font-heading font-bold text-xl mb-4">Related Tools</h2>
+              <h2 className="font-heading font-bold text-xl mb-4">Related Calculators</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {related.map((t) => (
                   <ToolCard key={t.slug} tool={t} />
