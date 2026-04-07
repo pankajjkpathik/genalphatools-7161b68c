@@ -14,25 +14,27 @@ const MobileNumerologyForm = () => {
   const meaning = result ? numberMeanings[result] : null;
 
   return (
-    <div className="bg-card rounded-lg border border-border p-6 shadow-card">
+    <div className="bg-card rounded-xl border-2 border-border p-6 shadow-card">
       <div className="space-y-4">
         <div>
           <label className="block text-sm font-medium mb-1.5">Enter Mobile Number</label>
           <input type="tel" value={number} onChange={(e) => setNumber(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleCalculate()}
             placeholder="e.g. 9876543210"
-            className="w-full px-4 py-2.5 rounded-lg border border-input bg-background text-sm focus:ring-2 focus:ring-ring focus:outline-none" />
+            className="w-full px-4 py-3 rounded-lg border border-input bg-background text-sm focus:ring-2 focus:ring-ring focus:outline-none" />
         </div>
-        <button onClick={handleCalculate} className="w-full gradient-warm text-primary-foreground font-semibold py-2.5 rounded-lg text-sm hover:opacity-90 transition-opacity">
-          Check Number Energy
+        <button onClick={handleCalculate} className="w-full bg-primary text-primary-foreground font-bold py-3 rounded-lg text-base hover:opacity-90 transition-opacity shadow-soft">
+          ⚡ Check Number Energy Now
         </button>
       </div>
       {result !== null && meaning && (
-        <div className="mt-6 p-5 bg-muted rounded-lg animate-fade-in text-center">
-          <span className="text-4xl font-heading font-bold gradient-text">{result}</span>
-          <p className="font-heading font-semibold text-lg mt-1">{meaning.title}</p>
-          <p className="text-sm text-muted-foreground mt-2 mb-1"><strong>Traits:</strong> {meaning.traits}</p>
-          <p className="text-sm text-muted-foreground">{meaning.description}</p>
+        <div className="mt-6 p-6 rounded-xl border-2 border-primary/30 bg-primary/5 animate-fade-in text-center shadow-elevated">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-semibold">Your Number Energy</p>
+          <span className="text-5xl font-heading font-bold text-primary">{result}</span>
+          <p className="font-heading font-bold text-xl mt-2">{meaning.title}</p>
+          <p className="text-sm text-muted-foreground mt-3"><strong>Traits:</strong> {meaning.traits}</p>
+          <p className="text-sm text-muted-foreground mt-2">{meaning.description}</p>
+          <p className="text-xs text-muted-foreground mt-4">💡 Share your result or try related calculators below!</p>
         </div>
       )}
     </div>
