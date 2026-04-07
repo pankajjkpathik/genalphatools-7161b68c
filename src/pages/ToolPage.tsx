@@ -164,6 +164,13 @@ const ToolPage = () => {
             </section>
           )}
 
+          {tool.detailedContent && (
+            <section className="mt-10">
+              <h2 className="font-heading font-bold text-xl mb-3">What You Should Know</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">{tool.detailedContent}</p>
+            </section>
+          )}
+
           <section className="mt-10">
             <h2 className="font-heading font-bold text-xl mb-3">Benefits & Use Cases</h2>
             <ul className="space-y-2">
