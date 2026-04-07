@@ -3,6 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ToolCard from "@/components/ToolCard";
+import AdPlaceholder from "@/components/AdPlaceholder";
 import { getToolsByCategory } from "@/data/tools";
 
 const HealthCalculators = () => {
