@@ -158,9 +158,9 @@ const AdSenseReadiness = () => {
           <CardContent>
             <Progress value={progress} aria-label={`${progress} percent complete`} />
             <p className="text-xs text-muted-foreground mt-3">
-              The two pending items require an issued AdSense publisher ID. They will flip to{" "}
-              <span className="font-medium">Connected</span> automatically once the ads.txt and verification meta tag
-              are deployed.
+              All checklist items are now <span className="font-medium">Connected</span>. Publisher verification (
+              <code className="text-[10px] bg-muted px-1 rounded">ca-pub-1433261757916600</code>) is live via
+              <code className="text-[10px] bg-muted px-1 rounded ml-1">/ads.txt</code> and the meta tag in <code className="text-[10px] bg-muted px-1 rounded">&lt;head&gt;</code>.
             </p>
           </CardContent>
         </Card>
