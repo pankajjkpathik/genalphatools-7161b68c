@@ -108,7 +108,7 @@ const AdSenseReadiness = () => {
       <SEOHead
         title="AdSense Readiness Checklist | GenAlpha Tools"
         description="Transparent overview of how GenAlpha Tools meets Google AdSense program policies: original content, privacy, disclaimers, navigation, and verification status."
-        path="/adsense-readiness"
+        canonical="https://genalphatools.in/adsense-readiness"
       />
       <SiteHeader />
       <main className="container py-8">
