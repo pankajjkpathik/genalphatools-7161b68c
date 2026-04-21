@@ -23,7 +23,7 @@ const PrivacyPolicy = () => (
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">Your Rights</h2>
         <p>You have the right to access, correct, or request deletion of any personal data. Since we do not store calculator inputs, the data we hold is limited to anonymous analytics. Email us to exercise your rights.</p>
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">Contact</h2>
-        <p>For privacy-related questions, email us at contact@genalphatools.com.</p>
+        <p>For privacy-related questions, email us at contact@genalphatools.in.</p>
       </div>
     </main>
     <SiteFooter />

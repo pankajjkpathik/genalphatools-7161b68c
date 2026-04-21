@@ -12,10 +12,10 @@ const SiteFooter = () => (
             data never leaves your browser.
           </p>
           <a
-            href="mailto:contact@genalphatools.com"
+            href="mailto:contact@genalphatools.in"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Mail size={14} /> contactus@genalphatools.com
+            <Mail size={14} /> contact@genalphatools.in
           </a>
           <div className="flex items-center gap-3 mt-3">
             <a

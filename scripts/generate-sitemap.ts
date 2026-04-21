@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const DOMAIN = "https://genalphatools.com";
+const DOMAIN = "https://genalphatools.in";
 
 const staticPages = [
   "/",

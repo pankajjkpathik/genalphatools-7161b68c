@@ -28,11 +28,11 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "GenAlpha Tools",
-    url: "https://genalphatools.com",
+    url: "https://genalphatools.in",
     description: "Free online calculators and numerology tools. Instant results, accurate insights.",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://genalphatools.com/?q={search_term_string}",
+      target: "https://genalphatools.in/?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
