@@ -15,6 +15,7 @@ import Disclaimer from "./pages/Disclaimer";
 import Terms from "./pages/Terms";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import AdSenseReadiness from "./pages/AdSenseReadiness";
 import NotFound from "./pages/NotFound";
 
 
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/adsense-readiness" element={<AdSenseReadiness />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -101,6 +101,11 @@ const SiteFooter = () => (
                 Terms &amp; Conditions
               </Link>
             </li>
+            <li>
+              <Link to="/adsense-readiness" className="hover:text-foreground transition-colors">
+                AdSense Readiness
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
