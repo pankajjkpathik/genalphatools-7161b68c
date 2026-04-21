@@ -14,10 +14,11 @@ const PrivacyPolicy = () => (
         <p><strong className="text-foreground">Last Updated:</strong> March 2026</p>
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">Data Collection</h2>
         <p>GenAlpha Tools does <strong>not</strong> collect, store, or share any personal information you enter into our calculators. All calculations are performed entirely in your web browser (client-side).</p>
-        <h2 className="font-heading font-bold text-lg text-foreground mt-6">Cookies & Analytics</h2>
-        <p>We may use cookies for analytics purposes (such as Google Analytics) to understand how visitors use our website. These cookies do not collect personally identifiable information.</p>
+        <h2 className="font-heading font-bold text-lg text-foreground mt-6">Cookies, Consent & Analytics</h2>
+        <p>On your first visit you will see a consent banner. No analytics or advertising scripts run until you make a choice. You can <strong>Accept all</strong>, <strong>Reject non-essential</strong>, or use <strong>Customise</strong> to toggle Analytics and Advertising independently. Strictly necessary cookies (used to remember your consent choice) are always on.</p>
+        <p>Your preference is stored locally in your browser under the key <code className="text-xs bg-muted px-1 rounded">ga-consent-v1</code>. To change it later, clear your browser site data for genalphatools.in and reload the page — the banner will reappear.</p>
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">Third-Party Services</h2>
-        <p>We may use third-party services such as Google Analytics for anonymous traffic analysis. These services may set their own cookies. You can manage cookie preferences directly in your browser settings at any time.</p>
+        <p>If you grant advertising consent, Google AdSense (publisher ID <code className="text-xs bg-muted px-1 rounded">pub-1433261757916600</code>) may set cookies to serve and measure ads in accordance with <a className="underline hover:text-foreground" href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google's advertising policies</a>. If you grant analytics consent, anonymous usage statistics may be collected. No third-party scripts load if you reject non-essential cookies.</p>
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">Children's Privacy</h2>
         <p>Our services are intended for general audiences. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with information, please contact us and we will promptly delete it.</p>
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">Your Rights</h2>
