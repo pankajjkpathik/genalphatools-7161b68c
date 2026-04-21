@@ -140,6 +140,70 @@ const Index = () => {
                   {health.slice(0, 6).map(t => <ToolCard key={t.slug} tool={t} />)}
                 </div>
               </section>
+
+              {/* About / Why Us */}
+              <section className="mb-12 bg-card border border-border rounded-2xl p-6 md:p-8">
+                <h2 className="font-heading font-bold text-2xl mb-4">About GenAlpha Tools</h2>
+                <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p>GenAlpha Tools is a free online platform offering {tools.length}+ professionally built calculators across two domains: <strong>Numerology</strong> and <strong>Health &amp; Wellness</strong>. Our mission is simple — give every user instant, accurate, and easy-to-understand answers to the questions they ask most: <em>What's my BMI? How many calories should I eat? What does my name number mean? Is my mobile number lucky?</em></p>
+                  <p>Every health calculator on this site is built around clinically validated formulas — the World Health Organization BMI classification, the Mifflin-St Jeor BMR equation, the Harris-Benedict Total Daily Energy Expenditure formula, the Devine ideal-weight formula, and Naegele's pregnancy-due-date rule. Every numerology calculator uses the Pythagorean letter-to-number system, the most widely accepted method in modern Western and Indian numerology practice.</p>
+                  <p>We believe useful tools should be free, fast, mobile-friendly, and never store your personal data. Every calculation runs entirely inside your browser; nothing is sent to a server. You don't need to sign up, install an app, or share an email address — just open the tool and get your answer in seconds.</p>
+                </div>
+              </section>
+
+              {/* Why Trust */}
+              <section className="mb-12">
+                <h2 className="font-heading font-bold text-2xl mb-4">Why Choose Our Calculators?</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-card border border-border rounded-xl p-5">
+                    <h3 className="font-heading font-semibold text-lg mb-2">✅ Built on Trusted Formulas</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Every health tool follows globally recognised medical formulas adopted by WHO, ICMR, and the American Council on Sports Medicine. Numerology tools follow established Pythagorean and Vedic numerology traditions.</p>
+                  </div>
+                  <div className="bg-card border border-border rounded-xl p-5">
+                    <h3 className="font-heading font-semibold text-lg mb-2">⚡ Instant, Offline Calculations</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Results appear in milliseconds — even on slow connections. Calculations happen entirely in your browser; we never send your data anywhere.</p>
+                  </div>
+                  <div className="bg-card border border-border rounded-xl p-5">
+                    <h3 className="font-heading font-semibold text-lg mb-2">📱 Mobile-First Design</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Designed for the way Indian users actually browse — primarily on smartphones. Works smoothly on Jio, Airtel, and Vi networks even on 3G.</p>
+                  </div>
+                  <div className="bg-card border border-border rounded-xl p-5">
+                    <h3 className="font-heading font-semibold text-lg mb-2">📚 Educational Content</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">Each tool includes a worked example, the underlying formula, benefits, and detailed FAQs. Our <a href="/blog" className="text-primary underline">blog</a> goes deeper on every topic.</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* FAQs */}
+              <section className="mb-12">
+                <h2 className="font-heading font-bold text-2xl mb-4">Frequently Asked Questions</h2>
+                <div className="space-y-3">
+                  <details className="group bg-card border border-border rounded-xl p-4">
+                    <summary className="cursor-pointer font-heading font-semibold text-base">Are GenAlpha Tools really free?</summary>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">Yes. Every calculator and article on this website is 100% free to use, with no sign-up, no paywall, and no hidden charges. We don't ask for your email or store any personal data.</p>
+                  </details>
+                  <details className="group bg-card border border-border rounded-xl p-4">
+                    <summary className="cursor-pointer font-heading font-semibold text-base">How accurate are your health calculators?</summary>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">Our health calculators use clinically validated formulas (Mifflin-St Jeor, WHO BMI, Devine ideal weight, Harris-Benedict TDEE, Naegele's rule). Results are accurate to within ±5% for most adults. They are educational and do not replace medical advice.</p>
+                  </details>
+                  <details className="group bg-card border border-border rounded-xl p-4">
+                    <summary className="cursor-pointer font-heading font-semibold text-base">Which numerology system do you use?</summary>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">We use the Pythagorean system (A=1, B=2 … I=9, then J=1, K=2, and so on), which is the most widely used numerology system worldwide and is the basis of most modern Indian numerology practice.</p>
+                  </details>
+                  <details className="group bg-card border border-border rounded-xl p-4">
+                    <summary className="cursor-pointer font-heading font-semibold text-base">Do you store the data I enter?</summary>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">No. Every calculation runs inside your browser using JavaScript. Nothing is uploaded to a server, nothing is logged, and nothing is shared with third parties. See our <a href="/privacy-policy" className="text-primary underline">Privacy Policy</a> for details.</p>
+                  </details>
+                  <details className="group bg-card border border-border rounded-xl p-4">
+                    <summary className="cursor-pointer font-heading font-semibold text-base">Can I use these tools on mobile?</summary>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">Absolutely. Our entire site is built mobile-first and works smoothly on Android, iOS, and any modern browser — even on 3G connections.</p>
+                  </details>
+                  <details className="group bg-card border border-border rounded-xl p-4">
+                    <summary className="cursor-pointer font-heading font-semibold text-base">Where can I learn more about the topics?</summary>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">Visit our <a href="/blog" className="text-primary underline">blog</a> for in-depth articles on BMI, calorie deficits, life path numbers, baby name numerology, mobile number numerology, pregnancy due dates, and more.</p>
+                  </details>
+                </div>
+              </section>
             </>
           )}
         </div>
