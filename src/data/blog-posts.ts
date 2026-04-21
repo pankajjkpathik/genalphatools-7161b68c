@@ -453,6 +453,358 @@ export const blogPosts: BlogPost[] = [
 <p>Use our <a href="/tool/water-intake-calculator">Water Intake Calculator</a> to get a personalised daily target. For complete health monitoring, combine it with our <a href="/tool/bmi-calculator">BMI Calculator</a> and <a href="/tool/calorie-calculator">Calorie Calculator</a>.</p>
 `,
   },
+  {
+    slug: "body-fat-percentage-guide",
+    title: "Body Fat Percentage Guide: Healthy Ranges, Measurement Methods & Goals",
+    metaTitle: "Body Fat Percentage Guide 2026 – Healthy Ranges for Men & Women",
+    metaDescription: "Understand body fat percentage, healthy ranges by age and gender, measurement methods (Navy, calipers, DEXA), and how to lower body fat safely. Complete 2026 guide.",
+    category: "health",
+    excerpt: "BMI doesn't tell the whole story. Body fat percentage reveals what your weight is actually made of — fat versus lean mass — and is a far better predictor of metabolic health.",
+    author: "GenAlpha Tools Editorial",
+    publishedAt: "2026-04-08",
+    readTimeMin: 8,
+    body: `
+<p>Two people can have identical BMIs but completely different bodies. A 75 kg powerlifter and a 75 kg desk worker of the same height share the same BMI, yet one is lean and muscular while the other may carry dangerous visceral fat. <strong>Body fat percentage</strong> resolves this contradiction by measuring what your weight is actually composed of — fat mass versus lean mass (muscle, bone, organs, water).</p>
+
+<p>This guide covers what body fat percentage means, the healthy ranges for men and women across age groups, the major measurement methods (from free formulas to DEXA scans), and a realistic plan for lowering body fat without losing muscle.</p>
+
+<h2>What is Body Fat Percentage?</h2>
+<p>Body fat percentage (BF%) is the proportion of your total weight that comes from fat tissue. The remainder is lean body mass. Unlike BMI, BF% directly reflects body composition, which is what actually drives metabolic risk, athletic performance, and physical appearance.</p>
+
+<h2>Essential vs Storage Fat</h2>
+<p>Your body needs a minimum amount of fat to function — this is called <em>essential fat</em>. Women require more than men because of reproductive biology.</p>
+<ul>
+  <li><strong>Essential fat (men):</strong> 2–5%</li>
+  <li><strong>Essential fat (women):</strong> 10–13%</li>
+</ul>
+<p>Anything above this is storage fat, which fuels daily activity and protects organs but becomes harmful in excess.</p>
+
+<h2>Healthy Body Fat Ranges by Gender & Age</h2>
+<p><strong>Men:</strong></p>
+<ul>
+  <li>Athletes: 6–13%</li>
+  <li>Fitness: 14–17%</li>
+  <li>Average: 18–24%</li>
+  <li>Obese: 25%+</li>
+</ul>
+<p><strong>Women:</strong></p>
+<ul>
+  <li>Athletes: 14–20%</li>
+  <li>Fitness: 21–24%</li>
+  <li>Average: 25–31%</li>
+  <li>Obese: 32%+</li>
+</ul>
+<p>Healthy ranges shift upwards with age. A 50-year-old woman at 28% is healthier than a 25-year-old woman at the same percentage, because hormonal changes naturally increase fat storage.</p>
+
+<h2>Measurement Methods Compared</h2>
+<p><strong>1. U.S. Navy Method (free, accurate enough):</strong> Uses neck, waist, and hip circumferences plus height. Accurate within ±3% for most people. This is what our <a href="/tool/body-fat-calculator">Body Fat Calculator</a> uses.</p>
+<p><strong>2. Skinfold Calipers:</strong> A trained technician pinches fat at 3–7 sites. Accuracy ±3–4%.</p>
+<p><strong>3. Bioelectrical Impedance (BIA):</strong> Smart scales send a weak current through the body. Convenient but easily affected by hydration, food, and time of day. Accuracy ±5–8%.</p>
+<p><strong>4. DEXA Scan:</strong> Gold-standard medical X-ray. Accuracy ±1–2%, but expensive (₹3,000–6,000 in India).</p>
+<p><strong>5. Hydrostatic Weighing & Bod Pod:</strong> Lab methods, very accurate but rarely available.</p>
+
+<h2>Why Body Fat Percentage Beats BMI</h2>
+<p>BMI is a height-weight ratio with no information about composition. A muscular athlete is often classified as "overweight" by BMI despite having a low body fat percentage. Conversely, a sedentary person with low muscle mass can have a "normal" BMI yet a dangerous body fat percentage — a condition called <em>skinny fat</em> or normal-weight obesity.</p>
+
+<h2>How to Lower Body Fat Safely</h2>
+<ol>
+  <li><strong>Moderate calorie deficit:</strong> 300–500 kcal/day below maintenance. Use our <a href="/tool/calorie-calculator">Calorie Calculator</a>.</li>
+  <li><strong>High protein:</strong> 1.6–2.2 g per kg of body weight to preserve muscle.</li>
+  <li><strong>Resistance training:</strong> 3–4 sessions per week, compound lifts.</li>
+  <li><strong>Sleep 7–9 hours:</strong> Poor sleep raises cortisol and drives fat storage.</li>
+  <li><strong>Patience:</strong> Aim for 0.5–0.75% body weight loss per week. Faster loss usually means muscle loss too.</li>
+</ol>
+
+<h2>FAQs</h2>
+<p><strong>How accurate are smart scales?</strong> Useful for tracking trends, not absolute numbers. Always weigh at the same time of day under the same conditions.</p>
+<p><strong>Can you spot-reduce belly fat?</strong> No. Fat is lost systemically, though belly fat usually responds well to overall calorie deficit and reduced refined carbs.</p>
+<p><strong>What's the lowest safe body fat?</strong> Below 5% (men) or 12% (women) is dangerous outside short competition prep and can disrupt hormones, immunity, and bone density.</p>
+`,
+  },
+  {
+    slug: "personal-year-number-meaning",
+    title: "Personal Year Number: What It Means & How to Use It in 2026",
+    metaTitle: "Personal Year Number Meaning – Numerology Guide for 2026",
+    metaDescription: "Learn what your Personal Year Number means in numerology, how to calculate it, and how each year (1–9) shapes career, love, and finance. Complete guide for 2026.",
+    category: "numerology",
+    excerpt: "Your Personal Year Number reveals the theme of your year ahead — a 9-year cycle that influences timing for career moves, relationships, and major decisions.",
+    author: "GenAlpha Tools Editorial",
+    publishedAt: "2026-04-09",
+    readTimeMin: 7,
+    body: `
+<p>In numerology, life moves in <strong>9-year cycles</strong>. Each year within the cycle carries a distinctive vibration that shapes opportunities, challenges, and the kind of decisions you should — and shouldn't — make. Your <strong>Personal Year Number</strong> is the single digit (1–9) that reveals where you currently stand in this cycle. Understanding it helps you align action with timing: starting bold ventures during a Personal Year 1, consolidating during a 4, and releasing during a 9.</p>
+
+<h2>How to Calculate Your Personal Year Number</h2>
+<p>The formula uses your birth day, birth month, and the current calendar year:</p>
+<p><strong>Personal Year = (birth day + birth month + current year), reduced to a single digit.</strong></p>
+<p>Example for someone born on 14 March, calculating for 2026:</p>
+<ol>
+  <li>Day = 1 + 4 = 5</li>
+  <li>Month = 3</li>
+  <li>Year = 2 + 0 + 2 + 6 = 10 → 1</li>
+  <li>Total = 5 + 3 + 1 = 9 → Personal Year 9</li>
+</ol>
+<p>Save time with our <a href="/tool/personal-year-calculator">Personal Year Calculator</a>.</p>
+
+<h2>The 9 Personal Years Explained</h2>
+<p><strong>Personal Year 1 — New Beginnings:</strong> Plant seeds. Start businesses, projects, relationships. Independence and initiative are rewarded.</p>
+<p><strong>Personal Year 2 — Patience & Partnerships:</strong> Slow down. Cooperate, collaborate, build relationships. Push too hard and you'll meet resistance.</p>
+<p><strong>Personal Year 3 — Creativity & Expression:</strong> A social, creative, joyful year. Excellent for art, writing, branding, and networking. Avoid scattering your focus.</p>
+<p><strong>Personal Year 4 — Hard Work & Foundations:</strong> Build systems, save money, formalise contracts. Slow but rewarding. Health and discipline matter.</p>
+<p><strong>Personal Year 5 — Change & Freedom:</strong> Travel, relocation, career pivots. Embrace change but avoid impulsive big commitments.</p>
+<p><strong>Personal Year 6 — Family & Responsibility:</strong> Home, marriage, children, and care-giving take centre stage. Beautify your environment.</p>
+<p><strong>Personal Year 7 — Reflection & Spirituality:</strong> Slow inward year. Study, meditation, healing. Not ideal for launching ventures.</p>
+<p><strong>Personal Year 8 — Power, Money & Recognition:</strong> The wealth year. Promotions, deals, investments, leadership. Reap what 1–7 sowed.</p>
+<p><strong>Personal Year 9 — Completion & Release:</strong> Endings, donations, decluttering. Let go of what no longer serves you to make space for the next 1.</p>
+
+<h2>How to Use Your Personal Year</h2>
+<ul>
+  <li><strong>Time major decisions</strong> with the year's vibration (e.g., launch in Year 1, marry in Year 6).</li>
+  <li><strong>Avoid swimming upstream</strong> — don't try to start a new business in Year 9.</li>
+  <li><strong>Combine with Life Path & Destiny</strong> for full context. Use our <a href="/tool/life-path-calculator">Life Path Calculator</a> and <a href="/tool/destiny-number-calculator">Destiny Number Calculator</a>.</li>
+</ul>
+
+<h2>FAQs</h2>
+<p><strong>When does the Personal Year change?</strong> Most numerologists use 1 January, though some use your birthday. Both schools work — pick one and stay consistent.</p>
+<p><strong>Are master numbers (11, 22, 33) used?</strong> Some practitioners highlight them when they appear in the calculation; for the year cycle, single digits are standard.</p>
+<p><strong>Does the Personal Year override Life Path?</strong> No. Life Path is the lifelong soul mission; Personal Year is the seasonal weather.</p>
+`,
+  },
+  {
+    slug: "vehicle-number-numerology-india",
+    title: "Vehicle Number Numerology in India: Pick a Lucky Number Plate",
+    metaTitle: "Vehicle Number Numerology India – Lucky Car & Bike Numbers 2026",
+    metaDescription: "Learn how vehicle number numerology works in India, how to calculate your car or bike's lucky number, and which numbers attract safety, prosperity, and good karma.",
+    category: "numerology",
+    excerpt: "From Mumbai to Delhi, Indian buyers pay lakhs for VIP number plates. Here's the numerology behind why certain vehicle numbers are considered lucky — and how to choose yours.",
+    author: "GenAlpha Tools Editorial",
+    publishedAt: "2026-04-10",
+    readTimeMin: 6,
+    body: `
+<p>Walk into any RTO auction in Mumbai, Delhi, or Bengaluru and you'll see professionals bidding lakhs of rupees for a single number plate ending in 0001, 0007, or 7777. This isn't superstition alone — it's <strong>vehicle number numerology</strong>, a centuries-old practice rooted in Vedic and Chaldean numerology that links the registration number of your vehicle with safety, prosperity, and the energy you bring on the road.</p>
+
+<h2>Why Vehicle Numbers Matter in Numerology</h2>
+<p>Your car or bike is something you spend hundreds of hours in every year. Numerologists believe the vehicle's number plate carries a vibration that interacts with the owner's <a href="/tool/life-path-calculator">Life Path Number</a> and <a href="/tool/destiny-number-calculator">Destiny Number</a>. A harmonious vehicle number is said to support smooth journeys, fewer accidents, and financial returns (especially for commercial vehicles).</p>
+
+<h2>How to Calculate Your Vehicle Number</h2>
+<p>Take only the digits from the registration (e.g., MH 12 AB 3456 → 3456). Add them and reduce to a single digit:</p>
+<ol>
+  <li>3 + 4 + 5 + 6 = 18</li>
+  <li>1 + 8 = 9 → Vehicle Number 9</li>
+</ol>
+<p>Use our <a href="/tool/vehicle-numerology-calculator">Vehicle Numerology Calculator</a> for instant compatibility with your birth details.</p>
+
+<h2>Meaning of Each Vehicle Number (1–9)</h2>
+<ul>
+  <li><strong>1 — Sun:</strong> Leadership, ambition. Best for entrepreneurs and leaders.</li>
+  <li><strong>2 — Moon:</strong> Gentle, family-friendly. Good for sedans used by families.</li>
+  <li><strong>3 — Jupiter:</strong> Wisdom, growth. Excellent for teachers, advisors, students.</li>
+  <li><strong>4 — Rahu:</strong> Considered unstable for most; avoid unless your Life Path is also 4.</li>
+  <li><strong>5 — Mercury:</strong> Travel, communication, business. Ideal for sales reps, traders.</li>
+  <li><strong>6 — Venus:</strong> Luxury, comfort, beauty. Perfect for premium and family vehicles.</li>
+  <li><strong>7 — Ketu:</strong> Mystical, introspective. Good for spiritual seekers but cautious for commercial use.</li>
+  <li><strong>8 — Saturn:</strong> Powerful but karma-heavy. Brings discipline; mismatched owners may face accidents.</li>
+  <li><strong>9 — Mars:</strong> Energy, courage, speed. Perfect for sports bikes and SUVs — but drive carefully.</li>
+</ul>
+
+<h2>Most Auspicious Vehicle Numbers in India</h2>
+<p>VIP plates that consistently fetch premium prices: <strong>0001, 0007, 0009, 0786, 1111, 7777, 9999</strong>. The number 786 holds religious significance in Islam, while 108 is sacred in Hinduism — both are widely sought after.</p>
+
+<h2>Numbers to Avoid</h2>
+<p>Most numerologists discourage vehicle numbers that reduce to 4 or 8 unless your own birth chart resonates with Saturn or Rahu. Combinations like 13, 26, 44, and 88 are also considered karma-heavy by Chaldean numerology.</p>
+
+<h2>How to Match Your Vehicle Number to You</h2>
+<ol>
+  <li>Calculate your Life Path Number.</li>
+  <li>Pick a vehicle number that is the same, or in friendly relation (e.g., 1, 5, 6 are friendly to most).</li>
+  <li>Avoid numbers that conflict with your Life Path (e.g., 4 and 8 often clash with 1, 2, 3).</li>
+</ol>
+
+<h2>FAQs</h2>
+<p><strong>Does only the last digit matter?</strong> The full sum is most important. Some traditions also weigh the final digit separately.</p>
+<p><strong>Can I change my vehicle number?</strong> Yes — through RTO transfer or by booking a fancy number during registration.</p>
+<p><strong>Does numerology guarantee safety?</strong> No. It's a supportive practice — defensive driving, insurance, and maintenance still matter most.</p>
+`,
+  },
+  {
+    slug: "ovulation-tracking-basics",
+    title: "Ovulation Tracking Basics: Methods, Accuracy & Conception Tips",
+    metaTitle: "Ovulation Tracking Guide 2026 – Methods, Calendar & Fertile Window",
+    metaDescription: "Complete ovulation tracking guide: calendar method, BBT, OPK strips, cervical mucus, and apps. Find your fertile window and improve conception chances naturally.",
+    category: "health",
+    excerpt: "If you're trying to conceive — or trying not to — knowing when you ovulate is the single most useful piece of information you can have about your cycle.",
+    author: "GenAlpha Tools Editorial",
+    publishedAt: "2026-04-11",
+    readTimeMin: 7,
+    body: `
+<p>Ovulation is the brief window each month when a mature egg is released from the ovary and is available for fertilisation. It typically lasts only 12–24 hours, but because sperm can survive 3–5 days inside the female reproductive tract, the actual <strong>fertile window</strong> spans roughly six days each cycle. Knowing when this window opens — and closes — is the foundation of natural family planning, fertility awareness, and any conception journey.</p>
+
+<h2>The Menstrual Cycle in Brief</h2>
+<p>An average cycle is 28 days, but anywhere between 21 and 35 days is normal. Day 1 is the first day of full menstrual flow. Ovulation usually happens 12–16 days <em>before</em> the next period — not 14 days after the last one (a common myth that confuses tracking).</p>
+
+<h2>Top 5 Ovulation Tracking Methods</h2>
+<p><strong>1. Calendar Method:</strong> Subtract 14 from your average cycle length. For a 30-day cycle, ovulation is around day 16. Easy but inaccurate for irregular cycles. Use our <a href="/tool/ovulation-calculator">Ovulation Calculator</a>.</p>
+<p><strong>2. Basal Body Temperature (BBT):</strong> Take your temperature first thing in the morning before getting out of bed. A sustained rise of 0.3–0.5°C confirms ovulation has already occurred. Useful for confirming patterns over months but doesn't predict in advance.</p>
+<p><strong>3. Ovulation Predictor Kits (OPKs):</strong> Urine strips that detect the LH (luteinising hormone) surge 24–36 hours before ovulation. Accuracy ~97% when used correctly. Available in India for ₹50–150 per strip.</p>
+<p><strong>4. Cervical Mucus Method:</strong> As ovulation approaches, mucus becomes clear, stretchy, and egg-white in consistency. After ovulation, it becomes thick and sticky.</p>
+<p><strong>5. Tracking Apps & Wearables:</strong> Modern apps combine calendar data with BBT and symptoms. Wearables like Ava or Tempdrop track skin temperature continuously. Best when paired with at least one direct method.</p>
+
+<h2>Signs of Ovulation Your Body Gives</h2>
+<ul>
+  <li>Mid-cycle pelvic twinge (mittelschmerz)</li>
+  <li>Increased libido</li>
+  <li>Breast tenderness</li>
+  <li>Light spotting</li>
+  <li>Heightened sense of smell</li>
+</ul>
+
+<h2>Best Days to Conceive</h2>
+<p>The two days <em>before</em> ovulation and the day <em>of</em> ovulation are the most fertile. Aim for intercourse every 1–2 days during the fertile window — daily is unnecessary and can reduce sperm quality slightly.</p>
+
+<h2>When to See a Doctor</h2>
+<p>If you've tracked accurately and tried to conceive for 12 months (or 6 months if over age 35) without success, consult a fertility specialist. Conditions like PCOS, thyroid disorders, and low AMH can affect ovulation and need medical evaluation.</p>
+
+<h2>FAQs</h2>
+<p><strong>Can I ovulate without a period?</strong> Yes — ovulation precedes menstruation, so you can ovulate before your first postpartum period.</p>
+<p><strong>Do irregular cycles mean infertility?</strong> Not necessarily. Irregular ovulation is treatable in most cases.</p>
+<p><strong>Can I get pregnant outside the fertile window?</strong> Very rare, but possible in cycles where ovulation occurs unexpectedly early or late.</p>
+`,
+  },
+  {
+    slug: "ideal-weight-formulas-compared",
+    title: "Ideal Weight Formulas Compared: Devine, Robinson, Miller & Hamwi",
+    metaTitle: "Ideal Body Weight Formulas Compared – Devine, Robinson, Miller, Hamwi",
+    metaDescription: "Compare the four major ideal body weight formulas: Devine, Robinson, Miller, and Hamwi. Learn which is most accurate for adults, athletes, and Indian body types.",
+    category: "health",
+    excerpt: "Doctors use four different formulas to calculate ideal body weight — and they often disagree by several kilograms. Here's how each works and which one to trust.",
+    author: "GenAlpha Tools Editorial",
+    publishedAt: "2026-04-12",
+    readTimeMin: 7,
+    body: `
+<p>Step on a scale at any clinic in India and you might be told your "ideal weight" is 65 kg, 68 kg, or 72 kg — depending on which formula the doctor uses. The truth is that <strong>ideal body weight (IBW)</strong> is not a single number but a range derived from one of four classical formulas, each developed for a different clinical purpose. This guide compares them side-by-side so you can pick the most appropriate one for your body type and goal.</p>
+
+<h2>Why Ideal Body Weight Matters</h2>
+<p>IBW formulas are used in medication dosing (especially anaesthetics), nutrition planning, fitness goal-setting, and insurance underwriting. Unlike BMI, which gives a category, IBW gives a target weight in kilograms.</p>
+
+<h2>The Four Major Formulas</h2>
+<p><strong>1. Devine Formula (1974) — most widely used in clinical practice:</strong></p>
+<ul>
+  <li>Men: 50 kg + 2.3 kg per inch over 5 feet</li>
+  <li>Women: 45.5 kg + 2.3 kg per inch over 5 feet</li>
+</ul>
+<p>Originally designed for drug-dosage calculation. Tends to slightly underestimate IBW for tall individuals.</p>
+
+<p><strong>2. Robinson Formula (1983):</strong></p>
+<ul>
+  <li>Men: 52 kg + 1.9 kg per inch over 5 feet</li>
+  <li>Women: 49 kg + 1.7 kg per inch over 5 feet</li>
+</ul>
+<p>Considered more accurate for short and average-height adults; lower estimates for tall people.</p>
+
+<p><strong>3. Miller Formula (1983):</strong></p>
+<ul>
+  <li>Men: 56.2 kg + 1.41 kg per inch over 5 feet</li>
+  <li>Women: 53.1 kg + 1.36 kg per inch over 5 feet</li>
+</ul>
+<p>Gives a slightly higher baseline. Useful for muscular individuals.</p>
+
+<p><strong>4. Hamwi Formula (1964) — oldest, still used:</strong></p>
+<ul>
+  <li>Men: 48 kg + 2.7 kg per inch over 5 feet</li>
+  <li>Women: 45.5 kg + 2.2 kg per inch over 5 feet</li>
+</ul>
+<p>Originally used for diabetic diet planning. Tends to overestimate for tall men.</p>
+
+<h2>Worked Example: Male, 5'9" (175 cm)</h2>
+<ul>
+  <li>Devine: 50 + (2.3 × 9) = 70.7 kg</li>
+  <li>Robinson: 52 + (1.9 × 9) = 69.1 kg</li>
+  <li>Miller: 56.2 + (1.41 × 9) = 68.9 kg</li>
+  <li>Hamwi: 48 + (2.7 × 9) = 72.3 kg</li>
+</ul>
+<p>The healthy IBW range is roughly <strong>69–72 kg</strong>. Use our <a href="/tool/ideal-weight-calculator">Ideal Weight Calculator</a> to see all four side-by-side.</p>
+
+<h2>Which Formula Should You Use?</h2>
+<ul>
+  <li><strong>Average build, average height:</strong> Devine or Robinson.</li>
+  <li><strong>Tall individuals:</strong> Miller (most generous and realistic).</li>
+  <li><strong>Muscular / athletic:</strong> Miller, then verify with <a href="/tool/body-fat-calculator">body fat percentage</a>.</li>
+  <li><strong>Indian / South Asian frame:</strong> Devine or Robinson, since these reflect smaller frame sizes.</li>
+</ul>
+
+<h2>Limitations of IBW Formulas</h2>
+<p>None of these formulas account for muscle mass, bone density, or ethnicity. A bodybuilder will exceed IBW yet be perfectly healthy. Always pair IBW with body composition data (BMI + body fat percentage) for the full picture.</p>
+
+<h2>FAQs</h2>
+<p><strong>Is ideal weight the same as healthy weight?</strong> No. Healthy weight is a range; ideal weight is a single mid-point.</p>
+<p><strong>Should women use a different formula?</strong> All four have separate equations for men and women.</p>
+<p><strong>Why do my IBW and BMI disagree?</strong> They measure different things. BMI gives a healthy-range category; IBW gives a target. Trust the range, not the single number.</p>
+`,
+  },
+  {
+    slug: "destiny-number-vs-life-path",
+    title: "Destiny Number vs Life Path Number: Key Differences Explained",
+    metaTitle: "Destiny Number vs Life Path Number – Differences, Meaning & How to Use",
+    metaDescription: "Confused between Destiny Number and Life Path Number? Learn how each is calculated, what they reveal, and how they work together to map your numerology blueprint.",
+    category: "numerology",
+    excerpt: "Both are core numerology numbers, but they answer very different questions. Life Path tells you who you are; Destiny tells you what you're here to do.",
+    author: "GenAlpha Tools Editorial",
+    publishedAt: "2026-04-13",
+    readTimeMin: 6,
+    body: `
+<p>Open any numerology book and the two numbers you'll meet first are the <strong>Life Path Number</strong> and the <strong>Destiny Number</strong> (also called Expression Number). They're often confused — even by intermediate readers — because both are reduced single digits and both describe "who you are." But they answer fundamentally different questions, and using them together gives you a far richer chart than either alone.</p>
+
+<h2>The Quick Difference</h2>
+<ul>
+  <li><strong>Life Path Number</strong> = derived from your <em>full date of birth</em>. Reveals your innate personality, natural strengths, and the path you're walking through life.</li>
+  <li><strong>Destiny Number</strong> = derived from your <em>full birth name</em>. Reveals your purpose, mission, and the impact you're meant to make in the world.</li>
+</ul>
+<p>Think of Life Path as the <em>vehicle</em> you were given, and Destiny as the <em>destination</em> you're driving toward.</p>
+
+<h2>How to Calculate Each</h2>
+<p><strong>Life Path:</strong> Add every digit of your date of birth, then reduce to a single digit (or to a master number 11/22/33).</p>
+<p>Example: 14 March 1995 → 1+4+3+1+9+9+5 = 32 → 3+2 = <strong>5</strong>.</p>
+<p>Use our <a href="/tool/life-path-calculator">Life Path Calculator</a>.</p>
+
+<p><strong>Destiny:</strong> Convert each letter of your full birth name into a number using the Pythagorean chart (A=1, B=2, …, I=9, J=1, …), sum them all, then reduce.</p>
+<p>Example: AMIT KUMAR → A(1)+M(4)+I(9)+T(2) + K(2)+U(3)+M(4)+A(1)+R(9) = 35 → 3+5 = <strong>8</strong>.</p>
+<p>Use our <a href="/tool/destiny-number-calculator">Destiny Number Calculator</a>.</p>
+
+<h2>What Each Number Reveals</h2>
+<p><strong>Life Path:</strong></p>
+<ul>
+  <li>Your core personality and natural temperament</li>
+  <li>The lessons you'll repeatedly meet</li>
+  <li>The challenges you're best equipped to handle</li>
+</ul>
+<p><strong>Destiny:</strong></p>
+<ul>
+  <li>Your soul's mission in this lifetime</li>
+  <li>The career or contribution you're called toward</li>
+  <li>The qualities you must develop to feel fulfilled</li>
+</ul>
+
+<h2>How They Work Together</h2>
+<p>If your Life Path and Destiny are <strong>the same</strong>, you have a clear, focused life — your natural gifts perfectly match your mission.</p>
+<p>If they are <strong>compatible</strong> (e.g., 1 and 5, both independent and pioneering), life flows with mild creative tension.</p>
+<p>If they <strong>clash</strong> (e.g., Life Path 7 introvert with Destiny 3 entertainer), you'll feel pulled in opposite directions until you consciously integrate both energies.</p>
+
+<h2>Worked Example</h2>
+<p>An adult with Life Path 2 (peacemaker) and Destiny 8 (executive power) may struggle in their twenties feeling "too sensitive" for leadership roles. By their thirties, integrating both energies, they often become exceptionally diplomatic CEOs — combining the empathy of 2 with the authority of 8.</p>
+
+<h2>Other Core Numbers Worth Knowing</h2>
+<ul>
+  <li><strong>Soul Urge / Heart's Desire</strong> (vowels in your name) — what you secretly long for.</li>
+  <li><strong>Personality Number</strong> (consonants in your name) — how others perceive you.</li>
+  <li><strong>Personal Year</strong> — current 9-year cycle position. Calculate it with our <a href="/tool/personal-year-calculator">Personal Year Calculator</a>.</li>
+</ul>
+
+<h2>FAQs</h2>
+<p><strong>Which name should I use for Destiny?</strong> Always your full name as written on your birth certificate. Married names create a "Current Name Number" but don't replace Destiny.</p>
+<p><strong>Can my Destiny Number change?</strong> Legally changing your full name creates a new vibration over time, but the original Destiny remains your core mission.</p>
+<p><strong>Which is more important?</strong> Neither. Life Path is who you are; Destiny is who you're becoming. You need both to read your numerology accurately.</p>
+`,
+  },
 ];
 
 export const getBlogPostBySlug = (slug: string) => blogPosts.find(p => p.slug === slug);
