@@ -15,6 +15,8 @@ const staticPages = [
   "/contact",
   "/privacy-policy",
   "/disclaimer",
+  "/terms",
+  "/blog",
 ];
 
 const toolSlugs = [
@@ -91,12 +93,31 @@ const variationSlugs = [
   "vehicle-number-numerology-india",
 ];
 
+const blogSlugs = [
+  "how-to-calculate-bmi-correctly",
+  "understanding-life-path-numbers",
+  "calorie-deficit-guide-india",
+  "how-to-choose-lucky-baby-name",
+  "mobile-number-numerology-guide",
+  "bmr-tdee-explained",
+  "pregnancy-due-date-explained",
+  "marriage-compatibility-numerology",
+  "water-intake-guide",
+  "body-fat-percentage-guide",
+  "personal-year-number-meaning",
+  "vehicle-number-numerology-india",
+  "ovulation-tracking-basics",
+  "ideal-weight-formulas-compared",
+  "destiny-number-vs-life-path",
+];
+
 const today = new Date().toISOString().split("T")[0];
 
 const urls = [
   ...staticPages.map((p) => ({ loc: `${DOMAIN}${p}`, priority: p === "/" ? "1.0" : "0.8", changefreq: "weekly" })),
   ...toolSlugs.map((s) => ({ loc: `${DOMAIN}/tool/${s}`, priority: "0.9", changefreq: "monthly" })),
   ...variationSlugs.map((s) => ({ loc: `${DOMAIN}/tool/${s}`, priority: "0.7", changefreq: "monthly" })),
+  ...blogSlugs.map((s) => ({ loc: `${DOMAIN}/blog/${s}`, priority: "0.7", changefreq: "monthly" })),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
