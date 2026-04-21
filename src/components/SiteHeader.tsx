@@ -5,16 +5,20 @@ import { Menu, X } from "lucide-react";
 const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const close = () => setMobileOpen(false);
+
   return (
     <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-14">
-        <Link to="/" className="flex items-center gap-2 font-heading font-bold text-lg">
+        <Link to="/" className="flex items-center gap-2 font-heading font-bold text-lg" aria-label="GenAlpha Tools home">
           <span className="gradient-text">GenAlpha</span>
           <span className="text-muted-foreground text-sm font-body font-normal hidden sm:inline">Tools</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+          <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</Link>
           <Link to="/numerology-tools" className="text-muted-foreground hover:text-foreground transition-colors">Numerology</Link>
           <Link to="/health-calculators" className="text-muted-foreground hover:text-foreground transition-colors">Health</Link>
+          <Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link>
           <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link>
           <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
         </nav>
@@ -28,10 +32,12 @@ const SiteHeader = () => {
       </div>
       {mobileOpen && (
         <nav className="md:hidden border-t border-border bg-card px-4 pb-4 pt-2 flex flex-col gap-3 text-sm font-medium animate-fade-in">
-          <Link to="/numerology-tools" onClick={() => setMobileOpen(false)} className="text-muted-foreground hover:text-foreground">Numerology Tools</Link>
-          <Link to="/health-calculators" onClick={() => setMobileOpen(false)} className="text-muted-foreground hover:text-foreground">Health Calculators</Link>
-          <Link to="/about" onClick={() => setMobileOpen(false)} className="text-muted-foreground hover:text-foreground">About</Link>
-          <Link to="/contact" onClick={() => setMobileOpen(false)} className="text-muted-foreground hover:text-foreground">Contact</Link>
+          <Link to="/" onClick={close} className="text-muted-foreground hover:text-foreground">Home</Link>
+          <Link to="/numerology-tools" onClick={close} className="text-muted-foreground hover:text-foreground">Numerology Tools</Link>
+          <Link to="/health-calculators" onClick={close} className="text-muted-foreground hover:text-foreground">Health Calculators</Link>
+          <Link to="/blog" onClick={close} className="text-muted-foreground hover:text-foreground">Blog</Link>
+          <Link to="/about" onClick={close} className="text-muted-foreground hover:text-foreground">About</Link>
+          <Link to="/contact" onClick={close} className="text-muted-foreground hover:text-foreground">Contact</Link>
         </nav>
       )}
     </header>

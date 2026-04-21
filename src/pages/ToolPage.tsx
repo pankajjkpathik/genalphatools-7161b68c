@@ -7,7 +7,6 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQSection";
-import AdPlaceholder from "@/components/AdPlaceholder";
 import ShareButtons from "@/components/ShareButtons";
 import ToolCard from "@/components/ToolCard";
 import HowToUse from "@/components/HowToUse";
@@ -123,8 +122,6 @@ const ToolPage = () => {
           { label: tool.name },
         ]} />
 
-        <AdPlaceholder slot="tool-top" />
-
         <article>
           <h1 className="font-heading font-bold text-2xl md:text-3xl mb-3">{tool.name}</h1>
           <p className="text-muted-foreground mb-6 leading-relaxed">{tool.intro}</p>
@@ -155,8 +152,6 @@ const ToolPage = () => {
 
           <ExampleCalculation example={tool.example} />
 
-          <AdPlaceholder slot="tool-mid" />
-
           {tool.formula && (
             <section className="mt-10">
               <h2 className="font-heading font-bold text-xl mb-3">How It's Calculated</h2>
@@ -186,8 +181,6 @@ const ToolPage = () => {
           <FAQSection faqs={tool.faqs} />
 
           <PeopleAlsoSearch slugs={tool.peopleAlsoSearch} />
-
-          <AdPlaceholder slot="tool-bottom" />
 
           {related.length > 0 && (
             <section className="mt-10">
