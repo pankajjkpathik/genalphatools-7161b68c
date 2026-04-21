@@ -21,16 +21,16 @@ const BlogPost = () => {
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     author: { "@type": "Organization", name: post.author },
-    publisher: { "@type": "Organization", name: "GenAlpha Tools", url: "https://genalphatools.com" },
-    mainEntityOfPage: `https://genalphatools.com/blog/${post.slug}`,
+    publisher: { "@type": "Organization", name: "GenAlpha Tools", url: "https://genalphatools.in" },
+    mainEntityOfPage: `https://genalphatools.in/blog/${post.slug}`,
   };
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://genalphatools.com/" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://genalphatools.com/blog" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://genalphatools.in/" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://genalphatools.in/blog" },
       { "@type": "ListItem", position: 3, name: post.title },
     ],
   };

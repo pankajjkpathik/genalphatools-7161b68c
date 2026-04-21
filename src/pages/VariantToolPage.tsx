@@ -85,9 +85,9 @@ const VariantToolPage = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://genalphatools.com/" },
-      { "@type": "ListItem", position: 2, name: categoryLabel, item: `https://genalphatools.com${categoryPath}` },
-      { "@type": "ListItem", position: 3, name: baseTool.name, item: `https://genalphatools.com/tool/${baseTool.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://genalphatools.in/" },
+      { "@type": "ListItem", position: 2, name: categoryLabel, item: `https://genalphatools.in${categoryPath}` },
+      { "@type": "ListItem", position: 3, name: baseTool.name, item: `https://genalphatools.in/tool/${baseTool.slug}` },
       { "@type": "ListItem", position: 4, name: variation.name },
     ],
   };

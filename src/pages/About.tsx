@@ -50,7 +50,7 @@ const About = () => (
         <p>To become the most trusted and comprehensive free tools platform for numerology enthusiasts and health-conscious individuals worldwide — with content quality you'd expect from a paid app, delivered free, forever.</p>
 
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">Get in Touch</h2>
-        <p>We love hearing from our users. Whether you spotted a bug, want a new calculator added, or have feedback on an article, please write to us at <a href="mailto:contact@genalphatools.com" className="text-primary underline">contact@genalphatools.com</a> or visit our <a href="/contact" className="text-primary underline">Contact page</a>.</p>
+        <p>We love hearing from our users. Whether you spotted a bug, want a new calculator added, or have feedback on an article, please write to us at <a href="mailto:contact@genalphatools.in" className="text-primary underline">contact@genalphatools.in</a> or visit our <a href="/contact" className="text-primary underline">Contact page</a>.</p>
       </div>
     </main>
     <SiteFooter />

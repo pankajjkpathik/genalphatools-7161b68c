@@ -24,8 +24,8 @@ const Contact = () => (
           <div className="bg-card border border-border rounded-xl p-5">
             <Mail size={18} className="text-primary mb-2" />
             <h2 className="font-heading font-semibold text-foreground text-sm mb-1">Email</h2>
-            <a href="mailto:contact@genalphatools.com" className="text-primary underline text-sm">
-              contactus@genalphatools.com
+            <a href="mailto:contact@genalphatools.in" className="text-primary underline text-sm">
+              contact@genalphatools.in
             </a>
           </div>
           <div className="bg-card border border-border rounded-xl p-5">

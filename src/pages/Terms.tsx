@@ -16,7 +16,7 @@ const Terms = () => (
       <div className="text-muted-foreground space-y-4 text-sm leading-relaxed">
         <p><strong className="text-foreground">Last Updated:</strong> April 2026</p>
 
-        <p>Welcome to GenAlpha Tools. By accessing or using our website (genalphatools.com), you agree to be bound by these Terms &amp; Conditions and our <a href="/privacy-policy" className="text-primary underline">Privacy Policy</a>. Please read them carefully before using any of our calculators or content.</p>
+        <p>Welcome to GenAlpha Tools. By accessing or using our website (genalphatools.in), you agree to be bound by these Terms &amp; Conditions and our <a href="/privacy-policy" className="text-primary underline">Privacy Policy</a>. Please read them carefully before using any of our calculators or content.</p>
 
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">1. Acceptance of Terms</h2>
         <p>By using this website you confirm that you are at least 13 years old and that you accept these terms in full. If you disagree with any part of these terms, please do not use the website.</p>
@@ -53,7 +53,7 @@ const Terms = () => (
         <p>These terms are governed by and construed in accordance with the laws of India. Any disputes arising shall be subject to the exclusive jurisdiction of courts in India.</p>
 
         <h2 className="font-heading font-bold text-lg text-foreground mt-6">10. Contact</h2>
-        <p>For questions about these terms, please email <a href="mailto:contact@genalphatools.com" className="text-primary underline">contact@genalphatools.com</a>.</p>
+        <p>For questions about these terms, please email <a href="mailto:contact@genalphatools.in" className="text-primary underline">contact@genalphatools.in</a>.</p>
       </div>
     </main>
     <SiteFooter />

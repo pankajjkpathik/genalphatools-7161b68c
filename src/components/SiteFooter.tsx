@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Twitter, Facebook, Instagram } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const SiteFooter = () => (
   <footer className="border-t border-border bg-muted/50 mt-16">
@@ -12,40 +12,11 @@ const SiteFooter = () => (
             data never leaves your browser.
           </p>
           <a
-            href="mailto:contact@genalphatools.com"
+            href="mailto:contact@genalphatools.in"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <Mail size={14} /> contactus@genalphatools.com
+            <Mail size={14} /> contact@genalphatools.in
           </a>
-          <div className="flex items-center gap-3 mt-3">
-            <a
-              href="https://twitter.com/GenAlphaTools"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Twitter size={16} />
-            </a>
-            <a
-              href="https://facebook.com/GenAlphaTools"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Facebook size={16} />
-            </a>
-            <a
-              href="https://instagram.com/GenAlphaTools"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Instagram size={16} />
-            </a>
-          </div>
         </div>
         <div>
           <h4 className="font-heading font-semibold text-sm mb-3">Numerology</h4>
