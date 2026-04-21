@@ -12,6 +12,7 @@ import ToolCard from "@/components/ToolCard";
 import HowToUse from "@/components/HowToUse";
 import ExampleCalculation from "@/components/ExampleCalculation";
 import PeopleAlsoSearch from "@/components/PeopleAlsoSearch";
+import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import NotFound from "@/pages/NotFound";
 
 import NameNumerologyForm from "@/components/tools/NameNumerologyForm";
@@ -181,6 +182,8 @@ const ToolPage = () => {
           <FAQSection faqs={tool.faqs} />
 
           <PeopleAlsoSearch slugs={tool.peopleAlsoSearch} />
+
+          <RelatedBlogPosts toolSlug={tool.slug} toolCategory={tool.category as "health" | "numerology"} />
 
           {related.length > 0 && (
             <section className="mt-10">
