@@ -6,7 +6,6 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQSection";
-import AdPlaceholder from "@/components/AdPlaceholder";
 import ShareButtons from "@/components/ShareButtons";
 import ToolCard from "@/components/ToolCard";
 import HowToUse from "@/components/HowToUse";
@@ -109,8 +108,6 @@ const VariantToolPage = () => {
           ]}
         />
 
-        <AdPlaceholder slot="tool-top" />
-
         <article>
           <h1 className="font-heading font-bold text-2xl md:text-3xl mb-3">{variation.h1}</h1>
           <p className="text-muted-foreground mb-6 leading-relaxed">{variation.intro}</p>
@@ -122,8 +119,6 @@ const VariantToolPage = () => {
           <HowToUse steps={baseTool.howToUse} />
 
           <ExampleCalculation example={baseTool.example} />
-
-          <AdPlaceholder slot="tool-mid" />
 
           {baseTool.formula && (
             <section className="mt-10">
@@ -147,8 +142,6 @@ const VariantToolPage = () => {
           <FAQSection faqs={variation.faqs} />
 
           <PeopleAlsoSearch slugs={baseTool.peopleAlsoSearch} />
-
-          <AdPlaceholder slot="tool-bottom" />
 
           {related.length > 0 && (
             <section className="mt-10">

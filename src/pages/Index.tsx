@@ -5,7 +5,6 @@ import SEOHead from "@/components/SEOHead";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ToolCard from "@/components/ToolCard";
-import AdPlaceholder from "@/components/AdPlaceholder";
 import { tools, getPopularTools, getToolsByCategory } from "@/data/tools";
 import heroBg from "@/assets/hero-bg.jpg";
 import numerologyIcon from "@/assets/numerology-icon.png";
@@ -100,8 +99,6 @@ const Index = () => {
             </div>
           )}
 
-          <AdPlaceholder slot="top-banner" />
-
           {/* Search results */}
           {filtered ? (
             <section className="mb-12">
@@ -132,8 +129,6 @@ const Index = () => {
                   {numerology.slice(0, 6).map(t => <ToolCard key={t.slug} tool={t} />)}
                 </div>
               </section>
-
-              <AdPlaceholder slot="mid-content" />
 
               {/* Health */}
               <section className="mb-12">
