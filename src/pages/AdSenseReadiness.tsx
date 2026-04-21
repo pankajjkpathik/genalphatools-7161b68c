@@ -89,13 +89,20 @@ const checklist: ChecklistItem[] = [
   {
     label: "AdSense site verification",
     description:
-      "Awaiting publisher ID. Once issued, the ads.txt entry and meta verification tag will be added below.",
-    status: "pending",
+      "Publisher ID ca-pub-1433261757916600 verified via the google-adsense-account meta tag in <head>.",
+    status: "done",
   },
   {
     label: "ads.txt published at /ads.txt",
-    description: "Will be added once AdSense issues the publisher ID (format: google.com, pub-XXXXX, DIRECT, ...).",
-    status: "pending",
+    description: "google.com, pub-1433261757916600, DIRECT, f08c47fec0942fa0",
+    status: "done",
+    evidence: { label: "View ads.txt", href: "/ads.txt" },
+  },
+  {
+    label: "GDPR / consent banner",
+    description:
+      "First-visit cookie banner with Accept all, Reject non-essential, and granular Customise controls. Analytics and AdSense scripts only load after explicit consent.",
+    status: "done",
   },
 ];
 
@@ -151,9 +158,9 @@ const AdSenseReadiness = () => {
           <CardContent>
             <Progress value={progress} aria-label={`${progress} percent complete`} />
             <p className="text-xs text-muted-foreground mt-3">
-              The two pending items require an issued AdSense publisher ID. They will flip to{" "}
-              <span className="font-medium">Connected</span> automatically once the ads.txt and verification meta tag
-              are deployed.
+              All checklist items are now <span className="font-medium">Connected</span>. Publisher verification (
+              <code className="text-[10px] bg-muted px-1 rounded">ca-pub-1433261757916600</code>) is live via
+              <code className="text-[10px] bg-muted px-1 rounded ml-1">/ads.txt</code> and the meta tag in <code className="text-[10px] bg-muted px-1 rounded">&lt;head&gt;</code>.
             </p>
           </CardContent>
         </Card>
@@ -213,34 +220,32 @@ const AdSenseReadiness = () => {
           <Card>
             <CardContent className="p-6 space-y-4">
               <p className="text-sm text-muted-foreground">
-                The following slots are reserved for the AdSense publisher ID. They are intentionally inert
-                placeholders — no ad code, tracking pixels, or external scripts are loaded from this page until
-                approval is granted, in line with the policy on “Google-served ads on screens without
-                publisher-content”.
+                Verification artefacts for publisher ID{" "}
+                <code className="text-xs bg-muted px-1.5 py-0.5 rounded">ca-pub-1433261757916600</code>. The auto-ads
+                script is loaded only after the visitor grants advertising consent in the cookie banner — fully
+                compliant with the “Google-served ads on screens without publisher-content” policy and ePrivacy/GDPR.
               </p>
 
               <div>
-                <h3 className="font-heading font-semibold text-sm mb-2">1. Meta verification tag</h3>
+                <h3 className="font-heading font-semibold text-sm mb-2">1. Meta verification tag (live)</h3>
                 <pre className="bg-muted rounded-md p-3 text-xs overflow-x-auto">
-{`<!-- To be added to <head> in index.html after AdSense approval -->
-<meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX" />`}
+{`<meta name="google-adsense-account" content="ca-pub-1433261757916600" />`}
                 </pre>
               </div>
 
               <div>
-                <h3 className="font-heading font-semibold text-sm mb-2">2. ads.txt at /ads.txt</h3>
+                <h3 className="font-heading font-semibold text-sm mb-2">2. ads.txt (live at /ads.txt)</h3>
                 <pre className="bg-muted rounded-md p-3 text-xs overflow-x-auto">
-{`# /public/ads.txt — to be created post-approval
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0`}
+{`google.com, pub-1433261757916600, DIRECT, f08c47fec0942fa0`}
                 </pre>
               </div>
 
               <div>
-                <h3 className="font-heading font-semibold text-sm mb-2">3. Auto-ads script</h3>
+                <h3 className="font-heading font-semibold text-sm mb-2">3. Auto-ads script (consent-gated)</h3>
                 <pre className="bg-muted rounded-md p-3 text-xs overflow-x-auto">
-{`<!-- Loaded ONLY after the account is approved -->
+{`// Loaded by src/lib/consent.ts only after the visitor accepts ads
 <script async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1433261757916600"
   crossorigin="anonymous"></script>`}
                 </pre>
               </div>

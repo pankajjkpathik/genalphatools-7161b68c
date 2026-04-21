@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import ConsentBanner from "@/components/ConsentBanner";
 import Index from "./pages/Index";
 import ToolPage from "./pages/ToolPage";
 import NumerologyTools from "./pages/NumerologyTools";
@@ -43,6 +44,7 @@ const App = () => (
             <Route path="/adsense-readiness" element={<AdSenseReadiness />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <ConsentBanner />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
