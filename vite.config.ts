@@ -29,6 +29,25 @@ const sitemapPlugin = () => {
   };
 };
 
+/**
+ * Vite plugin: after each production build, run scripts/prerender.ts
+ * to write static HTML for every route with the correct per-page
+ * <title>, meta description, canonical, OG tags, and JSON-LD baked
+ * into the raw HTML. Lets Google Live Test see complete metadata.
+ */
+const prerenderPlugin = () => ({
+  name: "auto-prerender",
+  apply: "build" as const,
+  closeBundle() {
+    try {
+      const script = path.resolve(__dirname, "scripts/prerender.ts");
+      execSync(`npx --yes tsx "${script}"`, { stdio: "inherit" });
+    } catch (err) {
+      console.warn("⚠️  Prerender failed:", (err as Error).message);
+    }
+  },
+});
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
