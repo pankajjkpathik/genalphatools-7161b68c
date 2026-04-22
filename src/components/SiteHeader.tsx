@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const SiteHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -8,11 +9,16 @@ const SiteHeader = () => {
   const close = () => setMobileOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
-      <div className="container flex items-center justify-between h-14">
-        <Link to="/" className="flex items-center gap-2 font-heading font-bold text-lg" aria-label="GenAlpha Tools home">
-          <span className="gradient-text">GenAlpha</span>
-          <span className="text-muted-foreground text-sm font-body font-normal hidden sm:inline">Tools</span>
+    <header className="sticky top-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
+      <div className="container flex items-center justify-between h-16">
+        <Link to="/" className="flex items-center" aria-label="genalphatools.in home">
+          <img
+            src={logo}
+            alt="genalphatools.in"
+            width={180}
+            height={50}
+            className="h-9 w-auto md:h-10"
+          />
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</Link>
