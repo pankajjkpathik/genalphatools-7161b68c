@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const SiteFooter = () => (
   <footer className="border-t border-border bg-muted/50 mt-16">
     <div className="container py-10">
       <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
         <div className="col-span-2">
-          <h3 className="font-heading font-bold text-lg gradient-text mb-2">GenAlpha Tools</h3>
+          <Link to="/" className="inline-flex items-center mb-3" aria-label="genalphatools.in home">
+            <img src={logo} alt="genalphatools.in" width={180} height={50} className="h-9 w-auto" loading="lazy" />
+          </Link>
           <p className="text-sm text-muted-foreground mb-3">
             Free online numerology &amp; health calculators built on trusted formulas. Instant results, no sign-up, your
             data never leaves your browser.
