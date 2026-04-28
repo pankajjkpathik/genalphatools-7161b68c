@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getToolBySlug, getRelatedTools } from "@/data/tools";
+import { getToolBySlug, getRelatedTools, getCategoryPath, getCategoryLabel } from "@/data/tools";
 import { getVariationBySlug, getVariationsByBaseSlug } from "@/data/seo-variations";
 import SEOHead from "@/components/SEOHead";
 import SiteHeader from "@/components/SiteHeader";
@@ -33,6 +33,15 @@ import MarriageCompatibilityForm from "@/components/tools/MarriageCompatibilityF
 import BodyFatForm from "@/components/tools/BodyFatForm";
 import PregnancyDueDateForm from "@/components/tools/PregnancyDueDateForm";
 import OvulationForm from "@/components/tools/OvulationForm";
+import StatsCalculatorForm from "@/components/tools/StatsCalculatorForm";
+import StdDevForm from "@/components/tools/StdDevForm";
+import ProbabilityForm from "@/components/tools/ProbabilityForm";
+import ABTestForm from "@/components/tools/ABTestForm";
+import ROIForm from "@/components/tools/ROIForm";
+import CAGRForm from "@/components/tools/CAGRForm";
+import BreakEvenForm from "@/components/tools/BreakEvenForm";
+import ForecastForm from "@/components/tools/ForecastForm";
+import DatasetSummaryForm from "@/components/tools/DatasetSummaryForm";
 
 const formMap: Record<string, React.ComponentType> = {
   "name-numerology-calculator": NameNumerologyForm,
@@ -53,6 +62,15 @@ const formMap: Record<string, React.ComponentType> = {
   "body-fat-calculator": BodyFatForm,
   "pregnancy-due-date-calculator": PregnancyDueDateForm,
   "ovulation-calculator": OvulationForm,
+  "mean-median-mode-calculator": StatsCalculatorForm,
+  "standard-deviation-calculator": StdDevForm,
+  "probability-calculator": ProbabilityForm,
+  "ab-test-calculator": ABTestForm,
+  "roi-calculator": ROIForm,
+  "cagr-calculator": CAGRForm,
+  "break-even-calculator": BreakEvenForm,
+  "forecasting-calculator": ForecastForm,
+  "dataset-summary-generator": DatasetSummaryForm,
 };
 
 const VariantToolPage = lazy(() => import("./VariantToolPage"));
@@ -75,8 +93,8 @@ const ToolPage = () => {
   const FormComponent = formMap[tool.slug];
   const related = getRelatedTools(tool.relatedSlugs);
   const variations = getVariationsByBaseSlug(tool.slug);
-  const categoryPath = tool.category === "numerology" ? "/numerology-tools" : "/health-calculators";
-  const categoryLabel = tool.category === "numerology" ? "Numerology Tools" : "Health Calculators";
+  const categoryPath = getCategoryPath(tool.category);
+  const categoryLabel = getCategoryLabel(tool.category);
 
   const faqJsonLd = {
     "@context": "https://schema.org",

@@ -15,6 +15,8 @@ const Index = () => {
   const popular = getPopularTools();
   const numerology = getToolsByCategory("numerology");
   const health = getToolsByCategory("health");
+  const statistics = getToolsByCategory("statistics");
+  const business = getToolsByCategory("business");
 
   const filtered = useMemo(() => {
     if (!search.trim()) return null;
