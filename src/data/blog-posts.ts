@@ -810,3 +810,31 @@ export const blogPosts: BlogPost[] = [
 export const getBlogPostBySlug = (slug: string) => blogPosts.find(p => p.slug === slug);
 export const getRelatedPosts = (currentSlug: string, category: string, limit = 3) =>
   blogPosts.filter(p => p.slug !== currentSlug && p.category === category).slice(0, limit);
+
+export const getPostsByCategory = (category: BlogPost["category"]) =>
+  [...blogPosts]
+    .filter((p) => p.category === category)
+    .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
+
+export const BLOG_CATEGORY_META: Record<BlogPost["category"], { slug: string; label: string; description: string }> = {
+  health: {
+    slug: "health",
+    label: "Health & Wellness",
+    description: "Evidence-based guides on BMI, calories, BMR, ideal weight, hydration, pregnancy and overall wellness — paired with our free health calculators.",
+  },
+  numerology: {
+    slug: "numerology",
+    label: "Numerology",
+    description: "In-depth articles on Pythagorean numerology, life path numbers, name numerology, mobile and vehicle numerology — paired with our free numerology calculators.",
+  },
+  guide: {
+    slug: "guide",
+    label: "How-To Guides",
+    description: "Practical how-to walkthroughs that explain how to use our calculators, interpret results, and apply them to real decisions.",
+  },
+};
+
+export const getBlogCategoryBySlug = (slug: string) =>
+  (Object.values(BLOG_CATEGORY_META).find((c) => c.slug === slug) ?? null) as
+    | (typeof BLOG_CATEGORY_META)[BlogPost["category"]]
+    | null;
