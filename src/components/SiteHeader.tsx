@@ -29,13 +29,16 @@ const SiteHeader = () => {
           <Link to="/numerology-tools" className="text-muted-foreground hover:text-foreground transition-colors">Numerology</Link>
           <Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link>
         </nav>
-        <button
-          className="md:hidden p-2 text-muted-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          <button
+            className="md:hidden p-2 text-muted-foreground"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
       {mobileOpen && (
         <nav className="md:hidden border-t border-border bg-card px-4 pb-4 pt-2 flex flex-col gap-3 text-sm font-medium animate-fade-in">
