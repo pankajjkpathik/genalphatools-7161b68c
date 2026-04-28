@@ -24,6 +24,16 @@
     <meta name="twitter:description" content="Free online numerology calculators, BMI calculator, calorie calculator &amp; more. Instant results, accurate insights. 100% free tools.">
     <meta property="og:image" content="https://genalphatools.in/og-image.png">
     <meta name="twitter:image" content="https://genalphatools.in/og-image.png">
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
+          if (theme === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
 
   <body>
