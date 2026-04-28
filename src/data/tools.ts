@@ -9,7 +9,7 @@ export interface ToolData {
   shortDescription: string;
   metaTitle: string;
   metaDescription: string;
-  category: "numerology" | "health";
+  category: "numerology" | "health" | "statistics" | "business";
   icon: string;
   popular?: boolean;
   intro: string;
@@ -728,10 +728,20 @@ export const tools: ToolData[] = [
 export const getToolBySlug = (slug: string): ToolData | undefined =>
   tools.find((t) => t.slug === slug);
 
-export const getToolsByCategory = (category: "numerology" | "health") =>
+export const getToolsByCategory = (category: ToolData["category"]) =>
   tools.filter((t) => t.category === category);
 
 export const getPopularTools = () => tools.filter((t) => t.popular);
 
 export const getRelatedTools = (slugs: string[]) =>
   tools.filter((t) => slugs.includes(t.slug));
+
+export const CATEGORY_META: Record<ToolData["category"], { path: string; label: string }> = {
+  numerology: { path: "/numerology-tools", label: "Numerology Tools" },
+  health: { path: "/health-calculators", label: "Health Calculators" },
+  statistics: { path: "/statistics-tools", label: "Statistics Tools" },
+  business: { path: "/business-tools", label: "Business Tools" },
+};
+
+export const getCategoryPath = (c: ToolData["category"]) => CATEGORY_META[c].path;
+export const getCategoryLabel = (c: ToolData["category"]) => CATEGORY_META[c].label;
