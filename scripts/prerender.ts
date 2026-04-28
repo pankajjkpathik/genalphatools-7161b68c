@@ -305,6 +305,24 @@ const staticPages: Array<{
     description:
       "Free online business calculators: ROI, CAGR, break-even analysis, and revenue forecasting. For US founders, investors, marketers, and finance teams.",
   },
+  {
+    path: "/blog/category/health",
+    title: "Health & Wellness Articles | GenAlpha Tools Blog",
+    description:
+      "Evidence-based guides on BMI, calories, BMR, ideal weight, hydration, pregnancy and overall wellness — paired with our free health calculators.",
+  },
+  {
+    path: "/blog/category/numerology",
+    title: "Numerology Articles & Guides | GenAlpha Tools Blog",
+    description:
+      "In-depth articles on Pythagorean numerology, life path numbers, name numerology, mobile and vehicle numerology — paired with our free numerology calculators.",
+  },
+  {
+    path: "/blog/category/guide",
+    title: "How-To Guides | GenAlpha Tools Blog",
+    description:
+      "Practical how-to walkthroughs that explain how to use our calculators, interpret results, and apply them to real decisions.",
+  },
 ];
 
 let count = 0;
