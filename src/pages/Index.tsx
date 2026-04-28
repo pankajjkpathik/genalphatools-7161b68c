@@ -94,15 +94,50 @@ const Index = () => {
             </div>
           )}
 
-          {/* Search results */}
+          {/* Search results (tools + blog) */}
           {filtered ? (
             <section className="mb-12">
               <h2 className="font-heading font-bold text-xl mb-4">
-                {filtered.length ? `${filtered.length} results for "${search}"` : "No tools found"}
+                {filtered.length ? `${filtered.length} results for "${search}"` : "No matches found"}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {filtered.map(t => <ToolCard key={t.slug} tool={t} />)}
-              </div>
+              {filtered.length > 0 && (
+                <>
+                  {(() => {
+                    const toolHits = filtered.filter((r) => r.kind === "tool");
+                    const postHits = filtered.filter((r) => r.kind === "post");
+                    return (
+                      <div className="space-y-8">
+                        {toolHits.length > 0 && (
+                          <div>
+                            <h3 className="font-heading font-semibold text-base mb-3 text-muted-foreground">Tools ({toolHits.length})</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                              {toolHits.map((r) => r.kind === "tool" && <ToolCard key={r.tool.slug} tool={r.tool} />)}
+                            </div>
+                          </div>
+                        )}
+                        {postHits.length > 0 && (
+                          <div>
+                            <h3 className="font-heading font-semibold text-base mb-3 text-muted-foreground">Articles ({postHits.length})</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                              {postHits.map((r) => r.kind === "post" && (
+                                <Link
+                                  key={r.post.slug}
+                                  to={`/blog/${r.post.slug}`}
+                                  className="group flex flex-col bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-primary/40 transition-all"
+                                >
+                                  <span className="text-xs uppercase tracking-wider text-muted-foreground mb-2">{r.post.category} • {r.post.readTimeMin} min read</span>
+                                  <h4 className="font-heading font-semibold text-base mb-2 group-hover:text-primary transition-colors line-clamp-2">{r.post.title}</h4>
+                                  <p className="text-sm text-muted-foreground line-clamp-3">{r.post.excerpt}</p>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()}
+                </>
+              )}
             </section>
           ) : (
             <>
