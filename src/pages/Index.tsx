@@ -6,6 +6,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ToolCard from "@/components/ToolCard";
 import { tools, getPopularTools, getToolsByCategory } from "@/data/tools";
+import { blogPosts } from "@/data/blog-posts";
 import heroBg from "@/assets/hero-bg.jpg";
 import numerologyIcon from "@/assets/numerology-icon.png";
 import healthIcon from "@/assets/health-icon.png";
