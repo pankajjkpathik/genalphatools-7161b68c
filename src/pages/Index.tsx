@@ -6,6 +6,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ToolCard from "@/components/ToolCard";
 import { tools, getPopularTools, getToolsByCategory } from "@/data/tools";
+import { blogPosts } from "@/data/blog-posts";
 import heroBg from "@/assets/hero-bg.jpg";
 import numerologyIcon from "@/assets/numerology-icon.png";
 import healthIcon from "@/assets/health-icon.png";
@@ -121,6 +122,28 @@ const Index = () => {
                 </div>
               </section>
 
+              {/* Statistics */}
+              <section className="mb-12">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="font-heading font-bold text-2xl">📊 Statistics Tools</h2>
+                  <Link to="/statistics-tools" className="text-sm text-primary font-medium hover:underline">View All →</Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {statistics.slice(0, 6).map(t => <ToolCard key={t.slug} tool={t} />)}
+                </div>
+              </section>
+
+              {/* Business */}
+              <section className="mb-12">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="font-heading font-bold text-2xl">💼 Business & Finance Tools</h2>
+                  <Link to="/business-tools" className="text-sm text-primary font-medium hover:underline">View All →</Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {business.slice(0, 6).map(t => <ToolCard key={t.slug} tool={t} />)}
+                </div>
+              </section>
+
               {/* Numerology */}
               <section className="mb-12">
                 <div className="flex items-center justify-between mb-6">
@@ -142,6 +165,35 @@ const Index = () => {
                   {health.slice(0, 6).map(t => <ToolCard key={t.slug} tool={t} />)}
                 </div>
               </section>
+
+              {/* Latest from Blog */}
+              <section className="mb-12">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="font-heading font-bold text-2xl">📝 Latest from the Blog</h2>
+                  <Link to="/blog" className="text-sm text-primary font-medium hover:underline">View All →</Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {[...blogPosts]
+                    .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
+                    .slice(0, 6)
+                    .map(post => (
+                      <Link
+                        key={post.slug}
+                        to={`/blog/${post.slug}`}
+                        className="group flex flex-col bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-primary/40 transition-all"
+                      >
+                        <span className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
+                          {post.category} • {post.readTimeMin} min read
+                        </span>
+                        <h3 className="font-heading font-semibold text-base mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground line-clamp-3">{post.excerpt}</p>
+                      </Link>
+                    ))}
+                </div>
+              </section>
+
 
               {/* About / Why Us */}
               <section className="mb-12 bg-card border border-border rounded-2xl p-6 md:p-8">
