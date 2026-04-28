@@ -20,13 +20,13 @@ const SiteHeader = () => {
             className="h-9 w-auto md:h-10"
           />
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-5 text-sm font-medium">
           <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-          <Link to="/numerology-tools" className="text-muted-foreground hover:text-foreground transition-colors">Numerology</Link>
+          <Link to="/statistics-tools" className="text-muted-foreground hover:text-foreground transition-colors">Statistics</Link>
+          <Link to="/business-tools" className="text-muted-foreground hover:text-foreground transition-colors">Business</Link>
           <Link to="/health-calculators" className="text-muted-foreground hover:text-foreground transition-colors">Health</Link>
+          <Link to="/numerology-tools" className="text-muted-foreground hover:text-foreground transition-colors">Numerology</Link>
           <Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link>
-          <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link>
-          <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
         </nav>
         <button
           className="md:hidden p-2 text-muted-foreground"
@@ -39,8 +39,10 @@ const SiteHeader = () => {
       {mobileOpen && (
         <nav className="md:hidden border-t border-border bg-card px-4 pb-4 pt-2 flex flex-col gap-3 text-sm font-medium animate-fade-in">
           <Link to="/" onClick={close} className="text-muted-foreground hover:text-foreground">Home</Link>
-          <Link to="/numerology-tools" onClick={close} className="text-muted-foreground hover:text-foreground">Numerology Tools</Link>
+          <Link to="/statistics-tools" onClick={close} className="text-muted-foreground hover:text-foreground">Statistics Tools</Link>
+          <Link to="/business-tools" onClick={close} className="text-muted-foreground hover:text-foreground">Business Tools</Link>
           <Link to="/health-calculators" onClick={close} className="text-muted-foreground hover:text-foreground">Health Calculators</Link>
+          <Link to="/numerology-tools" onClick={close} className="text-muted-foreground hover:text-foreground">Numerology Tools</Link>
           <Link to="/blog" onClick={close} className="text-muted-foreground hover:text-foreground">Blog</Link>
           <Link to="/about" onClick={close} className="text-muted-foreground hover:text-foreground">About</Link>
           <Link to="/contact" onClick={close} className="text-muted-foreground hover:text-foreground">Contact</Link>
