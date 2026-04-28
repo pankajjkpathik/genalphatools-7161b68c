@@ -25,7 +25,7 @@ const Index = () => {
     return searchSite(search, 60);
   }, [search]);
 
-  const jsonLd = {
+  const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "GenAlpha Tools",
@@ -38,12 +38,24 @@ const Index = () => {
     },
   };
 
+  const categoriesJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Tool categories",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Statistics Tools", url: "https://genalphatools.in/statistics-tools" },
+      { "@type": "ListItem", position: 2, name: "Business & Finance Tools", url: "https://genalphatools.in/business-tools" },
+      { "@type": "ListItem", position: 3, name: "Health Calculators", url: "https://genalphatools.in/health-calculators" },
+      { "@type": "ListItem", position: 4, name: "Numerology Tools", url: "https://genalphatools.in/numerology-tools" },
+    ],
+  };
+
   return (
     <>
       <SEOHead
         title="Free Online Calculators & Numerology Tools | GenAlpha Tools"
         description="Free online numerology calculators, BMI calculator, calorie calculator & more. Instant results, accurate insights. 100% free tools for India & global users."
-        jsonLd={jsonLd}
+        jsonLd={[websiteJsonLd, categoriesJsonLd]}
       />
       <SiteHeader />
       <main>
