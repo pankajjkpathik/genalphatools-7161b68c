@@ -28,6 +28,8 @@ const staticPages = [
   "/",
   "/numerology-tools",
   "/health-calculators",
+  "/statistics-tools",
+  "/business-tools",
   "/blog",
   "/about",
   "/contact",

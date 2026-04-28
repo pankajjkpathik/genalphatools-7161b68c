@@ -42,10 +42,17 @@ const tools: Array<{
   name: string;
   metaTitle: string;
   metaDescription: string;
-  category: "numerology" | "health";
+  category: "numerology" | "health" | "statistics" | "business";
   howToUse: string[];
   faqs: { question: string; answer: string }[];
 }> = toolsMod.tools;
+
+const CATEGORY_META: Record<string, { path: string; label: string }> = {
+  numerology: { path: "/numerology-tools", label: "Numerology Tools" },
+  health: { path: "/health-calculators", label: "Health Calculators" },
+  statistics: { path: "/statistics-tools", label: "Statistics Tools" },
+  business: { path: "/business-tools", label: "Business Tools" },
+};
 
 const variations: Array<{
   slug: string;
@@ -286,6 +293,18 @@ const staticPages: Array<{
     description:
       "Transparent overview of how GenAlpha Tools meets Google AdSense program policies: original content, privacy, disclaimers, navigation, and verification status.",
   },
+  {
+    path: "/statistics-tools",
+    title: "Free Statistics Tools & Calculators Online | GenAlpha Tools",
+    description:
+      "Free online statistics tools: mean, median, mode, standard deviation, probability, A/B test significance, and AI-powered dataset summary.",
+  },
+  {
+    path: "/business-tools",
+    title: "Free Business & Finance Calculators Online | GenAlpha Tools",
+    description:
+      "Free online business calculators: ROI, CAGR, break-even analysis, and revenue forecasting. For US founders, investors, marketers, and finance teams.",
+  },
 ];
 
 let count = 0;
@@ -304,10 +323,9 @@ for (const p of staticPages) {
 
 // ── Tool pages ────────────────────────────────────────────────────
 for (const tool of tools) {
-  const categoryPath =
-    tool.category === "numerology" ? "/numerology-tools" : "/health-calculators";
-  const categoryLabel =
-    tool.category === "numerology" ? "Numerology Tools" : "Health Calculators";
+  const meta = CATEGORY_META[tool.category];
+  const categoryPath = meta.path;
+  const categoryLabel = meta.label;
   const path = `/tool/${tool.slug}`;
   const jsonLd = [
     faqJsonLd(tool.faqs),
@@ -335,10 +353,9 @@ const toolBySlug = new Map(tools.map((t) => [t.slug, t]));
 for (const v of variations) {
   const base = toolBySlug.get(v.baseToolSlug);
   if (!base) continue;
-  const categoryPath =
-    base.category === "numerology" ? "/numerology-tools" : "/health-calculators";
-  const categoryLabel =
-    base.category === "numerology" ? "Numerology Tools" : "Health Calculators";
+  const meta = CATEGORY_META[base.category];
+  const categoryPath = meta.path;
+  const categoryLabel = meta.label;
   const path = `/tool/${v.slug}`;
   const jsonLd = [
     faqJsonLd(v.faqs),

@@ -77,26 +77,26 @@ const Index = () => {
         <div className="container py-10">
           {/* Category Cards */}
           {!filtered && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-              <Link
-                to="/numerology-tools"
-                className="group flex items-center gap-4 bg-card border border-border rounded-xl p-6 hover:shadow-elevated hover:border-secondary/40 transition-all"
-              >
-                <img src={numerologyIcon} alt="Numerology Tools" width={80} height={80} loading="lazy" className="shrink-0" />
-                <div>
-                  <h2 className="font-heading font-bold text-lg group-hover:text-secondary transition-colors">Numerology Tools</h2>
-                  <p className="text-sm text-muted-foreground mt-1">Discover the hidden power of numbers with {numerology.length} free calculators.</p>
-                </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+              <Link to="/statistics-tools" className="group flex flex-col items-center text-center gap-2 bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-primary/40 transition-all">
+                <span className="text-4xl">📊</span>
+                <h2 className="font-heading font-bold text-base group-hover:text-primary transition-colors">Statistics Tools</h2>
+                <p className="text-xs text-muted-foreground">{statistics.length} calculators</p>
               </Link>
-              <Link
-                to="/health-calculators"
-                className="group flex items-center gap-4 bg-card border border-border rounded-xl p-6 hover:shadow-elevated hover:border-accent/40 transition-all"
-              >
-                <img src={healthIcon} alt="Health Calculators" width={80} height={80} loading="lazy" className="shrink-0" />
-                <div>
-                  <h2 className="font-heading font-bold text-lg group-hover:text-accent transition-colors">Health Calculators</h2>
-                  <p className="text-sm text-muted-foreground mt-1">Track and improve your health with {health.length} accurate tools.</p>
-                </div>
+              <Link to="/business-tools" className="group flex flex-col items-center text-center gap-2 bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-primary/40 transition-all">
+                <span className="text-4xl">💼</span>
+                <h2 className="font-heading font-bold text-base group-hover:text-primary transition-colors">Business & Finance</h2>
+                <p className="text-xs text-muted-foreground">{business.length} calculators</p>
+              </Link>
+              <Link to="/health-calculators" className="group flex flex-col items-center text-center gap-2 bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-accent/40 transition-all">
+                <img src={healthIcon} alt="Health Calculators" width={48} height={48} loading="lazy" />
+                <h2 className="font-heading font-bold text-base group-hover:text-accent transition-colors">Health Calculators</h2>
+                <p className="text-xs text-muted-foreground">{health.length} calculators</p>
+              </Link>
+              <Link to="/numerology-tools" className="group flex flex-col items-center text-center gap-2 bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-secondary/40 transition-all">
+                <img src={numerologyIcon} alt="Numerology Tools" width={48} height={48} loading="lazy" />
+                <h2 className="font-heading font-bold text-base group-hover:text-secondary transition-colors">Numerology Tools</h2>
+                <p className="text-xs text-muted-foreground">{numerology.length} calculators</p>
               </Link>
             </div>
           )}
