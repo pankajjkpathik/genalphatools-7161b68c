@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import { Search } from "lucide-react";
 import { useState, useMemo } from "react";
 import SEOHead from "@/components/SEOHead";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import SiteSearch from "@/components/SiteSearch";
 import ToolCard from "@/components/ToolCard";
 import { tools, getPopularTools, getToolsByCategory } from "@/data/tools";
 import { blogPosts } from "@/data/blog-posts";
+import { searchSite } from "@/lib/search";
 import heroBg from "@/assets/hero-bg.jpg";
 import numerologyIcon from "@/assets/numerology-icon.png";
 import healthIcon from "@/assets/health-icon.png";
@@ -21,13 +22,10 @@ const Index = () => {
 
   const filtered = useMemo(() => {
     if (!search.trim()) return null;
-    return tools.filter(t =>
-      t.name.toLowerCase().includes(search.toLowerCase()) ||
-      t.shortDescription.toLowerCase().includes(search.toLowerCase())
-    );
+    return searchSite(search, 60);
   }, [search]);
 
-  const jsonLd = {
+  const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "GenAlpha Tools",
@@ -40,12 +38,24 @@ const Index = () => {
     },
   };
 
+  const categoriesJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Tool categories",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Statistics Tools", url: "https://genalphatools.in/statistics-tools" },
+      { "@type": "ListItem", position: 2, name: "Business & Finance Tools", url: "https://genalphatools.in/business-tools" },
+      { "@type": "ListItem", position: 3, name: "Health Calculators", url: "https://genalphatools.in/health-calculators" },
+      { "@type": "ListItem", position: 4, name: "Numerology Tools", url: "https://genalphatools.in/numerology-tools" },
+    ],
+  };
+
   return (
     <>
       <SEOHead
         title="Free Online Calculators & Numerology Tools | GenAlpha Tools"
         description="Free online numerology calculators, BMI calculator, calorie calculator & more. Instant results, accurate insights. 100% free tools for India & global users."
-        jsonLd={jsonLd}
+        jsonLd={[websiteJsonLd, categoriesJsonLd]}
       />
       <SiteHeader />
       <main>
@@ -62,16 +72,10 @@ const Index = () => {
             <p className="text-white/90 text-base md:text-lg mb-8 max-w-xl mx-auto">
               Check your health, destiny &amp; lucky numbers in seconds. 100% free, accurate, and trusted by millions.
             </p>
-            <div className="relative max-w-lg mx-auto">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
-              <input
-                type="search"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search tools... (e.g. BMI, name numerology)"
-                className="w-full pl-11 pr-4 py-3 rounded-xl bg-card text-foreground text-sm shadow-elevated focus:ring-2 focus:ring-ring focus:outline-none"
-              />
-            </div>
+            <SiteSearch
+              placeholder="Search tools and articles... (e.g. BMI, ROI, baby names)"
+              onQueryChange={setSearch}
+            />
           </div>
         </section>
 
@@ -102,15 +106,50 @@ const Index = () => {
             </div>
           )}
 
-          {/* Search results */}
+          {/* Search results (tools + blog) */}
           {filtered ? (
             <section className="mb-12">
               <h2 className="font-heading font-bold text-xl mb-4">
-                {filtered.length ? `${filtered.length} results for "${search}"` : "No tools found"}
+                {filtered.length ? `${filtered.length} results for "${search}"` : "No matches found"}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {filtered.map(t => <ToolCard key={t.slug} tool={t} />)}
-              </div>
+              {filtered.length > 0 && (
+                <>
+                  {(() => {
+                    const toolHits = filtered.filter((r) => r.kind === "tool");
+                    const postHits = filtered.filter((r) => r.kind === "post");
+                    return (
+                      <div className="space-y-8">
+                        {toolHits.length > 0 && (
+                          <div>
+                            <h3 className="font-heading font-semibold text-base mb-3 text-muted-foreground">Tools ({toolHits.length})</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                              {toolHits.map((r) => r.kind === "tool" && <ToolCard key={r.tool.slug} tool={r.tool} />)}
+                            </div>
+                          </div>
+                        )}
+                        {postHits.length > 0 && (
+                          <div>
+                            <h3 className="font-heading font-semibold text-base mb-3 text-muted-foreground">Articles ({postHits.length})</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                              {postHits.map((r) => r.kind === "post" && (
+                                <Link
+                                  key={r.post.slug}
+                                  to={`/blog/${r.post.slug}`}
+                                  className="group flex flex-col bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-primary/40 transition-all"
+                                >
+                                  <span className="text-xs uppercase tracking-wider text-muted-foreground mb-2">{r.post.category} • {r.post.readTimeMin} min read</span>
+                                  <h4 className="font-heading font-semibold text-base mb-2 group-hover:text-primary transition-colors line-clamp-2">{r.post.title}</h4>
+                                  <p className="text-sm text-muted-foreground line-clamp-3">{r.post.excerpt}</p>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()}
+                </>
+              )}
             </section>
           ) : (
             <>

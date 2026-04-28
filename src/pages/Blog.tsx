@@ -3,7 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { blogPosts } from "@/data/blog-posts";
+import { blogPosts, BLOG_CATEGORY_META } from "@/data/blog-posts";
 
 const categoryColors: Record<string, string> = {
   health: "bg-accent/10 text-accent",
@@ -39,9 +39,22 @@ const Blog = () => {
         <Breadcrumbs items={[{ label: "Blog" }]} />
         <h1 className="font-heading font-bold text-2xl md:text-3xl mb-2">📚 Blog & Guides</h1>
         <p className="text-muted-foreground mb-4">Practical, research-backed articles on numerology, health and personal wellness.</p>
-        <section className="bg-card border border-border rounded-xl p-5 mb-8 text-sm text-muted-foreground leading-relaxed">
+        <section className="bg-card border border-border rounded-xl p-5 mb-6 text-sm text-muted-foreground leading-relaxed">
           <p>Welcome to the GenAlpha Tools blog — your library of in-depth guides covering everything our calculators measure. Every article is written by our editorial team, reviewed for accuracy, and designed to help you understand <em>why</em> a number matters, not just what it says. Whether you want to lose weight safely, choose a lucky baby name, calculate your TDEE, or understand pregnancy milestones, you'll find a clear, no-fluff explanation here.</p>
         </section>
+
+        <div className="flex flex-wrap gap-2 mb-8" aria-label="Blog categories">
+          <span className="text-xs px-3 py-1.5 rounded-full bg-primary text-primary-foreground border border-primary">All Articles</span>
+          {Object.values(BLOG_CATEGORY_META).map((c) => (
+            <Link
+              key={c.slug}
+              to={`/blog/category/${c.slug}`}
+              className="text-xs px-3 py-1.5 rounded-full border border-border bg-muted/50 text-muted-foreground hover:bg-muted transition-colors"
+            >
+              {c.label}
+            </Link>
+          ))}
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {blogPosts.map(post => (
             <Link
