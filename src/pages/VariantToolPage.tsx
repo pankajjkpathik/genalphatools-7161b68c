@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { getVariationBySlug } from "@/data/seo-variations";
-import { getToolBySlug, getRelatedTools } from "@/data/tools";
+import { getToolBySlug, getRelatedTools, getCategoryPath, getCategoryLabel } from "@/data/tools";
 import SEOHead from "@/components/SEOHead";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -57,8 +57,8 @@ const VariantToolPage = () => {
 
   const FormComponent = variantFormMap[variation.baseToolSlug];
   const related = getRelatedTools(baseTool.relatedSlugs);
-  const categoryPath = baseTool.category === "numerology" ? "/numerology-tools" : "/health-calculators";
-  const categoryLabel = baseTool.category === "numerology" ? "Numerology Tools" : "Health Calculators";
+  const categoryPath = getCategoryPath(baseTool.category);
+  const categoryLabel = getCategoryLabel(baseTool.category);
 
   const faqJsonLd = {
     "@context": "https://schema.org",

@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import ToolPage from "./pages/ToolPage";
 import NumerologyTools from "./pages/NumerologyTools";
 import HealthCalculators from "./pages/HealthCalculators";
+import StatisticsTools from "./pages/StatisticsTools";
+import BusinessTools from "./pages/BusinessTools";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -33,6 +35,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/numerology-tools" element={<NumerologyTools />} />
             <Route path="/health-calculators" element={<HealthCalculators />} />
+            <Route path="/statistics-tools" element={<StatisticsTools />} />
+            <Route path="/business-tools" element={<BusinessTools />} />
             <Route path="/tool/:slug" element={<ToolPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
