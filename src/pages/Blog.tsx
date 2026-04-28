@@ -3,7 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { blogPosts } from "@/data/blog-posts";
+import { blogPosts, BLOG_CATEGORY_META } from "@/data/blog-posts";
 
 const categoryColors: Record<string, string> = {
   health: "bg-accent/10 text-accent",
