@@ -32,9 +32,6 @@ const shellHtml = readFileSync(resolve(dist, "index.html"), "utf-8");
 
 // ── Load data files via dynamic import (tsx supports TS) ─────────
 const toolsMod = await import(pathToFileURL(resolve(root, "src/data/tools.ts")).href);
-const variationsMod = await import(
-  pathToFileURL(resolve(root, "src/data/seo-variations.ts")).href
-);
 const blogMod = await import(pathToFileURL(resolve(root, "src/data/blog-posts.ts")).href);
 
 const tools: Array<{
@@ -42,17 +39,17 @@ const tools: Array<{
   name: string;
   metaTitle: string;
   metaDescription: string;
-  category: "numerology" | "health" | "statistics" | "business";
+  category: string;
   howToUse: string[];
   faqs: { question: string; answer: string }[];
 }> = toolsMod.tools;
 
-const CATEGORY_META: Record<string, { path: string; label: string }> = {
-  numerology: { path: "/numerology-tools", label: "Numerology Tools" },
-  health: { path: "/health-calculators", label: "Health Calculators" },
-  statistics: { path: "/statistics-tools", label: "Statistics Tools" },
-  business: { path: "/business-tools", label: "Business Tools" },
-};
+const CATEGORY_META: Record<string, { path: string; label: string }> =
+  Object.fromEntries(
+    Object.entries(toolsMod.CATEGORY_META as Record<string, { path: string; label: string }>).map(
+      ([k, v]) => [k, { path: v.path, label: v.label }],
+    ),
+  );
 
 const variations: Array<{
   slug: string;
@@ -61,7 +58,7 @@ const variations: Array<{
   metaTitle: string;
   metaDescription: string;
   faqs: { question: string; answer: string }[];
-}> = variationsMod.toolVariations;
+}> = [];
 
 const blogPosts: Array<{
   slug: string;
@@ -235,27 +232,22 @@ const staticPages: Array<{
 }> = [
   {
     path: "/",
-    title: "Free Online Calculators & Numerology Tools | GenAlpha Tools",
+    title: "Free Calculators for US Marketers, Founders & Analysts | GenAlpha Tools",
     description:
-      "Free online numerology calculators, BMI calculator, calorie calculator & more. Instant results, accurate insights. 100% free tools for India & global users.",
+      "50+ free online calculators: ROI, CAC, LTV, mortgage, NPV, IRR, statistics, A/B testing, SaaS metrics, data utilities. Built for US professionals.",
   },
-  {
-    path: "/numerology-tools",
-    title: "Free Numerology Tools & Calculators Online | GenAlpha Tools",
-    description:
-      "Explore free numerology tools: name numerology, life path, destiny number, mobile number analysis & more. Instant results, 100% free.",
-  },
-  {
-    path: "/health-calculators",
-    title: "Free Health Calculators Online – BMI, Calories, BMR | GenAlpha Tools",
-    description:
-      "Free online health calculators: BMI, calorie needs, BMR, water intake, ideal weight & more. Instant results for better health decisions.",
-  },
+  ...Object.values(toolsMod.CATEGORY_META as Record<string, { path: string; label: string; tagline: string }>).map(
+    (m) => ({
+      path: m.path,
+      title: `Free ${m.label} Calculators Online | GenAlpha Tools`,
+      description: m.tagline,
+    }),
+  ),
   {
     path: "/blog",
-    title: "Blog – Numerology & Health Guides | GenAlpha Tools",
+    title: "Blog – Marketing, Finance & Data Guides | GenAlpha Tools",
     description:
-      "In-depth guides on numerology, BMI, calorie tracking, pregnancy and wellness. Practical articles to help you get the most out of our free calculators.",
+      "In-depth guides on marketing analytics, finance, statistics, A/B testing, and SaaS metrics. Practical articles paired with free calculators.",
   },
   {
     path: "/about",
@@ -294,34 +286,19 @@ const staticPages: Array<{
       "Transparent overview of how GenAlpha Tools meets Google AdSense program policies: original content, privacy, disclaimers, navigation, and verification status.",
   },
   {
-    path: "/statistics-tools",
-    title: "Free Statistics Tools & Calculators Online | GenAlpha Tools",
-    description:
-      "Free online statistics tools: mean, median, mode, standard deviation, probability, A/B test significance, and AI-powered dataset summary.",
-  },
-  {
-    path: "/business-tools",
-    title: "Free Business & Finance Calculators Online | GenAlpha Tools",
-    description:
-      "Free online business calculators: ROI, CAGR, break-even analysis, and revenue forecasting. For US founders, investors, marketers, and finance teams.",
-  },
-  {
     path: "/blog/category/health",
-    title: "Health & Wellness Articles | GenAlpha Tools Blog",
-    description:
-      "Evidence-based guides on BMI, calories, BMR, ideal weight, hydration, pregnancy and overall wellness — paired with our free health calculators.",
+    title: "Health Articles | GenAlpha Tools Blog",
+    description: "Evidence-based health and wellness guides from our archive.",
   },
   {
     path: "/blog/category/numerology",
-    title: "Numerology Articles & Guides | GenAlpha Tools Blog",
-    description:
-      "In-depth articles on Pythagorean numerology, life path numbers, name numerology, mobile and vehicle numerology — paired with our free numerology calculators.",
+    title: "Numerology Articles | GenAlpha Tools Blog",
+    description: "In-depth numerology articles from our archive.",
   },
   {
     path: "/blog/category/guide",
     title: "How-To Guides | GenAlpha Tools Blog",
-    description:
-      "Practical how-to walkthroughs that explain how to use our calculators, interpret results, and apply them to real decisions.",
+    description: "Practical how-to walkthroughs for our calculators.",
   },
 ];
 

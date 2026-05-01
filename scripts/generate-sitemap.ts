@@ -26,10 +26,14 @@ function extractSlugs(relativePath: string): string[] {
 
 const staticPages = [
   "/",
-  "/numerology-tools",
-  "/health-calculators",
+  "/marketing-tools",
   "/statistics-tools",
-  "/business-tools",
+  "/ab-testing-tools",
+  "/finance-tools",
+  "/saas-metrics-tools",
+  "/utility-tools",
+  "/visualization-tools",
+  "/bonus-tools",
   "/blog",
   "/blog/category/health",
   "/blog/category/numerology",
@@ -43,7 +47,7 @@ const staticPages = [
 ];
 
 const toolSlugs = extractSlugs("src/data/tools.ts");
-const variationSlugs = extractSlugs("src/data/seo-variations.ts");
+const variationSlugs: string[] = [];
 const blogSlugs = extractSlugs("src/data/blog-posts.ts");
 
 const today = new Date().toISOString().split("T")[0];

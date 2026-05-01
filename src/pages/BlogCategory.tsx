@@ -12,7 +12,7 @@ import {
   getPostsByCategory,
   type BlogPost,
 } from "@/data/blog-posts";
-import { getToolsByCategory } from "@/data/tools";
+import { getToolsByCategory, type ToolCategory } from "@/data/tools";
 
 const PAGE_SIZE = 9;
 
@@ -25,9 +25,9 @@ const categoryColors: Record<string, string> = {
 };
 
 // Map blog category → matching tool category for internal linking
-const RELATED_TOOL_CATEGORY: Record<BlogPost["category"], "health" | "numerology" | null> = {
-  health: "health",
-  numerology: "numerology",
+const RELATED_TOOL_CATEGORY: Record<BlogPost["category"], ToolCategory | null> = {
+  health: null,
+  numerology: null,
   guide: null,
 };
 
@@ -192,9 +192,7 @@ const BlogCategory = () => {
         {/* Internal cross-link to related tools */}
         {relatedTools.length > 0 && (
           <section className="mt-12">
-            <h2 className="font-heading font-bold text-xl mb-4">
-              Try Related {relatedToolCat === "health" ? "Health" : "Numerology"} Calculators
-            </h2>
+            <h2 className="font-heading font-bold text-xl mb-4">Related Calculators</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {relatedTools.map((t) => (
                 <ToolCard key={t.slug} tool={t} />
