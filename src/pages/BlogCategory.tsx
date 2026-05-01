@@ -19,16 +19,18 @@ const PAGE_SIZE = 9;
 const SITE = "https://genalphatools.in";
 
 const categoryColors: Record<string, string> = {
-  health: "bg-accent/10 text-accent",
-  numerology: "bg-secondary/10 text-secondary",
-  guide: "bg-primary/10 text-primary",
+  marketing: "bg-primary/10 text-primary",
+  finance: "bg-accent/10 text-accent",
+  data: "bg-secondary/10 text-secondary",
+  guide: "bg-muted text-foreground",
 };
 
 // Map blog category → matching tool category for internal linking
 const RELATED_TOOL_CATEGORY: Record<BlogPost["category"], ToolCategory | null> = {
-  health: null,
-  numerology: null,
-  guide: null,
+  marketing: "marketing",
+  finance: "finance",
+  data: "statistics",
+  guide: "utility",
 };
 
 const BlogCategory = () => {
