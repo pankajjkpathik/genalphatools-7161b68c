@@ -6,9 +6,10 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogPosts, BLOG_CATEGORY_META } from "@/data/blog-posts";
 
 const categoryColors: Record<string, string> = {
-  health: "bg-accent/10 text-accent",
-  numerology: "bg-secondary/10 text-secondary",
-  guide: "bg-primary/10 text-primary",
+  marketing: "bg-primary/10 text-primary",
+  finance: "bg-accent/10 text-accent",
+  data: "bg-secondary/10 text-secondary",
+  guide: "bg-muted text-foreground",
 };
 
 const Blog = () => {
@@ -17,7 +18,7 @@ const Blog = () => {
     "@type": "Blog",
     name: "GenAlpha Tools Blog",
     url: "https://genalphatools.in/blog",
-    description: "Guides on numerology, BMI, calorie tracking, pregnancy and personal wellness.",
+    description: "In-depth guides on marketing ROI, SaaS metrics, A/B testing, finance and data analysis — paired with our free calculators.",
     blogPost: blogPosts.map(p => ({
       "@type": "BlogPosting",
       headline: p.title,
@@ -30,17 +31,17 @@ const Blog = () => {
   return (
     <>
       <SEOHead
-        title="Blog – Numerology & Health Guides | GenAlpha Tools"
-        description="In-depth guides on numerology, BMI, calorie tracking, pregnancy and wellness. Practical articles to help you get the most out of our free calculators."
+        title="Blog – Marketing, SaaS, Finance & Data Guides | GenAlpha Tools"
+        description="In-depth guides on marketing ROI, CAC/LTV, SaaS metrics, A/B testing, finance and data analysis — paired with our free calculators."
         jsonLd={jsonLd}
       />
       <SiteHeader />
       <main className="container py-8 max-w-4xl">
         <Breadcrumbs items={[{ label: "Blog" }]} />
         <h1 className="font-heading font-bold text-2xl md:text-3xl mb-2">📚 Blog & Guides</h1>
-        <p className="text-muted-foreground mb-4">Practical, research-backed articles on numerology, health and personal wellness.</p>
+        <p className="text-muted-foreground mb-4">Practical, research-backed articles on marketing, SaaS metrics, finance and data analysis.</p>
         <section className="bg-card border border-border rounded-xl p-5 mb-6 text-sm text-muted-foreground leading-relaxed">
-          <p>Welcome to the GenAlpha Tools blog — your library of in-depth guides covering everything our calculators measure. Every article is written by our editorial team, reviewed for accuracy, and designed to help you understand <em>why</em> a number matters, not just what it says. Whether you want to lose weight safely, choose a lucky baby name, calculate your TDEE, or understand pregnancy milestones, you'll find a clear, no-fluff explanation here.</p>
+          <p>Welcome to the GenAlpha Tools blog — your library of in-depth guides covering every calculator on the site. Every article is written by our editorial team, reviewed for accuracy, and designed to help you understand <em>why</em> a number matters, not just what it says. Whether you're calculating marketing ROI, modeling SaaS churn, planning an A/B test, or cleaning a messy CSV, you'll find a clear, no-fluff explanation here.</p>
         </section>
 
         <div className="flex flex-wrap gap-2 mb-8" aria-label="Blog categories">
