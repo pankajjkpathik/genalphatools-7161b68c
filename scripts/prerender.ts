@@ -286,19 +286,24 @@ const staticPages: Array<{
       "Transparent overview of how GenAlpha Tools meets Google AdSense program policies: original content, privacy, disclaimers, navigation, and verification status.",
   },
   {
-    path: "/blog/category/health",
-    title: "Health Articles | GenAlpha Tools Blog",
-    description: "Evidence-based health and wellness guides from our archive.",
+    path: "/blog/category/marketing",
+    title: "Business & Marketing Articles | GenAlpha Tools Blog",
+    description: "Practical guides on ROI, CAC, LTV, conversion and growth math from the GenAlpha Tools blog.",
   },
   {
-    path: "/blog/category/numerology",
-    title: "Numerology Articles | GenAlpha Tools Blog",
-    description: "In-depth numerology articles from our archive.",
+    path: "/blog/category/finance",
+    title: "Finance & SaaS Metrics Articles | GenAlpha Tools Blog",
+    description: "Compound interest, break-even, MRR/ARR/churn and more — explained for founders and operators.",
+  },
+  {
+    path: "/blog/category/data",
+    title: "Data & Statistics Articles | GenAlpha Tools Blog",
+    description: "A/B testing, statistical significance, and core data concepts for analysts and PMs.",
   },
   {
     path: "/blog/category/guide",
     title: "How-To Guides | GenAlpha Tools Blog",
-    description: "Practical how-to walkthroughs for our calculators.",
+    description: "Hands-on walkthroughs for our utilities and calculators.",
   },
 ];
 
