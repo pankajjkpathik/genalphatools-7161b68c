@@ -7,10 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import ConsentBanner from "@/components/ConsentBanner";
 import Index from "./pages/Index";
 import ToolPage from "./pages/ToolPage";
-import NumerologyTools from "./pages/NumerologyTools";
-import HealthCalculators from "./pages/HealthCalculators";
-import StatisticsTools from "./pages/StatisticsTools";
-import BusinessTools from "./pages/BusinessTools";
+import ClusterPage from "./pages/ClusterPage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -21,7 +18,6 @@ import BlogCategory from "./pages/BlogCategory";
 import BlogPost from "./pages/BlogPost";
 import AdSenseReadiness from "./pages/AdSenseReadiness";
 import NotFound from "./pages/NotFound";
-
 
 const queryClient = new QueryClient();
 
@@ -34,10 +30,14 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/numerology-tools" element={<NumerologyTools />} />
-            <Route path="/health-calculators" element={<HealthCalculators />} />
-            <Route path="/statistics-tools" element={<StatisticsTools />} />
-            <Route path="/business-tools" element={<BusinessTools />} />
+            <Route path="/marketing-tools" element={<ClusterPage category="marketing" />} />
+            <Route path="/statistics-tools" element={<ClusterPage category="statistics" />} />
+            <Route path="/ab-testing-tools" element={<ClusterPage category="abtest" />} />
+            <Route path="/finance-tools" element={<ClusterPage category="finance" />} />
+            <Route path="/saas-metrics-tools" element={<ClusterPage category="saas" />} />
+            <Route path="/utility-tools" element={<ClusterPage category="utility" />} />
+            <Route path="/visualization-tools" element={<ClusterPage category="viz" />} />
+            <Route path="/bonus-tools" element={<ClusterPage category="bonus" />} />
             <Route path="/tool/:slug" element={<ToolPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

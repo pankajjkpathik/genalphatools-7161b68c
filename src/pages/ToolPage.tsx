@@ -1,7 +1,5 @@
-import { lazy, Suspense } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getToolBySlug, getRelatedTools, getCategoryPath, getCategoryLabel } from "@/data/tools";
-import { getVariationBySlug, getVariationsByBaseSlug } from "@/data/seo-variations";
+import { getToolBySlug, getRelatedTools, getCategoryPath, getCategoryLabel, CATEGORY_META } from "@/data/tools";
 import SEOHead from "@/components/SEOHead";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -11,95 +9,49 @@ import ShareButtons from "@/components/ShareButtons";
 import ToolCard from "@/components/ToolCard";
 import HowToUse from "@/components/HowToUse";
 import ExampleCalculation from "@/components/ExampleCalculation";
-import PeopleAlsoSearch from "@/components/PeopleAlsoSearch";
-import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import NotFound from "@/pages/NotFound";
 
-import NameNumerologyForm from "@/components/tools/NameNumerologyForm";
-import LifePathForm from "@/components/tools/LifePathForm";
-import DestinyNumberForm from "@/components/tools/DestinyNumberForm";
-import MobileNumerologyForm from "@/components/tools/MobileNumerologyForm";
-import PersonalYearForm from "@/components/tools/PersonalYearForm";
-import VehicleNumerologyForm from "@/components/tools/VehicleNumerologyForm";
-import BMIForm from "@/components/tools/BMIForm";
-import CalorieForm from "@/components/tools/CalorieForm";
-import BMRForm from "@/components/tools/BMRForm";
-import WaterIntakeForm from "@/components/tools/WaterIntakeForm";
-import IdealWeightForm from "@/components/tools/IdealWeightForm";
-import BabyNameNumerologyForm from "@/components/tools/BabyNameNumerologyForm";
-import BusinessNameNumerologyForm from "@/components/tools/BusinessNameNumerologyForm";
-import LuckyNameGeneratorForm from "@/components/tools/LuckyNameGeneratorForm";
-import MarriageCompatibilityForm from "@/components/tools/MarriageCompatibilityForm";
-import BodyFatForm from "@/components/tools/BodyFatForm";
-import PregnancyDueDateForm from "@/components/tools/PregnancyDueDateForm";
-import OvulationForm from "@/components/tools/OvulationForm";
-import StatsCalculatorForm from "@/components/tools/StatsCalculatorForm";
-import StdDevForm from "@/components/tools/StdDevForm";
-import ProbabilityForm from "@/components/tools/ProbabilityForm";
 import ABTestForm from "@/components/tools/ABTestForm";
-import ROIForm from "@/components/tools/ROIForm";
-import CAGRForm from "@/components/tools/CAGRForm";
 import BreakEvenForm from "@/components/tools/BreakEvenForm";
-import ForecastForm from "@/components/tools/ForecastForm";
 import DatasetSummaryForm from "@/components/tools/DatasetSummaryForm";
+import ProbabilityForm from "@/components/tools/ProbabilityForm";
+import ROIForm from "@/components/tools/ROIForm";
+import StdDevForm from "@/components/tools/StdDevForm";
 
 const formMap: Record<string, React.ComponentType> = {
-  "name-numerology-calculator": NameNumerologyForm,
-  "life-path-number-calculator": LifePathForm,
-  "destiny-number-calculator": DestinyNumberForm,
-  "mobile-number-numerology": MobileNumerologyForm,
-  "personal-year-number-calculator": PersonalYearForm,
-  "vehicle-number-numerology": VehicleNumerologyForm,
-  "bmi-calculator": BMIForm,
-  "calorie-calculator": CalorieForm,
-  "bmr-calculator": BMRForm,
-  "water-intake-calculator": WaterIntakeForm,
-  "ideal-weight-calculator": IdealWeightForm,
-  "baby-name-numerology": BabyNameNumerologyForm,
-  "business-name-numerology": BusinessNameNumerologyForm,
-  "lucky-name-generator": LuckyNameGeneratorForm,
-  "marriage-compatibility-calculator": MarriageCompatibilityForm,
-  "body-fat-calculator": BodyFatForm,
-  "pregnancy-due-date-calculator": PregnancyDueDateForm,
-  "ovulation-calculator": OvulationForm,
-  "mean-median-mode-calculator": StatsCalculatorForm,
-  "standard-deviation-calculator": StdDevForm,
-  "probability-calculator": ProbabilityForm,
   "ab-test-calculator": ABTestForm,
-  "roi-calculator": ROIForm,
-  "cagr-calculator": CAGRForm,
   "break-even-calculator": BreakEvenForm,
-  "forecasting-calculator": ForecastForm,
   "dataset-summary-generator": DatasetSummaryForm,
+  "probability-calculator": ProbabilityForm,
+  "roi-calculator": ROIForm,
+  "standard-deviation-calculator": StdDevForm,
 };
 
-const VariantToolPage = lazy(() => import("./VariantToolPage"));
+const ComingSoonPanel = ({ name }: { name: string }) => (
+  <div className="bg-card rounded-xl border-2 border-dashed border-border p-8 text-center my-2">
+    <p className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-2">Calculator launching soon</p>
+    <h2 className="font-heading text-2xl font-black mb-2">The {name} is on the build queue</h2>
+    <p className="text-sm text-muted-foreground max-w-md mx-auto">
+      Full SEO content, formula, examples and FAQs are below. The interactive calculator ships in our next release.
+      In the meantime, explore related tools or our <Link to="/blog" className="text-primary underline">blog</Link>.
+    </p>
+  </div>
+);
 
 const ToolPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const tool = slug ? getToolBySlug(slug) : undefined;
-  const variation = slug ? getVariationBySlug(slug) : undefined;
-
-  if (!tool && variation) {
-    return (
-      <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-        <VariantToolPage />
-      </Suspense>
-    );
-  }
-
   if (!tool) return <NotFound />;
 
   const FormComponent = formMap[tool.slug];
   const related = getRelatedTools(tool.relatedSlugs);
-  const variations = getVariationsByBaseSlug(tool.slug);
   const categoryPath = getCategoryPath(tool.category);
   const categoryLabel = getCategoryLabel(tool.category);
 
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: tool.faqs.map(f => ({
+    mainEntity: tool.faqs.map((f) => ({
       "@type": "Question",
       name: f.question,
       acceptedAnswer: { "@type": "Answer", text: f.answer },
@@ -129,46 +81,21 @@ const ToolPage = () => {
 
   return (
     <>
-      <SEOHead
-        title={tool.metaTitle}
-        description={tool.metaDescription}
-        jsonLd={[faqJsonLd, howToJsonLd, breadcrumbJsonLd]}
-      />
+      <SEOHead title={tool.metaTitle} description={tool.metaDescription} jsonLd={[faqJsonLd, howToJsonLd, breadcrumbJsonLd]} />
       <SiteHeader />
       <main className="container py-8 max-w-4xl">
-        <Breadcrumbs items={[
-          { label: categoryLabel, href: categoryPath },
-          { label: tool.name },
-        ]} />
+        <Breadcrumbs items={[{ label: categoryLabel, href: categoryPath }, { label: tool.name }]} />
 
         <article>
-          <h1 className="font-heading font-bold text-2xl md:text-3xl mb-3">{tool.name}</h1>
-          <p className="text-muted-foreground mb-6 leading-relaxed">{tool.intro}</p>
+          <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold">{CATEGORY_META[tool.category].emoji} {categoryLabel}</span>
+          <h1 className="font-heading font-black text-3xl md:text-5xl tracking-tight mt-2 mb-4">{tool.name}</h1>
+          <p className="text-muted-foreground mb-6 leading-relaxed text-base md:text-lg">{tool.intro}</p>
 
-          {FormComponent && <FormComponent />}
+          {FormComponent && !tool.comingSoon ? <FormComponent /> : <ComingSoonPanel name={tool.name} />}
 
           <ShareButtons title={tool.name} />
 
-          {/* SEO Variation Links */}
-          {variations.length > 0 && (
-            <section className="mt-8">
-              <h2 className="font-heading font-semibold text-lg mb-3">Also Try</h2>
-              <div className="flex flex-wrap gap-2">
-                {variations.map(v => (
-                  <Link
-                    key={v.slug}
-                    to={`/tool/${v.slug}`}
-                    className="inline-block text-sm px-3 py-1.5 rounded-full border border-border bg-muted/50 text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
-                  >
-                    {v.name}
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
-
           <HowToUse steps={tool.howToUse} />
-
           <ExampleCalculation example={tool.example} />
 
           {tool.formula && (
@@ -199,15 +126,11 @@ const ToolPage = () => {
 
           <FAQSection faqs={tool.faqs} />
 
-          <PeopleAlsoSearch slugs={tool.peopleAlsoSearch} />
-
-          <RelatedBlogPosts toolSlug={tool.slug} toolCategory={tool.category as "health" | "numerology"} />
-
           {related.length > 0 && (
             <section className="mt-10">
               <h2 className="font-heading font-bold text-xl mb-4">Related Calculators</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {related.map(t => <ToolCard key={t.slug} tool={t} />)}
+                {related.map((t) => <ToolCard key={t.slug} tool={t} />)}
               </div>
             </section>
           )}
