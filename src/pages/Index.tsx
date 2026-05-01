@@ -58,13 +58,13 @@ const Index = () => {
               50+ Free Tools · No Signup · Browser-Only
             </p>
             <h1 className="font-heading font-black text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.95] mb-6 max-w-5xl">
-              The calculators<br />
-              <span className="bg-foreground text-background px-2">US professionals</span><br />
-              actually use.
+              Smarter numbers,<br />
+              <span className="bg-foreground text-background px-2">faster decisions</span>—<br />
+              all in one place.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed">
-              ROI, CAC, LTV, mortgage, NPV, IRR, A/B testing, SaaS metrics, statistics, and data utilities — built for
-              marketers, founders, and analysts who need answers fast.
+              From finance and marketing to statistics, SaaS metrics, and everyday data utilities — a complete toolkit
+              of free calculators for anyone who works with numbers.
             </p>
             <div className="max-w-xl">
               <SiteSearch placeholder="Search 50+ tools and articles…" onQueryChange={setSearch} />
