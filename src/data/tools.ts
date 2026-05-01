@@ -86,7 +86,6 @@ export const tools: ToolData[] = [
     category: "marketing",
     icon: "🎯",
     popular: true,
-    comingSoon: true,
     intro: "Customer Acquisition Cost (CAC) is the single most important efficiency metric in modern growth. It tells you exactly how much it costs to land one new paying customer when you sum all sales and marketing investment. Our free CAC calculator gives you a clean number you can plug into LTV:CAC ratios, payback period analyses, and board reporting. Built for US SaaS founders, D2C brands, and ecommerce operators.",
     formula: "CAC = (Total Sales Spend + Total Marketing Spend) ÷ Number of New Customers Acquired in the same period.",
     howToUse: [
@@ -120,7 +119,6 @@ export const tools: ToolData[] = [
     category: "marketing",
     icon: "💎",
     popular: true,
-    comingSoon: true,
     intro: "Customer Lifetime Value (LTV) is the total profit a customer is expected to generate over their entire relationship with your business. Our free LTV calculator uses the standard SaaS formula combining ARPU, gross margin, and churn rate to give you a defensible number for unit economics, board decks, and growth investment decisions.",
     formula: "LTV = (ARPU × Gross Margin %) ÷ Monthly Churn Rate. For contractual subscriptions: LTV = ARPU × Average Customer Lifetime (months).",
     howToUse: [
@@ -153,7 +151,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free conversion rate calculator. Divide conversions by visitors to get exact CR percentage. For US marketers, ecommerce, and CRO professionals.",
     category: "marketing",
     icon: "🔁",
-    comingSoon: true,
     intro: "Conversion rate is the percentage of visitors who complete a desired action — purchase, signup, lead, demo request. Our free conversion rate calculator gives you the exact percentage, plus comparison benchmarks for ecommerce, SaaS, B2B lead gen, and paid traffic landing pages.",
     formula: "Conversion Rate (%) = (Conversions ÷ Total Visitors) × 100",
     howToUse: [
@@ -217,7 +214,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate profit margin (gross, operating, net) instantly. Free online tool for US small businesses, ecommerce, SaaS, and consultants.",
     category: "marketing",
     icon: "💹",
-    comingSoon: true,
     intro: "Profit margin is the percentage of revenue you keep as profit. Our free profit margin calculator returns gross, operating, and net margin from your revenue and cost inputs — the three margin numbers every founder, ecommerce operator, and finance lead needs to know cold.",
     formula: "Gross Margin (%) = ((Revenue − COGS) ÷ Revenue) × 100. Net Margin (%) = (Net Profit ÷ Revenue) × 100.",
     howToUse: [
@@ -249,7 +245,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate markup percentage or compute selling price from cost and target markup. Free for US retailers, wholesalers, and ecommerce sellers.",
     category: "marketing",
     icon: "🏷️",
-    comingSoon: true,
     intro: "Markup is the percentage added on top of cost to set selling price — the foundational pricing math for retail, wholesale, and ecommerce. Our free markup calculator goes both ways: enter cost and markup % to get selling price, or enter cost and selling price to get markup %.",
     formula: "Markup (%) = ((Selling Price − Cost) ÷ Cost) × 100. Selling Price = Cost × (1 + Markup ÷ 100).",
     howToUse: [
@@ -279,7 +274,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate Cost Per Lead (CPL) instantly. Divide total marketing spend by number of leads. Free online tool for US B2B and demand-gen teams.",
     category: "marketing",
     icon: "🧲",
-    comingSoon: true,
     intro: "Cost Per Lead (CPL) is the total marketing spend required to generate one lead — typically a form fill, demo request, or content download. Our free CPL calculator gives you a clean number to compare across channels (Google Ads, LinkedIn, content syndication) and benchmark against industry CPL data.",
     formula: "CPL = Total Campaign Spend ÷ Number of Leads Generated.",
     howToUse: [
@@ -309,7 +303,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free CPA calculator. Compute Cost Per Acquisition by dividing ad spend by paying customers. For US Google Ads, Meta Ads, and growth teams.",
     category: "marketing",
     icon: "💳",
-    comingSoon: true,
     intro: "Cost Per Acquisition (CPA) is the all-in ad cost required to generate one paying customer through a specific channel. It's the metric Google Ads, Meta Ads, and TikTok Ads use to optimize bidding. Our free CPA calculator gives you the precise number for ROAS modeling and channel allocation.",
     formula: "CPA = Total Ad Spend ÷ Number of Acquisitions (paying customers).",
     howToUse: [
@@ -339,7 +332,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate sales growth percentage between any two periods. Free year-over-year, quarter-over-quarter, and month-over-month growth tool.",
     category: "marketing",
     icon: "📊",
-    comingSoon: true,
     intro: "Sales growth percentage is the universal language of business performance. Our free sales growth calculator tells you exactly how much you grew (or shrank) between any two periods — month, quarter, year, or custom range — and shows absolute change alongside percent.",
     formula: "Growth (%) = ((Current Period − Prior Period) ÷ Prior Period) × 100.",
     howToUse: [
@@ -407,7 +399,6 @@ export const tools: ToolData[] = [
     metaDescription: "Compute sample and population variance instantly. Free variance calculator with mean, standard deviation, and step-by-step output.",
     category: "statistics",
     icon: "s²",
-    comingSoon: true,
     intro: "Variance measures how far a set of numbers is spread from their mean. It's the foundation of standard deviation, regression analysis, and ANOVA testing. Our free variance calculator returns both sample variance (s²) and population variance (σ²) instantly.",
     formula: "Sample Variance s² = Σ(xᵢ − x̄)² ÷ (n − 1). Population Variance σ² = Σ(xᵢ − μ)² ÷ N.",
     howToUse: [
@@ -435,7 +426,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate z-score (standard score) instantly. Free tool with probability and percentile output. For students, US analysts, and AP Stats.",
     category: "statistics",
     icon: "Z",
-    comingSoon: true,
     intro: "A z-score (or standard score) tells you how many standard deviations a value is from the mean. Our free z-score calculator computes the score plus the corresponding probability and percentile from the standard normal distribution.",
     formula: "z = (x − μ) ÷ σ. Where x is your value, μ is the mean, σ is the standard deviation.",
     howToUse: [
@@ -465,7 +455,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate p-value from z-score or t-score. Supports one-tailed and two-tailed tests. Free for US students, researchers, and AP Stats.",
     category: "statistics",
     icon: "p",
-    comingSoon: true,
     intro: "The p-value is the probability of observing your test statistic — or one more extreme — under the null hypothesis. Our free p-value calculator handles z-scores and t-scores, one-tailed and two-tailed tests, with clear interpretation against your significance threshold.",
     formula: "For z-test (two-tailed): p = 2 × (1 − Φ(|z|)) where Φ is the standard normal CDF.",
     howToUse: [
@@ -497,7 +486,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free 95% confidence interval calculator. Supports mean and proportion, custom confidence levels. For US students, surveyors, and analysts.",
     category: "statistics",
     icon: "[ ]",
-    comingSoon: true,
     intro: "A confidence interval gives a plausible range for an unknown population parameter, with a stated confidence level (typically 95%). Our free confidence interval calculator handles both means (with sample SD) and proportions (with sample size and p-hat).",
     formula: "CI for mean = x̄ ± z × (s ÷ √n). CI for proportion = p̂ ± z × √(p̂(1−p̂) ÷ n).",
     howToUse: [
@@ -528,7 +516,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate margin of error for surveys, polls, and proportions. Free online MOE calculator with 90/95/99% confidence levels.",
     category: "statistics",
     icon: "±",
-    comingSoon: true,
     intro: "Margin of error tells you how much survey results may differ from the true population value. Our free margin of error calculator computes MOE from sample size, sample proportion, and confidence level — the standard tool for US pollsters, market researchers, and journalists.",
     formula: "MOE = z × √(p̂(1−p̂) ÷ n). Use p̂ = 0.5 for the most conservative (largest) MOE.",
     howToUse: [
@@ -558,7 +545,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate required sample size for surveys, polls, and experiments. Free online sample size calculator with confidence level and MOE inputs.",
     category: "statistics",
     icon: "n",
-    comingSoon: true,
     intro: "Determining required sample size before you collect data is the difference between a credible study and a wasted one. Our free sample size calculator returns the minimum n required to hit a desired margin of error at your chosen confidence level — for surveys, opinion polls, and experiments.",
     formula: "n = (z² × p̂ × (1 − p̂)) ÷ MOE². Use p̂ = 0.5 for conservative estimate.",
     howToUse: [
@@ -588,7 +574,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free linear regression calculator. Computes slope, intercept, correlation, R², and lets you predict new y-values. For students, analysts, US researchers.",
     category: "statistics",
     icon: "📉",
-    comingSoon: true,
     intro: "Linear regression is the workhorse of predictive analytics. Our free linear regression calculator fits the best-fit line y = a + bx through your (x, y) data, returning slope, intercept, correlation coefficient (r), R-squared, and a prediction tool for new x-values.",
     formula: "Slope b = Σ((x − x̄)(y − ȳ)) ÷ Σ((x − x̄)²). Intercept a = ȳ − b × x̄.",
     howToUse: [
@@ -618,7 +603,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate Pearson correlation coefficient (r) between two datasets. Free online correlation calculator with strength interpretation.",
     category: "statistics",
     icon: "r",
-    comingSoon: true,
     intro: "Pearson's correlation coefficient (r) measures the linear relationship strength between two variables, ranging from −1 (perfect negative) to +1 (perfect positive). Our free correlation calculator returns r plus a clear strength interpretation.",
     formula: "r = Σ((x − x̄)(y − ȳ)) ÷ √(Σ(x − x̄)² × Σ(y − ȳ)²)",
     howToUse: [
@@ -708,7 +692,6 @@ export const tools: ToolData[] = [
     metaDescription: "Test statistical significance for A/B tests. Free calculator with p-value, confidence interval, and lift. For US CRO and growth teams.",
     category: "abtest",
     icon: "✅",
-    comingSoon: true,
     intro: "Statistical significance tells you whether the lift in your A/B test is real or just random noise. Our free significance calculator runs the gold-standard two-proportion test and reports p-value, confidence interval around lift, and a clear ship/don't ship verdict.",
     formula: "Same as A/B Test: two-proportion z-test, with p-value compared to chosen alpha (typically 0.05).",
     howToUse: [
@@ -736,7 +719,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free split test (A/B/n) calculator. Compare multiple variants with significance, lift, and conversion rates. For US growth teams.",
     category: "abtest",
     icon: "🧪",
-    comingSoon: true,
     intro: "A split test (or A/B/n test) compares multiple variants simultaneously. Our free split test calculator handles 2+ variants, computing pairwise significance against the control with Bonferroni correction for multiple comparisons.",
     formula: "Two-proportion z-test for each pairwise comparison; alpha adjusted by Bonferroni: α′ = α / (k − 1).",
     howToUse: [
@@ -763,7 +745,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate percentage conversion lift between control and variant. Free online tool for US growth and CRO teams.",
     category: "abtest",
     icon: "🚀",
-    comingSoon: true,
     intro: "Conversion lift is the percentage improvement of your variant over control. Our free conversion lift calculator gives you both relative lift (%) and absolute lift (percentage points) — two numbers commonly confused.",
     formula: "Relative Lift (%) = ((CR_B − CR_A) ÷ CR_A) × 100. Absolute Lift = CR_B − CR_A (percentage points).",
     howToUse: [
@@ -790,7 +771,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free Bayesian A/B test calculator. Returns probability variant beats control + 95% credible interval. Modern alternative to frequentist z-test.",
     category: "abtest",
     icon: "🧠",
-    comingSoon: true,
     intro: "Bayesian A/B testing answers the intuitive question: 'What's the probability my variant is better than control?' — directly, instead of via the convoluted p-value framework. Our free Bayesian A/B calculator uses Beta-Binomial conjugate priors to return probability-to-beat-control plus a 95% credible interval on lift.",
     formula: "Beta(α + conversions, β + non-conversions) for each variant; Monte Carlo sample to compute P(B > A).",
     howToUse: [
@@ -824,7 +804,6 @@ export const tools: ToolData[] = [
     category: "finance",
     icon: "🪙",
     popular: true,
-    comingSoon: true,
     intro: "Compound interest is the eighth wonder of the world — Einstein's words. Our free compound interest calculator shows you exactly how much your investment will grow given principal, annual rate, contribution, time horizon, and compounding frequency. Built for US investors planning brokerage, IRA, 401(k), and savings strategies.",
     formula: "FV = P × (1 + r/n)^(nt) + PMT × (((1 + r/n)^(nt) − 1) ÷ (r/n)) for periodic contributions.",
     howToUse: [
@@ -856,7 +835,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free investment return calculator. Computes total and annualized (CAGR) return for stocks, ETFs, bonds, and any investment. US-focused.",
     category: "finance",
     icon: "📈",
-    comingSoon: true,
     intro: "Calculate the true return on any investment over any holding period. Our free investment return calculator returns both total return percentage and annualized (CAGR) return — the two numbers needed to compare investments of different durations.",
     formula: "Total Return (%) = ((End − Start + Dividends) ÷ Start) × 100. Annualized = ((End ÷ Start)^(1/years) − 1) × 100.",
     howToUse: [
@@ -887,7 +865,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free Net Present Value calculator. Discount future cash flows to today's dollars. For US finance teams, real estate, and project evaluators.",
     category: "finance",
     icon: "💰",
-    comingSoon: true,
     intro: "Net Present Value (NPV) discounts future cash flows back to today's dollars — the foundational metric for evaluating projects, acquisitions, and capital investments. Our free NPV calculator handles uneven cash flows and any discount rate.",
     formula: "NPV = Σ (CF_t ÷ (1 + r)^t) − Initial Investment.",
     howToUse: [
@@ -917,7 +894,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free Internal Rate of Return calculator. Solve for IRR on any uneven cash-flow series. For US finance, real estate, and project teams.",
     category: "finance",
     icon: "🔢",
-    comingSoon: true,
     intro: "Internal Rate of Return (IRR) is the discount rate that makes a project's NPV exactly zero — effectively, the project's true compound annual return. Our free IRR calculator solves for IRR on any uneven cash flow series using the Newton-Raphson method.",
     formula: "Solve for r: 0 = Σ (CF_t ÷ (1 + r)^t) − Initial Investment.",
     howToUse: [
@@ -947,7 +923,6 @@ export const tools: ToolData[] = [
     category: "finance",
     icon: "🏠",
     popular: true,
-    comingSoon: true,
     intro: "Calculate your true monthly US mortgage payment including principal, interest, property taxes, and homeowners insurance (PITI). Our free mortgage calculator handles conventional 30-year fixed, 15-year fixed, ARM, FHA, and VA loans, with full amortization schedule.",
     formula: "Monthly P&I = (P × r × (1+r)^n) ÷ ((1+r)^n − 1) where r = annual rate ÷ 12 and n = months.",
     howToUse: [
@@ -977,7 +952,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free loan calculator with monthly payment, total interest, and amortization. For US personal, auto, student, and business loans.",
     category: "finance",
     icon: "🏦",
-    comingSoon: true,
     intro: "Calculate the monthly payment for any fixed-rate loan — personal, auto, student, or small business. Our free loan calculator returns monthly payment, total interest paid, and full amortization schedule.",
     formula: "Same as mortgage: Payment = (P × r × (1+r)^n) ÷ ((1+r)^n − 1).",
     howToUse: [
@@ -1003,7 +977,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate your debt-to-income ratio. Free DTI calculator with US mortgage lender thresholds (FHA, conventional, VA).",
     category: "finance",
     icon: "📋",
-    comingSoon: true,
     intro: "Debt-to-income (DTI) is the single most important number US mortgage lenders look at after credit score. Our free DTI calculator returns both front-end (housing only) and back-end (all debt) DTI ratios with thresholds for FHA, conventional, and VA loans.",
     formula: "Back-end DTI = (Total Monthly Debt Payments ÷ Gross Monthly Income) × 100.",
     howToUse: [
@@ -1032,7 +1005,6 @@ export const tools: ToolData[] = [
     category: "finance",
     icon: "🌅",
     popular: true,
-    comingSoon: true,
     intro: "Plan your US retirement with confidence. Our free retirement calculator projects your nest egg given current savings, monthly contributions to 401(k)/IRA, expected returns, and retirement age — and tells you how much annual income that nest egg can support using the 4% safe withdrawal rule.",
     formula: "Future Value formula plus 4% Rule: Annual Income = Nest Egg × 0.04.",
     howToUse: [
@@ -1064,7 +1036,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free US inflation calculator using BLS CPI data. Compare purchasing power between any two years from 1913 to today.",
     category: "finance",
     icon: "📉",
-    comingSoon: true,
     intro: "How much would $1,000 in 1990 be worth today? Our free US inflation calculator uses official BLS Consumer Price Index data to convert dollar amounts between any two years — essential for understanding salary history, real returns, and long-term cost comparisons.",
     formula: "Adjusted Value = Original × (CPI_target_year ÷ CPI_original_year).",
     howToUse: [
@@ -1093,7 +1064,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate monthly savings or time required to reach any goal (down payment, emergency fund, college). Free US savings goal calculator.",
     category: "finance",
     icon: "🎯",
-    comingSoon: true,
     intro: "Set a savings goal and our free calculator tells you exactly how much to save each month — or how long it will take given your current monthly contribution. Built for US savers planning down payments, emergency funds, college, weddings, or any specific target.",
     formula: "Solve for PMT: FV = PMT × (((1 + r/12)^n − 1) ÷ (r/12)) where n = months.",
     howToUse: [
@@ -1127,7 +1097,6 @@ export const tools: ToolData[] = [
     category: "saas",
     icon: "💵",
     popular: true,
-    comingSoon: true,
     intro: "Monthly Recurring Revenue (MRR) is the heartbeat of any SaaS or subscription business. Our free MRR calculator handles mixed subscription tiers, normalizes annual plans into monthly equivalents, and breaks down new MRR, expansion MRR, and churned MRR.",
     formula: "MRR = Σ (Customers × Monthly Plan Price). Annual plans: divide annual price by 12.",
     howToUse: [
@@ -1156,7 +1125,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate Annual Recurring Revenue from MRR or annual contracts. Free ARR calculator for US SaaS founders, finance, and investors.",
     category: "saas",
     icon: "📅",
-    comingSoon: true,
     intro: "Annual Recurring Revenue (ARR) is the SaaS industry's headline number — what investors and acquirers care about most. Our free ARR calculator converts MRR to ARR or aggregates annual contracts directly.",
     formula: "ARR = MRR × 12. Or: ARR = Σ (Customers × Annual Contract Value).",
     howToUse: [
@@ -1182,7 +1150,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate monthly customer and revenue churn rates. Free SaaS churn calculator with retention and net revenue retention.",
     category: "saas",
     icon: "📉",
-    comingSoon: true,
     intro: "Churn rate is the percentage of customers (or revenue) you lose each period. It's the silent killer of SaaS — a 5% monthly churn means you lose ~46% of your base each year. Our free churn calculator computes both customer and revenue churn, with annualization.",
     formula: "Customer Churn = (Customers Lost ÷ Customers at Start) × 100. Revenue Churn = (MRR Lost ÷ MRR at Start) × 100.",
     howToUse: [
@@ -1212,7 +1179,6 @@ export const tools: ToolData[] = [
     metaDescription: "Calculate Customer Retention Rate (CRR) for SaaS and subscription businesses. Free online tool with monthly and annual rates.",
     category: "saas",
     icon: "🔁",
-    comingSoon: true,
     intro: "Customer Retention Rate (CRR) is the percentage of customers you keep over a period — the inverse of churn but typically reported separately for board decks. Our free CRR calculator handles new customer adjustments correctly.",
     formula: "CRR = ((Customers at End − New Customers Acquired) ÷ Customers at Start) × 100.",
     howToUse: [
@@ -1241,7 +1207,6 @@ export const tools: ToolData[] = [
     category: "saas",
     icon: "🔥",
     popular: true,
-    comingSoon: true,
     intro: "Burn rate is how much cash your startup loses each month. Our free burn rate calculator returns both gross burn (total expenses) and net burn (expenses − revenue), plus runway in months — the single most important number for any pre-profitability startup.",
     formula: "Net Burn = Monthly Expenses − Monthly Revenue. Runway = Cash on Hand ÷ Net Burn.",
     howToUse: [
@@ -1276,7 +1241,6 @@ export const tools: ToolData[] = [
     category: "utility",
     icon: "📋",
     popular: true,
-    comingSoon: true,
     intro: "Convert any CSV file or text into clean JSON in one click. Our free CSV to JSON converter works entirely in your browser — your data never touches our servers. Supports custom delimiters, header detection, and pretty-printed or minified output.",
     howToUse: [
       "Paste CSV text or upload a CSV file",
@@ -1305,7 +1269,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free JSON formatter, beautifier, and validator. Pretty-print JSON, find errors, minify. Browser-only — your data never leaves your device.",
     category: "utility",
     icon: "{ }",
-    comingSoon: true,
     intro: "Paste any JSON and get instant pretty-printed output, validation errors with line numbers, and minified-vs-formatted toggle. Our free JSON formatter is built for developers, API debuggers, and data analysts who need clean JSON fast.",
     howToUse: [
       "Paste your JSON text",
@@ -1331,7 +1294,6 @@ export const tools: ToolData[] = [
     metaDescription: "Remove duplicate lines or values from any list. Free online dedup tool with case-sensitivity and trim-whitespace options. Browser-only.",
     category: "utility",
     icon: "🧹",
-    comingSoon: true,
     intro: "Paste any list (lines, comma-separated values, emails) and get back a deduplicated version instantly. Our free remove duplicates tool offers case sensitivity, whitespace trim, and original-order preservation.",
     howToUse: [
       "Paste your list (one item per line or comma-separated)",
@@ -1357,7 +1319,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free text cleaner tool. Remove extra spaces, line breaks, tabs, special characters. Trim, lowercase, uppercase. Browser-only privacy.",
     category: "utility",
     icon: "✂️",
-    comingSoon: true,
     intro: "Paste messy text and clean it up in one click. Our free text cleaner removes extra spaces, line breaks, tabs, special characters, and HTML tags — with toggles for trimming, case conversion, and whitespace normalization.",
     howToUse: [
       "Paste your text",
@@ -1383,7 +1344,6 @@ export const tools: ToolData[] = [
     metaDescription: "Convert Excel (XLSX) files to CSV in your browser. Free Excel to CSV converter, multi-sheet support, no upload, no signup.",
     category: "utility",
     icon: "📊",
-    comingSoon: true,
     intro: "Convert any Excel (.xlsx) file to CSV in seconds. Our free Excel to CSV converter parses your file entirely in your browser — your data is never uploaded. Multi-sheet workbooks supported with sheet selector.",
     howToUse: [
       "Upload your .xlsx file (or drag-drop)",
@@ -1414,7 +1374,6 @@ export const tools: ToolData[] = [
     metaDescription: "Free online chart generator. Paste data, get a beautiful bar, line, or pie chart. Export as PNG. Privacy-safe browser-only.",
     category: "viz",
     icon: "📊",
-    comingSoon: true,
     intro: "Create publication-ready bar, line, and pie charts in seconds. Paste your data, choose chart type and color theme, and download as PNG. Built for analysts, journalists, students, and anyone who needs a clean chart faster than opening Excel.",
     howToUse: [
       "Paste data as labels + values (or CSV)",
@@ -1442,7 +1401,6 @@ export const tools: ToolData[] = [
     metaDescription: "Generate histograms from any dataset. Free online histogram tool with auto-bins, custom bins, and PNG export. For US analysts and students.",
     category: "viz",
     icon: "📶",
-    comingSoon: true,
     intro: "Visualize the distribution of any numeric dataset with our free histogram generator. Auto-bin selection (Sturges' rule, Freedman-Diaconis) or custom bins, with PNG export.",
     howToUse: [
       "Paste your numeric data",
@@ -1468,7 +1426,6 @@ export const tools: ToolData[] = [
     metaDescription: "Generate Pearson correlation heatmaps from CSV data. Free online tool for US data scientists, analysts, and ML engineers.",
     category: "viz",
     icon: "🔥",
-    comingSoon: true,
     intro: "Upload a CSV with multiple numeric columns and get an instant Pearson correlation heatmap — the standard EDA visualization for spotting multicollinearity, feature relationships, and data quality issues.",
     howToUse: [
       "Upload CSV with numeric columns",
@@ -1498,7 +1455,6 @@ export const tools: ToolData[] = [
     metaDescription: "Upload survey responses and get instant breakdowns by question, charts, and AI-written insights. Free for US researchers and marketers.",
     category: "bonus",
     icon: "📝",
-    comingSoon: true,
     intro: "Upload your survey response CSV and our free analyzer breaks down responses per question, generates charts, calculates margins of error, and writes a plain-English insights summary. Built for US market researchers, academic surveyors, and product teams analyzing user feedback.",
     howToUse: [
       "Upload your survey response CSV",
