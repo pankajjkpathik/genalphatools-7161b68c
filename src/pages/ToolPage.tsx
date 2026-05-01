@@ -17,14 +17,82 @@ import DatasetSummaryForm from "@/components/tools/DatasetSummaryForm";
 import ProbabilityForm from "@/components/tools/ProbabilityForm";
 import ROIForm from "@/components/tools/ROIForm";
 import StdDevForm from "@/components/tools/StdDevForm";
+import {
+  CACForm, LTVForm, ConversionRateForm, ProfitMarginForm, MarkupForm,
+  CPLForm, CPAForm, SalesGrowthForm,
+} from "@/components/tools/MarketingForms";
+import {
+  VarianceForm, ZScoreForm, PValueForm, ConfidenceIntervalForm, MarginOfErrorForm,
+  SampleSizeForm, RegressionForm, CorrelationForm,
+} from "@/components/tools/StatsForms";
+import { StatSignificanceForm, SplitTestForm, ConversionLiftForm, BayesianABForm } from "@/components/tools/ABForms";
+import {
+  CompoundInterestForm, InvestmentReturnForm, NPVForm, IRRForm, MortgageForm,
+  LoanForm, DTIForm, RetirementForm, InflationForm, SavingsGoalForm,
+} from "@/components/tools/FinanceForms";
+import { MRRForm, ARRForm, ChurnForm, RetentionForm, BurnRateForm } from "@/components/tools/SaasForms";
+import { CsvToJsonForm, JsonFormatterForm, RemoveDuplicatesForm, TextCleanerForm, ExcelToCsvForm } from "@/components/tools/UtilityForms";
+import { ChartGeneratorForm, HistogramForm, CorrelationHeatmapForm, SurveyResultsForm } from "@/components/tools/VizForms";
 
 const formMap: Record<string, React.ComponentType> = {
+  // existing
   "ab-test-calculator": ABTestForm,
   "break-even-calculator": BreakEvenForm,
   "dataset-summary-generator": DatasetSummaryForm,
   "probability-calculator": ProbabilityForm,
   "roi-calculator": ROIForm,
   "standard-deviation-calculator": StdDevForm,
+  // marketing
+  "cac-calculator": CACForm,
+  "ltv-calculator": LTVForm,
+  "conversion-rate-calculator": ConversionRateForm,
+  "profit-margin-calculator": ProfitMarginForm,
+  "markup-calculator": MarkupForm,
+  "cost-per-lead-calculator": CPLForm,
+  "cost-per-acquisition-calculator": CPAForm,
+  "sales-growth-calculator": SalesGrowthForm,
+  // statistics
+  "variance-calculator": VarianceForm,
+  "z-score-calculator": ZScoreForm,
+  "p-value-calculator": PValueForm,
+  "confidence-interval-calculator": ConfidenceIntervalForm,
+  "margin-of-error-calculator": MarginOfErrorForm,
+  "sample-size-calculator": SampleSizeForm,
+  "regression-calculator": RegressionForm,
+  "correlation-calculator": CorrelationForm,
+  // a/b testing
+  "statistical-significance-calculator": StatSignificanceForm,
+  "split-test-calculator": SplitTestForm,
+  "conversion-lift-calculator": ConversionLiftForm,
+  "bayesian-ab-test-calculator": BayesianABForm,
+  // finance
+  "compound-interest-calculator": CompoundInterestForm,
+  "investment-return-calculator": InvestmentReturnForm,
+  "npv-calculator": NPVForm,
+  "irr-calculator": IRRForm,
+  "mortgage-calculator": MortgageForm,
+  "loan-calculator": LoanForm,
+  "debt-to-income-ratio-calculator": DTIForm,
+  "retirement-calculator": RetirementForm,
+  "inflation-calculator": InflationForm,
+  "savings-goal-calculator": SavingsGoalForm,
+  // saas
+  "mrr-calculator": MRRForm,
+  "arr-calculator": ARRForm,
+  "churn-rate-calculator": ChurnForm,
+  "customer-retention-rate-calculator": RetentionForm,
+  "burn-rate-calculator": BurnRateForm,
+  // utilities
+  "csv-to-json-converter": CsvToJsonForm,
+  "json-formatter": JsonFormatterForm,
+  "remove-duplicates-tool": RemoveDuplicatesForm,
+  "text-cleaner-tool": TextCleanerForm,
+  "excel-to-csv-converter": ExcelToCsvForm,
+  // visualization + bonus
+  "chart-generator": ChartGeneratorForm,
+  "histogram-generator": HistogramForm,
+  "correlation-heatmap-generator": CorrelationHeatmapForm,
+  "survey-results-analyzer": SurveyResultsForm,
 };
 
 const ComingSoonPanel = ({ name }: { name: string }) => (
