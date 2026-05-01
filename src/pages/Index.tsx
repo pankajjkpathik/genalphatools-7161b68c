@@ -5,32 +5,24 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import SiteSearch from "@/components/SiteSearch";
 import ToolCard from "@/components/ToolCard";
-import { tools, getPopularTools, getToolsByCategory } from "@/data/tools";
+import { tools, getPopularTools, CATEGORY_META, type ToolCategory } from "@/data/tools";
 import { blogPosts } from "@/data/blog-posts";
 import { searchSite } from "@/lib/search";
-import heroBg from "@/assets/hero-bg.jpg";
-import numerologyIcon from "@/assets/numerology-icon.png";
-import healthIcon from "@/assets/health-icon.png";
 
 const Index = () => {
   const [search, setSearch] = useState("");
   const popular = getPopularTools();
-  const numerology = getToolsByCategory("numerology");
-  const health = getToolsByCategory("health");
-  const statistics = getToolsByCategory("statistics");
-  const business = getToolsByCategory("business");
 
-  const filtered = useMemo(() => {
-    if (!search.trim()) return null;
-    return searchSite(search, 60);
-  }, [search]);
+  const filtered = useMemo(() => (search.trim() ? searchSite(search, 60) : null), [search]);
+
+  const categories = Object.entries(CATEGORY_META) as [ToolCategory, typeof CATEGORY_META[ToolCategory]][];
 
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "GenAlpha Tools",
     url: "https://genalphatools.in",
-    description: "Free online calculators and numerology tools. Instant results, accurate insights.",
+    description: "Free online calculators for US marketers, founders, and analysts. ROI, CAC, LTV, mortgage, NPV, statistics & more.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://genalphatools.in/?q={search_term_string}",
@@ -38,265 +30,113 @@ const Index = () => {
     },
   };
 
-  const categoriesJsonLd = {
+  const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Tool categories",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Statistics Tools", url: "https://genalphatools.in/statistics-tools" },
-      { "@type": "ListItem", position: 2, name: "Business & Finance Tools", url: "https://genalphatools.in/business-tools" },
-      { "@type": "ListItem", position: 3, name: "Health Calculators", url: "https://genalphatools.in/health-calculators" },
-      { "@type": "ListItem", position: 4, name: "Numerology Tools", url: "https://genalphatools.in/numerology-tools" },
-    ],
+    itemListElement: categories.map(([, m], i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: m.label,
+      url: `https://genalphatools.in${m.path}`,
+    })),
   };
 
   return (
     <>
       <SEOHead
-        title="Free Online Calculators & Numerology Tools | GenAlpha Tools"
-        description="Free online numerology calculators, BMI calculator, calorie calculator & more. Instant results, accurate insights. 100% free tools for India & global users."
-        jsonLd={[websiteJsonLd, categoriesJsonLd]}
+        title="Free Calculators for US Marketers, Founders & Analysts | GenAlpha Tools"
+        description="50+ free online calculators: ROI, CAC, LTV, mortgage, NPV, IRR, statistics, A/B testing, SaaS metrics, data utilities. Built for US professionals. No signup."
+        jsonLd={[websiteJsonLd, itemListJsonLd]}
       />
       <SiteHeader />
       <main>
-        {/* Hero */}
-        <section
-          className="relative py-16 md:py-24 text-center px-4 overflow-hidden"
-          style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-        >
-          <div className="absolute inset-0 bg-black/30" />
-          <div className="container max-w-3xl relative z-10">
-            <h1 className="font-heading text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Free Online Calculators &<br />Numerology Tools (Instant Results)
-            </h1>
-            <p className="text-white/90 text-base md:text-lg mb-8 max-w-xl mx-auto">
-              Check your health, destiny &amp; lucky numbers in seconds. 100% free, accurate, and trusted by millions.
+        {/* Hero — bold editorial */}
+        <section className="border-b-2 border-foreground/10 bg-background">
+          <div className="container py-16 md:py-24">
+            <p className="text-xs md:text-sm uppercase tracking-[0.25em] font-bold text-muted-foreground mb-4">
+              50+ Free Tools · No Signup · Browser-Only
             </p>
-            <SiteSearch
-              placeholder="Search tools and articles... (e.g. BMI, ROI, baby names)"
-              onQueryChange={setSearch}
-            />
+            <h1 className="font-heading font-black text-5xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.95] mb-6 max-w-5xl">
+              The calculators<br />
+              <span className="bg-foreground text-background px-2">US professionals</span><br />
+              actually use.
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed">
+              ROI, CAC, LTV, mortgage, NPV, IRR, A/B testing, SaaS metrics, statistics, and data utilities — built for
+              marketers, founders, and analysts who need answers fast.
+            </p>
+            <div className="max-w-xl">
+              <SiteSearch placeholder="Search 50+ tools and articles…" onQueryChange={setSearch} />
+            </div>
           </div>
         </section>
 
-        <div className="container py-10">
-          {/* Category Cards */}
-          {!filtered && (
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-              <Link to="/statistics-tools" className="group flex flex-col items-center text-center gap-2 bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-primary/40 transition-all">
-                <span className="text-4xl">📊</span>
-                <h2 className="font-heading font-bold text-base group-hover:text-primary transition-colors">Statistics Tools</h2>
-                <p className="text-xs text-muted-foreground">{statistics.length} calculators</p>
-              </Link>
-              <Link to="/business-tools" className="group flex flex-col items-center text-center gap-2 bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-primary/40 transition-all">
-                <span className="text-4xl">💼</span>
-                <h2 className="font-heading font-bold text-base group-hover:text-primary transition-colors">Business & Finance</h2>
-                <p className="text-xs text-muted-foreground">{business.length} calculators</p>
-              </Link>
-              <Link to="/health-calculators" className="group flex flex-col items-center text-center gap-2 bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-accent/40 transition-all">
-                <img src={healthIcon} alt="Health Calculators" width={48} height={48} loading="lazy" />
-                <h2 className="font-heading font-bold text-base group-hover:text-accent transition-colors">Health Calculators</h2>
-                <p className="text-xs text-muted-foreground">{health.length} calculators</p>
-              </Link>
-              <Link to="/numerology-tools" className="group flex flex-col items-center text-center gap-2 bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-secondary/40 transition-all">
-                <img src={numerologyIcon} alt="Numerology Tools" width={48} height={48} loading="lazy" />
-                <h2 className="font-heading font-bold text-base group-hover:text-secondary transition-colors">Numerology Tools</h2>
-                <p className="text-xs text-muted-foreground">{numerology.length} calculators</p>
-              </Link>
-            </div>
-          )}
-
-          {/* Search results (tools + blog) */}
+        <div className="container py-12">
           {filtered ? (
             <section className="mb-12">
-              <h2 className="font-heading font-bold text-xl mb-4">
+              <h2 className="font-heading font-black text-2xl mb-4">
                 {filtered.length ? `${filtered.length} results for "${search}"` : "No matches found"}
               </h2>
-              {filtered.length > 0 && (
-                <>
-                  {(() => {
-                    const toolHits = filtered.filter((r) => r.kind === "tool");
-                    const postHits = filtered.filter((r) => r.kind === "post");
-                    return (
-                      <div className="space-y-8">
-                        {toolHits.length > 0 && (
-                          <div>
-                            <h3 className="font-heading font-semibold text-base mb-3 text-muted-foreground">Tools ({toolHits.length})</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                              {toolHits.map((r) => r.kind === "tool" && <ToolCard key={r.tool.slug} tool={r.tool} />)}
-                            </div>
-                          </div>
-                        )}
-                        {postHits.length > 0 && (
-                          <div>
-                            <h3 className="font-heading font-semibold text-base mb-3 text-muted-foreground">Articles ({postHits.length})</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                              {postHits.map((r) => r.kind === "post" && (
-                                <Link
-                                  key={r.post.slug}
-                                  to={`/blog/${r.post.slug}`}
-                                  className="group flex flex-col bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-primary/40 transition-all"
-                                >
-                                  <span className="text-xs uppercase tracking-wider text-muted-foreground mb-2">{r.post.category} • {r.post.readTimeMin} min read</span>
-                                  <h4 className="font-heading font-semibold text-base mb-2 group-hover:text-primary transition-colors line-clamp-2">{r.post.title}</h4>
-                                  <p className="text-sm text-muted-foreground line-clamp-3">{r.post.excerpt}</p>
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })()}
-                </>
-              )}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {filtered.map((r) =>
+                  r.kind === "tool" ? (
+                    <ToolCard key={r.tool.slug} tool={r.tool} />
+                  ) : (
+                    <Link key={r.post.slug} to={`/blog/${r.post.slug}`} className="group flex flex-col bg-card border-2 border-border rounded-xl p-5 hover:border-foreground transition-colors">
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground mb-2 font-bold">{r.post.category} · {r.post.readTimeMin} min</span>
+                      <h3 className="font-heading font-bold text-base mb-2 line-clamp-2">{r.post.title}</h3>
+                      <p className="text-sm text-muted-foreground line-clamp-3">{r.post.excerpt}</p>
+                    </Link>
+                  )
+                )}
+              </div>
             </section>
           ) : (
             <>
+              {/* Cluster grid */}
+              <section className="mb-16">
+                <h2 className="font-heading font-black text-3xl md:text-4xl tracking-tight mb-6">Browse by category</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                  {categories.map(([key, m]) => (
+                    <Link key={key} to={m.path} className="group border-2 border-border rounded-xl p-5 hover:border-foreground hover:bg-foreground hover:text-background transition-colors">
+                      <span className="text-3xl block mb-3">{m.emoji}</span>
+                      <h3 className="font-heading font-bold text-base mb-1">{m.label}</h3>
+                      <p className="text-xs opacity-70">{tools.filter((t) => t.category === key).length} tools</p>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+
               {/* Popular */}
-              <section className="mb-12">
-                <h2 className="font-heading font-bold text-2xl mb-6">🔥 Popular Tools</h2>
+              <section className="mb-16">
+                <h2 className="font-heading font-black text-3xl md:text-4xl tracking-tight mb-6">🔥 Most popular</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {popular.map(t => <ToolCard key={t.slug} tool={t} />)}
+                  {popular.map((t) => <ToolCard key={t.slug} tool={t} />)}
                 </div>
               </section>
 
-              {/* Statistics */}
-              <section className="mb-12">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="font-heading font-bold text-2xl">📊 Statistics Tools</h2>
-                  <Link to="/statistics-tools" className="text-sm text-primary font-medium hover:underline">View All →</Link>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {statistics.slice(0, 6).map(t => <ToolCard key={t.slug} tool={t} />)}
-                </div>
-              </section>
-
-              {/* Business */}
-              <section className="mb-12">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="font-heading font-bold text-2xl">💼 Business & Finance Tools</h2>
-                  <Link to="/business-tools" className="text-sm text-primary font-medium hover:underline">View All →</Link>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {business.slice(0, 6).map(t => <ToolCard key={t.slug} tool={t} />)}
-                </div>
-              </section>
-
-              {/* Numerology */}
-              <section className="mb-12">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="font-heading font-bold text-2xl">🔮 Numerology Tools</h2>
-                  <Link to="/numerology-tools" className="text-sm text-primary font-medium hover:underline">View All →</Link>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {numerology.slice(0, 6).map(t => <ToolCard key={t.slug} tool={t} />)}
-                </div>
-              </section>
-
-              {/* Health */}
-              <section className="mb-12">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="font-heading font-bold text-2xl">💪 Health Calculators</h2>
-                  <Link to="/health-calculators" className="text-sm text-primary font-medium hover:underline">View All →</Link>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {health.slice(0, 6).map(t => <ToolCard key={t.slug} tool={t} />)}
-                </div>
-              </section>
-
-              {/* Latest from Blog */}
-              <section className="mb-12">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="font-heading font-bold text-2xl">📝 Latest from the Blog</h2>
-                  <Link to="/blog" className="text-sm text-primary font-medium hover:underline">View All →</Link>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {[...blogPosts]
-                    .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
-                    .slice(0, 6)
-                    .map(post => (
-                      <Link
-                        key={post.slug}
-                        to={`/blog/${post.slug}`}
-                        className="group flex flex-col bg-card border border-border rounded-xl p-5 hover:shadow-elevated hover:border-primary/40 transition-all"
-                      >
-                        <span className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-                          {post.category} • {post.readTimeMin} min read
-                        </span>
-                        <h3 className="font-heading font-semibold text-base mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                          {post.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground line-clamp-3">{post.excerpt}</p>
-                      </Link>
-                    ))}
-                </div>
-              </section>
-
-
-              {/* About / Why Us */}
-              <section className="mb-12 bg-card border border-border rounded-2xl p-6 md:p-8">
-                <h2 className="font-heading font-bold text-2xl mb-4">About GenAlpha Tools</h2>
-                <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
-                  <p>GenAlpha Tools is a free online platform offering {tools.length}+ professionally built calculators across two domains: <strong>Numerology</strong> and <strong>Health &amp; Wellness</strong>. Our mission is simple — give every user instant, accurate, and easy-to-understand answers to the questions they ask most: <em>What's my BMI? How many calories should I eat? What does my name number mean? Is my mobile number lucky?</em></p>
-                  <p>Every health calculator on this site is built around clinically validated formulas — the World Health Organization BMI classification, the Mifflin-St Jeor BMR equation, the Harris-Benedict Total Daily Energy Expenditure formula, the Devine ideal-weight formula, and Naegele's pregnancy-due-date rule. Every numerology calculator uses the Pythagorean letter-to-number system, the most widely accepted method in modern Western and Indian numerology practice.</p>
-                  <p>We believe useful tools should be free, fast, mobile-friendly, and never store your personal data. Every calculation runs entirely inside your browser; nothing is sent to a server. You don't need to sign up, install an app, or share an email address — just open the tool and get your answer in seconds.</p>
-                </div>
-              </section>
-
-              {/* Why Trust */}
-              <section className="mb-12">
-                <h2 className="font-heading font-bold text-2xl mb-4">Why Choose Our Calculators?</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="bg-card border border-border rounded-xl p-5">
-                    <h3 className="font-heading font-semibold text-lg mb-2">✅ Built on Trusted Formulas</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Every health tool follows globally recognised medical formulas adopted by WHO, ICMR, and the American Council on Sports Medicine. Numerology tools follow established Pythagorean and Vedic numerology traditions.</p>
+              {/* Latest blog */}
+              {blogPosts.length > 0 && (
+                <section className="mb-16">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="font-heading font-black text-3xl md:text-4xl tracking-tight">Latest from the blog</h2>
+                    <Link to="/blog" className="text-sm font-bold hover:underline">View all →</Link>
                   </div>
-                  <div className="bg-card border border-border rounded-xl p-5">
-                    <h3 className="font-heading font-semibold text-lg mb-2">⚡ Instant, Offline Calculations</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Results appear in milliseconds — even on slow connections. Calculations happen entirely in your browser; we never send your data anywhere.</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {[...blogPosts]
+                      .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
+                      .slice(0, 6)
+                      .map((post) => (
+                        <Link key={post.slug} to={`/blog/${post.slug}`} className="group flex flex-col bg-card border-2 border-border rounded-xl p-5 hover:border-foreground transition-colors">
+                          <span className="text-xs uppercase tracking-wider text-muted-foreground mb-2 font-bold">{post.category} · {post.readTimeMin} min</span>
+                          <h3 className="font-heading font-bold text-base mb-2 line-clamp-2">{post.title}</h3>
+                          <p className="text-sm text-muted-foreground line-clamp-3">{post.excerpt}</p>
+                        </Link>
+                      ))}
                   </div>
-                  <div className="bg-card border border-border rounded-xl p-5">
-                    <h3 className="font-heading font-semibold text-lg mb-2">📱 Mobile-First Design</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Designed for the way Indian users actually browse — primarily on smartphones. Works smoothly on Jio, Airtel, and Vi networks even on 3G.</p>
-                  </div>
-                  <div className="bg-card border border-border rounded-xl p-5">
-                    <h3 className="font-heading font-semibold text-lg mb-2">📚 Educational Content</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">Each tool includes a worked example, the underlying formula, benefits, and detailed FAQs. Our <a href="/blog" className="text-primary underline">blog</a> goes deeper on every topic.</p>
-                  </div>
-                </div>
-              </section>
-
-              {/* FAQs */}
-              <section className="mb-12">
-                <h2 className="font-heading font-bold text-2xl mb-4">Frequently Asked Questions</h2>
-                <div className="space-y-3">
-                  <details className="group bg-card border border-border rounded-xl p-4">
-                    <summary className="cursor-pointer font-heading font-semibold text-base">Are GenAlpha Tools really free?</summary>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">Yes. Every calculator and article on this website is 100% free to use, with no sign-up, no paywall, and no hidden charges. We don't ask for your email or store any personal data.</p>
-                  </details>
-                  <details className="group bg-card border border-border rounded-xl p-4">
-                    <summary className="cursor-pointer font-heading font-semibold text-base">How accurate are your health calculators?</summary>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">Our health calculators use clinically validated formulas (Mifflin-St Jeor, WHO BMI, Devine ideal weight, Harris-Benedict TDEE, Naegele's rule). Results are accurate to within ±5% for most adults. They are educational and do not replace medical advice.</p>
-                  </details>
-                  <details className="group bg-card border border-border rounded-xl p-4">
-                    <summary className="cursor-pointer font-heading font-semibold text-base">Which numerology system do you use?</summary>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">We use the Pythagorean system (A=1, B=2 … I=9, then J=1, K=2, and so on), which is the most widely used numerology system worldwide and is the basis of most modern Indian numerology practice.</p>
-                  </details>
-                  <details className="group bg-card border border-border rounded-xl p-4">
-                    <summary className="cursor-pointer font-heading font-semibold text-base">Do you store the data I enter?</summary>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">No. Every calculation runs inside your browser using JavaScript. Nothing is uploaded to a server, nothing is logged, and nothing is shared with third parties. See our <a href="/privacy-policy" className="text-primary underline">Privacy Policy</a> for details.</p>
-                  </details>
-                  <details className="group bg-card border border-border rounded-xl p-4">
-                    <summary className="cursor-pointer font-heading font-semibold text-base">Can I use these tools on mobile?</summary>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">Absolutely. Our entire site is built mobile-first and works smoothly on Android, iOS, and any modern browser — even on 3G connections.</p>
-                  </details>
-                  <details className="group bg-card border border-border rounded-xl p-4">
-                    <summary className="cursor-pointer font-heading font-semibold text-base">Where can I learn more about the topics?</summary>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">Visit our <a href="/blog" className="text-primary underline">blog</a> for in-depth articles on BMI, calorie deficits, life path numbers, baby name numerology, mobile number numerology, pregnancy due dates, and more.</p>
-                  </details>
-                </div>
-              </section>
+                </section>
+              )}
             </>
           )}
         </div>
